@@ -3,6 +3,7 @@
 % {{{ packages
 
 \usepackage{blindtext}
+\usepackage{cite}
 
 % math
 \usepackage{fixmath}
@@ -116,18 +117,18 @@ This project would not be possible without many people. Firstly, thanks to my ad
 \section{Magnetic information storage}
 
 % Information 
-In computer architecture, there is typically a trade-off between the optimum speed or response time and the complexity and size of memory storage. Volatile memory refers to temporary memory storage where the data is lost when the power is removed. Volatile memory such as SRAM (static random access memory) and DRAM (dynamic random access memory) are used as CPU caches and main memory respectively. SRAM, although has much faster access times and does not require periodic refreshing, requires four to six transistors per bit as compared to one transistor and capacitor in DRAM devices. Non-volatile memory (NVM) storage devices, on the other hand, retain their data for a long period of time until disturbed. Modern computers mostly use flash memory based solid state drives (SSD) and magnetic hard disk drives (HDD) for storing large amounts of data permanently. The first HDD was invented in 1956 by IBM and since then, HDD have seen more than 8 orders of magnitude improvement in the storage density. However, the trilemma in magnetic recording between poor thermal stability, coercive fields and signal-to-noise ratio has resulted in the HDDs reaching a saturation limit in their device performance. Flash memory uses floating gate MOSFETs (metal oxide semiconductor field effect transistors) to store memory and does not contain any moving parts unlike HDDs. Although SSD have dominated the NVM marketshare, there is an increasing need for alternative NVM technologies that are fast, low power consuming and have high storage density.
+In information memory storage devices, there is typically a trade-off between the optimum speed or response time and the complexity and size of memory storage \cite{Wing1986}. Volatile memory refers to temporary memory storage where the data is lost when the power is removed. Volatile memory such as SRAM (static random access memory) and DRAM (dynamic random access memory) are used as CPU caches and main memory respectively. SRAM has much faster access times and does not require periodic refreshing. However, it requires four to six transistors per bit as compared to one transistor and one capacitor in DRAM devices \cite{Meena2014}. Non-volatile memory (NVM) storage devices on the other hand, retain their data for a long period of time until perturbed. Modern computers mostly use flash memory based solid state drives (SSD) and magnetic hard disk drives (HDD) for storing large amounts of data permanently \cite{Meena2014}. The first HDD was invented in 1956 by IBM and since then, has seen more than eight orders of magnitude improvement in the storage density. However, the trilemma in magnetic recording between poor thermal stability, coercive fields and signal-to-noise ratio has resulted in the HDD reaching a saturation limit in their device performance \cite{Krishnan2016}. Flash memory uses floating gate MOSFETs (metal oxide semiconductor field effect transistors) to store memory and does not contain any moving parts. Although SSD have dominated the NVM marketshare last few years, there is an increasing need for alternative NVM technologies that are fast, low power consuming and have high storage density \cite{Meena2014}.
 
 % Emerging NVM
-One such emerging NVM is MRAM (magnetoresistive random access memory). Unlike flash memory which uses electronic charge as a medium of memory storage, MRAM uses the electronic spin degree of freedom to store memory. MRAM devices consist of cells with magnetic tunnel junctions (MTJ) that have two ferromagnet (FM) layers separated by an insulating layer. One of the layer is pinned where the magnetization orientation is fixed and acts as a reference layer. Depending on the orientation of the free layer, the tunneling magnetoresistance (TMR) is high or low and hence, memory can be read using electrical currents. Early MRAMs were written by induced fields from heavy currents passed on the adjacent layer. With recent developments in spin transfer torque in ferromagnets, it has become possible to write using electrical currents. This has reduced the power consumption significantly and made commercialization of MRAM devices possible. 
+One such emerging NVM is MRAM (magnetoresistive random access memory). Unlike flash memory which uses electronic charge as a medium of memory storage, MRAM uses the electronic spin degree of freedom to store information. Unlike charge based storage devices, MRAM is stable against perturbations such as ionizing radiation \cite{Wadley2016}. MRAM devices consist of cells with magnetic tunnel junctions (MTJ) that have two ferromagnet (FM) layers separated by an insulating layer. One of the layer is pinned where the magnetization orientation is fixed and acts as a reference layer. Depending on the orientation of the free layer, the tunneling magnetoresistance (TMR) is high or low and hence, memory can be read out using electrical currents \cite{Krishnan2016}. Early MRAMs were written by induced fields from heavy currents passed on the adjacent layer. With recent developments in spin transfer torque (STT) in ferromagnets, it has become possible to write using electrical currents \cite{Chappert2007}. This has reduced the power consumption significantly and made commercialization of MRAM devices possible \cite{Krishnan2016,Bhatti2017}.
 
 \section{Antiferromagnets for potential applications as a memory unit}
 
 % Gomonay 2010 paper
-Historically, antiferromagnets (AFM) have been used as inactive components in MTJ, primarily in exchange biasing the pinned FM layer. However in 2010, Gomonay \emph{et al.} proposed electrical switching of AFMs using STT by passing a spin polarized current injected from a fixed FM layer through the AFM layer. The electrical current gets spin polarized in the FM layer and transfers its angular momentum to the AFM moments to switch it from one orientation to another. There are advantages to using AFM over FM in MRAM devices. AFM are not easily affected by external magnetic fields and do not produce stray fields of their own. They have smaller domains which would allow for higher storage densities. Since the precession frequency of AFM moments is the geometric mean of exchange interaction and magnetocrystalline anisotropy, the dynamics in AFM materials occur in GHz timescales which is useful for fast precessional switching. Although the AFM can be switched using electrical currents from parallel to perpendicular orientation with respect to the FM magnetization direction, the reverse process cannot be obtained electrically. High magnetic fields above the spin flop transition of the AFM needs to be applied in order to switch back the AFM to its original state.
+Historically, antiferromagnets (AFM) have been used as inactive components in MTJ, primarily in exchange biasing the pinned FM layer. However in 2010, Gomonay \emph{et al.} \cite{Gomonay2010} proposed electrical switching of AFMs using STT by passing a spin polarized current injected from a fixed FM layer through the AFM layer. The electrical current gets spin polarized in the FM layer and transfers its angular momentum to the AFM moments to switch it from one orientation to another. There are advantages to using AFM over FM in MRAM devices. AFM are not easily affected by external magnetic fields and do not produce stray fields of their own. They have smaller domains which would allow for higher storage densities \cite{Wadley2016}. Since the precession frequency of AFM moments is determined the geometric mean of exchange and anisotropy energies, the dynamics in AFM materials occur at THz timescales which is two orders of magnitude higher than in FM \cite{Siddiqui2020}. Although the AFM can be switched using electrical currents from parallel to perpendicular orientation with respect to the FM magnetization direction, the reverse process cannot be obtained using electrical current. High magnetic fields above the spin flop transition of the AFM needs to be applied in order to switch back the AFM to its original state \cite{Gomonay2010}.
 
 % Wadley 2016 paper
-Unlike previously discussed STT MRAM devices, spin orbit torque based electrical switching in FM does not require the presence of a pinned FM layer at all. Since the fieldlike torque experienced by the moments are quadratic to the magnetization of the FM, the concept is also equally applicable to AFM. In 2016, Wadley \emph{et al.} showed that in AFM with certain symmetries, the current induced spin polarization of charge carriers is staggered across the two magnetic sublattices resulting in a fieldlike torque that is in the same direction for the two sublattices. This could allow the rotation of the N\'eel vector orientation with every current pulse. This is possible in materials which are globally centrosymmetric but locally non-centrosymmetric and the two sublattices are related to each other by a center of inversion. It was initially demonstrated in the case of epitaxially grown tetragonal CuMnAs thin films on GaP substrate and since then, it has also been shown in Mn$_2$Au. It requires the presence of degenrate N\'eel vectors like in CuMnAs as shown in Fig. \ref{fig:tet-CuMnAs}(a) as opposed to compounds like MnF$_2$ where the Mn moments point along $c$ in Fig. \ref{fig:tet-CuMnAs}(b).
+Unlike previously discussed STT MRAM devices, spin orbit torque based electrical switching in broken inversion symmetry FM does not require the presence of a FM polarizer \cite{Manchon2008}. This concept of the presence of relativistic fields is applicable to AFM as well provided the local moments do not sit on centrosymmetric sites. If the two sublattices are related to each other by a center of inversion, then the current induced spin polarized fields are staggered across the two sublattices \cite{Zelezny2014,Zelezny2017,Wadley2016}. This results in a uniform fieldlike torque experienced by the order parameter. This is possible in bulk materials that are globally centrosymmetric but locally non-centrosymmetric and the two sublattices are related to each other by a center of inversion. It was initially demonstrated in the case of epitaxially grown tetragonal CuMnAs thin films on GaP substrate \cite{Wadley2016} and since then, it has also been shown in Mn$_2$Au and CuMnAs sputtered films as well \cite{Meinert2018,Matalla-Wagner2019}. Observation of electrical switching behavior in AFM requires the presence of degenrate N\'eel vectors like in CuMnAs as shown in Fig. \ref{fig:tet-CuMnAs}(a) as opposed to compounds like MnF$_2$ where the Mn moments point along $c$ in Fig. \ref{fig:tet-CuMnAs}(b).
 
 
 \begin{figure}
@@ -140,7 +141,7 @@ The magnetic structures of tetragonal CuMnAs and MnF$_2$ are shown in (a) and (b
 \section{Exploration of Cu-Mn-As phase space}
 
 % Why are CuMnAs compounds popular?
-Cu-Mn-As phase space has become very popular in recent times primarily due to tetragonal and orthorhombic CuMnAs. As mentioned earlier, tetragonal CuMnAs was the first antiferromagnet where electrical switching was supposedly demonstrated. Orthorhombic CuMnAs, shown in Fig. \ref{fig:ort-CuMnAs}, was the first magnetic compound to be proposed as a Dirac semimetal. Based on the orientation of the N\'eel vector, the compound changes from conducting to insulating and hence, it can be used for voltage based switching applications.
+Compounds in Cu-Mn-As phase space have attracted a lot of attention in recent times mainly due to the exotic properties of tetragonal and orthorhombic CuMnAs. As mentioned earlier, tetragonal CuMnAs was the first antiferromagnet where electrical switching was supposedly demonstrated. Orthorhombic CuMnAs, shown in Fig. \ref{fig:ort-CuMnAs}, was the first magnetic compound to be proposed as a Dirac semimetal. It is a special compound where the inversion and time reversal symmetry of the magnetic structure is broken but their combined symmetry ($PT$ symmetry) is still preserved. Based on the orientation of the AFM order parameter, the compound changes from a conducting to an insulating phase. Hence, there are voltage based switching applications that have been proposed for this compound \cite{Kim2018}.
 
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch1/ort-CuMnAs.png} \\
@@ -153,41 +154,23 @@ Magnetic structure of orthorhombic CuMnAs
 \begin{figure}
 \centering\includegraphics[width=0.8\columnwidth]{figures/ch1/Cu-Mn-As phase diagram.png} \\
 \caption{\label{fig:Cu-Mn-As}
-Cu-Mn-As ternary phase diagram highlighting the known ternary compounds in blue and known magnetic structures in red.
+Cu-Mn-As ternary phase diagram highlighting the known ternary compounds in blue and known magnetic structures in red. Not all compounds in this system are shown here.
 }
 \end{figure}
 
 
 % The dual problem
-Despite the growing importance of the compounds in Cu-Mn-As system, the Cu-Mn-As ternary phase space has not been explored properly. There are four known ternary compounds including both the polymorphs of CuMnAs, orthorhombic CuMn$_3$As$_2$ and Cu$_2$Mn$_4$As$_3$ as shown in Fig. \ref{fig:Cu-Mn-As}. Bulk orthorhombic CuMnAs can be grown using traditional solid state synthesis routes by Cu, Mn and As powders in stoichiometric ratio and heating the powders to 1000$^\circ$C. In order to synthesize pure bulk tetragonal CuMnAs, we have to go off-stoichiometry and either substitute Mn with Cu or As. Hence, it is important to explore different regions in the Cu-Mn-As system and verify the stability of different ternary compounds. The magnetic structures in the Cu-Mn-As system have also not been identified for most of the compounds. Apart from the four Cu-Mn-As ternary compounds, there are more than ten Mn-As binary compounds. The magnetic structures are known only for the two previously mentioned CuMnAs compounds, Mn$_2$As and MnAs as shown in Fig. \ref{fig:Cu-Mn-As}. Since most, if not all, the binary Mn-As compounds are metallic, there is a need to magnetically characterize the compounds and identify their magnetic structures.
+Despite the growing importance of the compounds in Cu-Mn-As system, the Cu-Mn-As ternary phase space has not been explored properly. There are four known ternary compounds including both the polymorphs of CuMnAs, orthorhombic CuMn$_3$As$_2$ and Cu$_2$Mn$_4$As$_3$ as shown in Fig. \ref{fig:Cu-Mn-As} \cite{Nateprov2011,MacA2012,Wadley2013,Uhlirova2015}. Bulk orthorhombic CuMnAs can be grown using traditional solid state synthesis routes by Cu, Mn and As powders in stoichiometric ratio and heating the powders to 1000$^\circ$C. In order to synthesize pure bulk tetragonal CuMnAs, we have to go off-stoichiometry and either substitute Mn with Cu or As \cite{Uhlirova2015}. Hence, it is important to explore different regions in the Cu-Mn-As system and verify the stability of different ternary compounds. The magnetic structures in the Cu-Mn-As system have also not been identified for most of the compounds. Apart from the four Cu-Mn-As ternary compounds, there are more than ten Mn-As binary compounds present in this system. The magnetic structures are known only for the two previously mentioned CuMnAs compounds, Mn$_2$As and MnAs as shown in Fig. \ref{fig:Cu-Mn-As} \cite{MacA2012,Wadley2013,Hills2015,Wadley2015,Austin1962,Bacon1955}. Since most, if not all, the binary Mn-As compounds are metallic, there is a need to magnetically characterize the compounds and identify their magnetic structures.
 
 \section{Exchange interactions in Cu$_2$Sb type structures}
 % Exchange interactions in Cu$_2$Sb materials.
-If we want to understand the electrical switching behavior in metallic antiferromagnets, we should be able to quantify the fundamental energies such as magnetocrystalline anisotropy and exchange interactions in materials like CuMnAs. CuMnAs has a Cu$_2$Sb structure type. Other materials with this structure includes Mn$_2$As, Cr$_2$As, Fe$_2$As, CrMnAs, FeMnAs etc. Althought Mn$_2$As, Cr$_2$As and Fe$_2$As have the same structure, the magnetic ground state is different in all three compounds. The direct exchange interaction between two magnetic atoms is a result of antibonding or non-bonding orbital overlap between the two magnetic atoms. Since these materials are metallic, there are two contributions to indirect exchange interactions. One contribution arises from superexchange interactions mediated by As atoms and the other contribution comes from RKKY interactions that are caused due to exchange interactions with the conduction electrons. It is important that we are able to determine what spin interactions are relevant and how does it affect the magnetic ordering in these materials. It is also crucial that we are able to verify the computational methods and the exchange coupling values obtained from these methods so that we can use these methods for other systems as well.
+If we want to understand the electrical switching behavior in metallic antiferromagnets, we should be able to quantify the fundamental energies such as magnetocrystalline anisotropy and exchange interactions in materials like CuMnAs. CuMnAs has a Cu$_2$Sb structure type. Other materials with this structure includes Mn$_2$As, Cr$_2$As, Fe$_2$As, CrMnAs, MnFeAs etc. \cite{Lutz-Kappelman2018,Zhang2013,Zhang2015}. Although Mn$_2$As, Cr$_2$As and Fe$_2$As have the same structure, the magnetic ground state is different in all three compounds. The strength and sign of direct exchange interactions between two magnetic atoms is a result of the nature of orbital overlap between the two magnetic atoms \cite{Zhang2013}. Since these materials are metallic, there are two contributions to indirect exchange interactions. One contribution arises from superexchange interactions mediated by As atoms and the other contribution comes from RKKY (Ruderman–Kittel–Kasuya–Yosida) interactions \cite{Zhang2015}. It is important that we are able to determine what spin interactions are relevant and how does it affect the magnetic ordering in these materials. It is also crucial that we are able to verify the computational methods and the exchange coupling values obtained from these methods so that we can use these methods for other systems as well.
 
 %chapter 2
 \chapter{Theory of electrical switching in metallic antiferromagnets}
 
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch2/zhang_1.png} \\
-\caption{\label{fig:zhang_1}
-Electronic band structure
-}
-\end{figure}
+\section{Hidden spin polarization in centrosymmetric crystals}
 
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch2/zhang_2.png} \\
-\caption{\label{fig:zhang_2}
-Electronic band structure
-}
-\end{figure}
-
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch2/zhang_3.png} \\
-\caption{\label{fig:zhang_3}
-Electronic band structure
-}
-\end{figure}
 
 \begin{figure}
 \centering\includegraphics[width=\columnwidth]{figures/ch2/wadley_1.png} \\
@@ -196,12 +179,20 @@ Electronic band structure
 }
 \end{figure}
 
+\section{Components of torque from non-equilibrium current induced spin polarization}
+
+
+
 \begin{figure}
 \centering\includegraphics[width=0.7\columnwidth]{figures/ch2/rashba_dresselhaus.png} \\
 \caption{\label{fig:rashba_dresselhaus}
 Electronic band structure
 }
 \end{figure}
+
+\section{Torque in tetragonal CuMnAs}
+
+\section{Torque in Fe$_2$As}
 
 \begin{figure}
 \centering\includegraphics[width=0.3\columnwidth]{figures/ch2/Fe2As.png} \\
@@ -223,6 +214,7 @@ Electronic band structure
 Electronic band structure
 }
 \end{figure}
+
 
 \Blindtext[6]
 
