@@ -4,6 +4,7 @@
 
 \usepackage{blindtext}
 \usepackage{cite}
+\usepackage{array}
 
 % math
 \usepackage{fixmath}
@@ -154,7 +155,7 @@ Magnetic structure of orthorhombic CuMnAs
 \begin{figure}
 \centering\includegraphics[width=0.8\columnwidth]{figures/ch1/Cu-Mn-As phase diagram.png} \\
 \caption{\label{fig:Cu-Mn-As}
-Cu-Mn-As ternary phase diagram highlighting the known ternary compounds in blue and known magnetic structures in red. Not all compounds in this system are shown here.
+Cu-Mn-As ternary phase diagram highlighting some of the known ternary compounds in blue and known magnetic structures in red. Not all compounds in this system are shown here.
 }
 \end{figure}
 
@@ -163,14 +164,67 @@ Cu-Mn-As ternary phase diagram highlighting the known ternary compounds in blue 
 Despite the growing importance of the compounds in Cu-Mn-As system, the Cu-Mn-As ternary phase space has not been explored properly. There are four known ternary compounds including both the polymorphs of CuMnAs, orthorhombic CuMn$_3$As$_2$ and Cu$_2$Mn$_4$As$_3$ as shown in Fig. \ref{fig:Cu-Mn-As} \cite{Nateprov2011,MacA2012,Wadley2013,Uhlirova2015}. Bulk orthorhombic CuMnAs can be grown using traditional solid state synthesis routes by Cu, Mn and As powders in stoichiometric ratio and heating the powders to 1000$^\circ$C. In order to synthesize pure bulk tetragonal CuMnAs, we have to go off-stoichiometry and either substitute Mn with Cu or As \cite{Uhlirova2015}. Hence, it is important to explore different regions in the Cu-Mn-As system and verify the stability of different ternary compounds. The magnetic structures in the Cu-Mn-As system have also not been identified for most of the compounds. Apart from the four Cu-Mn-As ternary compounds, there are more than ten Mn-As binary compounds present in this system. The magnetic structures are known only for the two previously mentioned CuMnAs compounds, Mn$_2$As and MnAs as shown in Fig. \ref{fig:Cu-Mn-As} \cite{MacA2012,Wadley2013,Hills2015,Wadley2015,Austin1962,Bacon1955}. Since most, if not all, the binary Mn-As compounds are metallic, there is a need to magnetically characterize the compounds and identify their magnetic structures.
 
 \section{Exchange interactions in Cu$_2$Sb type structures}
+
 % Exchange interactions in Cu$_2$Sb materials.
 If we want to understand the electrical switching behavior in metallic antiferromagnets, we should be able to quantify the fundamental energies such as magnetocrystalline anisotropy and exchange interactions in materials like CuMnAs. CuMnAs has a Cu$_2$Sb structure type. Other materials with this structure includes Mn$_2$As, Cr$_2$As, Fe$_2$As, CrMnAs, MnFeAs etc. \cite{Lutz-Kappelman2018,Zhang2013,Zhang2015}. Although Mn$_2$As, Cr$_2$As and Fe$_2$As have the same structure, the magnetic ground state is different in all three compounds. The strength and sign of direct exchange interactions between two magnetic atoms is a result of the nature of orbital overlap between the two magnetic atoms \cite{Zhang2013}. Since these materials are metallic, there are two contributions to indirect exchange interactions. One contribution arises from superexchange interactions mediated by As atoms and the other contribution comes from RKKY (Ruderman–Kittel–Kasuya–Yosida) interactions \cite{Zhang2015}. It is important that we are able to determine what spin interactions are relevant and how does it affect the magnetic ordering in these materials. It is also crucial that we are able to verify the computational methods and the exchange coupling values obtained from these methods so that we can use these methods for other systems as well.
 
 %chapter 2
 \chapter{Theory of electrical switching in metallic antiferromagnets}
 
+%Introduction
+Electrical switching in any magnetic compound is a series of events involving current induced spin polarization (CISP) of charge carriers and different components of CISP exerting different torque on the magnetic moments of the atoms. The nature of CISP is set by the crystal symmetry. In previous studies of CuMnAs and Mn$_2$Au, it was stated that the compound should globally centrosymmetric but locally non-centrosymmetric and the two sublattices should be related to each other by a center of inversion \cite{Zelezny2014,Zelezny2017,Wadley2016}. Is this a necessary condition for observing a staggered spin polarization configuration and can it be applied to general cases? These are some of the questions we will answer in this chapter. Once we have determined the required symmetry criteria, we will filter out metallic antiferromagnetic candidates from large databases of materials such as MPDS (Materials Platform for Data Science) and ASM (ASM International), and analyze the effect of torque on the order parameter.
+
 \section{Hidden spin polarization in centrosymmetric crystals}
 
+% Explanation of R2-D2 effect
+It has been known for quite some time that in materials (even non-magnetic) having large spin orbit coupling (SOC) and lacking a center of inversion, magnetic fields are induced. When materials possess structural inversion asymmetry such as in quantum wells and other heterostructures, this effect is called the Rashba effect and it results in a helical type spin texture. When this occurs in materials that lack bulk inversion symmetry, the effect is called the Dresselhaus effect and it results in a unique spin texture \cite{Zhang2014}. Zhang \emph{et al.} \cite{Zhang2014} argued that since SOC is a relativistic effect, instead of considering the symmetry of the entire unit cell, one should check for atomic site symmetry to understand SOC induced spin polarization. Based on this argument, there are four cases possible as shown in Table \ref{tab:RD_effect}.
+
+R1 and D1 effect refers to conventional Rashba and Dresselhaus spin polarization respectively. In materials that are globally centrosymmetric, hidden spin polarization is possible. There is local spin polarization near non-centrosymmetric sites but when summed over the entire unit cell, the net spin polarization is zero. This effect is called the R2 or D2 effect corresponding to Rashba or Dresselhaus effect, respectively in centrosymmetric crystals. The total spin polarization in the unit cell is the vector sum of all the local spin polarizations in the unit cell. The presence of local spin polarization in centrosymmetric crystals opens avenue to larger group of compounds including metallic antiferromagnets.
+
+
+\begin{table}
+\caption{\label{tab:RD_effect} 
+Different cases of spin polarization depending on the symmetry of atomic sites and the unit cell \cite{Zhang2014}}
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{5cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{3cm}}
+\hline\hline
+\textbf{} & \textbf{All non-polar point groups} & \textbf{At least one polar point groups} & \textbf{All centrosymmetric point groups}\\
+\hline
+\textbf{Non-Centrosymmetric space group} & D1 effect & R1/D1 effect & Not possible\\
+\hline
+\textbf{Centrosymmetric space group} & D2 effect & R2/D2 effect & No spin polarization\\
+\hline\hline
+\end{tabular}
+~\\
+\end{table}
+
+\section{Finding metallic antiferromagnetic candidates with R2-D2 effect}
+
+The spin polarization 
+
+\begin{table}
+\caption{\label{tab:metallic_afm_candidates} 
+List of metallic antiferromagnetic candidates filtered out from MPDS and ASM database and their metal atom site symmetries}
+%\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{3cm}}
+\hline\hline
+\textbf{Structure type} & \textbf{List of compounds} & \textbf{Magnetic metal atom site symmetries} & \textbf{SOC effect}\\
+\hline\hline
+Cu$_2$Sb & CuMnAs, Fe$_2$As, Mn$_2$As, Cr$_2$As & Cu1:C$_{3v}$, Cu2:C$_{3h}$, Sb:C$_{2h}$ & R2-D2 effect\\
+\hline
+ScFe$_6$Ge$_6$ & ScFe$_6$Ge$_6$ & & R2-D2 effect\\
+\hline
+Mn$_3$Sn & Mn$_3$Ga, Mn$_3$Ge, Mn$_3$Sn, Fe$_3$Ga, Co$_3$Mo, Co$_3$W, Ni$_3$In, Ni$_3$Sn, Ni$_3$Zr &  & R2-D2 effect\\
+\hline
+CoGa$_3$ & CoGa$_3$, CoIn$_3$, FeGa$_3$ &  & R2-D2 effect\\
+\hline
+MoNi$_4$ & MoNi$_4$, WNi$_4$ &  & R2-D2 effect\\
+\hline
+Ni$_2$Al$_3$ & Ni$_2$Al$_3$, Ni$_2$Ga$_3$, Ni$_2$In$_3$ & & R2-D2 effect\\
+\hline\hline
+\end{tabular}
+~\\
+\end{table}
 
 \begin{figure}
 \centering\includegraphics[width=\columnwidth]{figures/ch2/wadley_1.png} \\
@@ -179,7 +233,7 @@ Electronic band structure
 }
 \end{figure}
 
-\section{Components of torque from non-equilibrium current induced spin polarization}
+\section{Components of torque from non-equilibrium CISP}
 
 
 
@@ -190,9 +244,7 @@ Electronic band structure
 }
 \end{figure}
 
-\section{Torque in tetragonal CuMnAs}
-
-\section{Torque in Fe$_2$As}
+\section{Torque from CISP in Fe$_2$As}
 
 \begin{figure}
 \centering\includegraphics[width=0.3\columnwidth]{figures/ch2/Fe2As.png} \\
