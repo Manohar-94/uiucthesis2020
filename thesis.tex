@@ -179,12 +179,12 @@ Electrical switching in any magnetic compound is a series of events involving cu
 % Explanation of R2-D2 effect
 It has been known for quite some time that in materials (even non-magnetic) having large spin orbit coupling (SOC) and lacking a center of inversion, magnetic fields are induced. When materials possess structural inversion asymmetry such as in quantum wells and other heterostructures, this effect is called the Rashba effect and it results in a helical type spin texture. When this occurs in materials that lack bulk inversion symmetry, the effect is called the Dresselhaus effect and it results in a unique spin texture \cite{Zhang2014}. Zhang \emph{et al.} \cite{Zhang2014} argued that since SOC is a relativistic effect, instead of considering the symmetry of the entire unit cell, one should check for atomic site symmetry to understand SOC induced spin polarization. Based on this argument, there are four cases possible as shown in Table \ref{tab:RD_effect}.
 
-R1 and D1 effect refers to conventional Rashba and Dresselhaus spin polarization respectively. In materials that are globally centrosymmetric, hidden spin polarization is possible. There is local spin polarization near non-centrosymmetric sites but when summed over the entire unit cell, the net spin polarization is zero. This effect is called the R2 or D2 effect corresponding to Rashba or Dresselhaus effect, respectively in centrosymmetric crystals. The total spin polarization in the unit cell is the vector sum of all the local spin polarizations in the unit cell. The presence of local spin polarization in centrosymmetric crystals opens avenue to larger group of compounds including metallic antiferromagnets.
+R1 and D1 effects refer to conventional Rashba and Dresselhaus spin polarization respectively. In materials that are globally centrosymmetric, hidden spin polarization is possible. There is local spin polarization near non-centrosymmetric sites but when summed over the entire unit cell, the net spin polarization is zero. This effect is called the R2 or D2 effect corresponding to Rashba or Dresselhaus effect, respectively in centrosymmetric crystals. The total spin polarization of the unit cell is the vector sum of all the local spin polarizations in the unit cell. Non-centrosymmetric point groups can be further divided into polar and non-polar groups. Local Rashba effect requires the presence of polar point groups on atomic sites and the local Dresselhaus effect requires the presence of non-polar point groups at the atom site. The presence of local spin polarization in centrosymmetric crystals opens the avenue to studying spin polarization in a larger group of compounds including metallic antiferromagnets.
 
-
+\renewcommand{\arraystretch}{1.2}
 \begin{table}
 \caption{\label{tab:RD_effect} 
-Different cases of spin polarization depending on the symmetry of atomic sites and the unit cell \cite{Zhang2014}}
+Different cases of spin polarization depending on the symmetry of atomic sites and the unit cell \cite{Zhang2014}.}
 \centering
 \begin{tabular}{>{\raggedright\arraybackslash}p{5cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{3cm}}
 \hline\hline
@@ -200,49 +200,62 @@ Different cases of spin polarization depending on the symmetry of atomic sites a
 
 \section{Finding metallic antiferromagnetic candidates with R2-D2 effect}
 
-The spin polarization 
+% Replace this figure maybe
+\begin{figure}
+\centering\includegraphics[width=\columnwidth]{figures/ch2/wadley_1.png} \\
+\caption{\label{fig:wadley_1}
+The Fermi surface of the local sectors near Mn1 and Mn2 atoms are shown in (a) and (b), respectively. The magnetic structure of tetragonal CuMnAs is shown in (c).
+}
+\end{figure}
 
+% Explain use of Zunger paper in CuMnAs
+
+In spin orbit torque based switching of metallic antiferromagnets, the same arguments apply as before except that we only care about the point group symmetry at the magnetic atom sites. For example, the magnetic structure of CuMnAs is shown in Fig. \ref{fig:wadley_1}(c). Cu and As atoms have no moments and sit on D$_{2d}$ and C$_{4v}$ sites respectively. Since only the Mn atoms have moments, we must take the site symmetry of Mn atoms into consideration. Mn atom sites have C$_{4v}$ point group symmetry which is polar. As seen in Fig. \ref{fig:wadley_1}(a,b), the Fermi surface corresponding to the Mn layer would have a Rashba-like spin texture. When current is applied, there is a spin polarization of the conduction electrons near Mn sites  which, through exchange coupling with Mn atoms, torques the order parameter. From the example of CuMnAs above, we can search for compounds from databases that are antiferromagnets or are likely to be antiferromagnets where the magnetic atoms sit on a polar point group. Such a search can be made for compounds which are not complicated by the presence of many magnetic sites with different point groups. The general case applicable for all magnetic compounds will be considered in the following sections. Following is the general procedure for extracting potential metallic antiferromagnet candidates from databases -
+
+% Procedure list
+\begin{enumerate}
+\item Search for known metallic antiferromagnets from database having tetragonal, trigonal or hexagonal crystal system.
+\item Remove duplicate and non-centrosymmetric compounds.
+\item Identify the Néel temperature and magnetic ordering.
+\item Filter out compounds having Néel temperature $>$ 300 K.
+\item Identify the nature of atomic site symmetry and select compounds.
+\item Study available literature to see if any compounds can be synthesized as single crystals.
+\end{enumerate}
+
+This procedure assumes that we are starting with a collection of known or possible metallic antiferromagnets. This is true in case of compounds downloaded from MPDS. In case of ASM database, the compounds are metallic but their magnetism is not known beforehand. We will have to make some assumptions based on the chemical nature and stoichiometry of the ions present in the compound in order to select antiferromagnets. Tetragonal, trigonal or hexagonal crystal systems are preferred since they allow for the presence of multiple degenerate axes for N\'eel vector orientation. It is still important to check if the magnetic structure for the compound is known or not and if the N\'eel vector points along the degerate axis. Carrying out the above mentioned steps for compounds in MPDS and ASM database gives us a list of compounds that have been grouped together based on their structure types in Table \ref{tab:metallic_afm_candidates}.
+
+\renewcommand{\arraystretch}{1.2}
 \begin{table}
 \caption{\label{tab:metallic_afm_candidates} 
 List of metallic antiferromagnetic candidates filtered out from MPDS and ASM database and their metal atom site symmetries}
-%\centering
-\begin{tabular}{>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{4cm}>{\raggedright\arraybackslash}p{3cm}}
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}p{4cm}>{\centering}p{3cm}>{\raggedright\arraybackslash}p{4cm}}
 \hline\hline
-\textbf{Structure type} & \textbf{List of compounds} & \textbf{Magnetic metal atom site symmetries} & \textbf{SOC effect}\\
-\hline\hline
-Cu$_2$Sb & CuMnAs, Fe$_2$As, Mn$_2$As, Cr$_2$As & Cu1:C$_{3v}$, Cu2:C$_{3h}$, Sb:C$_{2h}$ & R2-D2 effect\\
+\textbf{Structure type} & \textbf{List of compounds} & \textbf{Point group} & \textbf{Magnetism}\\
 \hline
-ScFe$_6$Ge$_6$ & ScFe$_6$Ge$_6$ & & R2-D2 effect\\
+MoSi$_2$ & Mn$_2$Au, Cr$_2$Al, Ni$_2$Ta & C$_{4v}$ & Mn$_2$Au is a candidate\\
 \hline
-Mn$_3$Sn & Mn$_3$Ga, Mn$_3$Ge, Mn$_3$Sn, Fe$_3$Ga, Co$_3$Mo, Co$_3$W, Ni$_3$In, Ni$_3$Sn, Ni$_3$Zr &  & R2-D2 effect\\
+HfFe$_6$Ge$_6$ & ScFe$_6$Ge$_6$ & C$_{2v}$ & AFM with N\'eel vector along $c$\\
 \hline
-CoGa$_3$ & CoGa$_3$, CoIn$_3$, FeGa$_3$ &  & R2-D2 effect\\
+Mg$_3$Cd & Mn$_3$Ga, Mn$_3$Ge, Mn$_3$Sn, Fe$_3$Ga, Co$_3$Mo, Co$_3$W, Ni$_3$In, Ni$_3$Sn, Ni$_3$Zr & C$_{2v}$ & Non-collinear AFM\\
 \hline
-MoNi$_4$ & MoNi$_4$, WNi$_4$ &  & R2-D2 effect\\
+IrIn$_3$ & CoGa$_3$, CoIn$_3$, FeGa$_3$ & C$_{2v}$ & FeGa$_3$ and CoGa$_3$ are diamagnets\\
 \hline
-Ni$_2$Al$_3$ & Ni$_2$Al$_3$, Ni$_2$Ga$_3$, Ni$_2$In$_3$ & & R2-D2 effect\\
+MoNi$_4$ & MoNi$_4$, WNi$_4$ & C$_{1v}$ & Unknown\\
+\hline
+Ni$_2$Al$_3$ & Ni$_2$Al$_3$, Ni$_2$Ga$_3$, Ni$_2$In$_3$ & C$_{3v}$ & Unknown\\
 \hline\hline
 \end{tabular}
 ~\\
 \end{table}
 
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch2/wadley_1.png} \\
-\caption{\label{fig:wadley_1}
-Electronic band structure
-}
-\end{figure}
+%Discuss the list of compounds obtained
+
+The first group of compounds consist of materials in MoSi$_2$ structure type. Mn$_2$Au is a well-known compound that has been extensively studied for electrical switching applications \cite{Meinert2018,Bodnar2019}. Cr$_2$Al powders can be prepared using traditional solid state synthesis routes by heating to above 850$^\circ$C \cite{Susner2015}. Early neutron diffraction experiments suggest Cr moments align at 65$^\circ$ to the $ab$ plane \cite{Atoji1965}. However, a later article \cite{Kallel1967} by another group of researchers indicate that the determined magnetic structure may not be correct. Regardless of whether the moments align in the $ab$ plane or not, Cr$_2$Al is an interesting candidate to study. ScFe$_6$Ge$_6$ is AFM at room temperature \cite{Venturini1992}. However, the Fe moments align along $c$ and does not satify our criteria \cite{Mazet2000}. Compounds in the Mg$_3$Cd structure type contain Kagome lattice of magnetic atoms. Mn$_3$Sn and Mn$_3$Ge are known to have a non-collinear spin arrangement. They have become popular for showing anomalous hall and spin hall effect \cite{Nakatsuji2015,Kubler2014,Kimata2019}. Electrical switching was demonstrated in Mn$_3$Sn recently. In the fourth group of compounds, both FeGa$_3$ and CoGa$_3$ are known to show diamagnetic properties and hence they can be discarded \cite{Haussermann2002,Viklund2002,Zhang2017}. The magnetism is unknown in the final two groups of compounds in MoNi$_4$ and Ni$_2$Al$_3$ structure types and most of these compounds can be synthesized by the arc melting process \cite{Harker1944,Taylor1972}.
 
 \section{Components of torque from non-equilibrium CISP}
 
 
-
-\begin{figure}
-\centering\includegraphics[width=0.7\columnwidth]{figures/ch2/rashba_dresselhaus.png} \\
-\caption{\label{fig:rashba_dresselhaus}
-Electronic band structure
-}
-\end{figure}
 
 \section{Torque from CISP in Fe$_2$As}
 
@@ -267,8 +280,11 @@ Electronic band structure
 }
 \end{figure}
 
+\section{Acknowledgements}
 
-\Blindtext[6]
+% Acknowledge Scott and Carmen
+
+I would like to acknowledge two REU students, Scott Berens and Carmen Paquette, for compiling the list of metallic antiferromagnets from MPDS and ASM databases respectively. It saved me a lot of time and I was able to analyze the symmetry requirements on a much smaller list of compounds.
 
 %chapter 3
 \chapter{Magnetic structure refinement from neutron diffraction measurements}
