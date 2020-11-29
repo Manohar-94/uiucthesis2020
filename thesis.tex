@@ -5,7 +5,7 @@
 \usepackage{blindtext}
 \usepackage{cite}
 \usepackage{array}
-
+\usepackage{booktabs}
 % math
 \usepackage{fixmath}
 \usepackage{amsmath}
@@ -168,18 +168,18 @@ Despite the growing importance of the compounds in Cu-Mn-As system, the Cu-Mn-As
 % Exchange interactions in Cu$_2$Sb materials.
 If we want to understand the electrical switching behavior in metallic antiferromagnets, we should be able to quantify the fundamental energies such as magnetocrystalline anisotropy and exchange interactions in materials like CuMnAs. CuMnAs has a Cu$_2$Sb structure type. Other materials with this structure includes Mn$_2$As, Cr$_2$As, Fe$_2$As, CrMnAs, MnFeAs etc. \cite{Lutz-Kappelman2018,Zhang2013,Zhang2015}. Although Mn$_2$As, Cr$_2$As and Fe$_2$As have the same structure, the magnetic ground state is different in all three compounds. The strength and sign of direct exchange interactions between two magnetic atoms is a result of the nature of orbital overlap between the two magnetic atoms \cite{Zhang2013}. Since these materials are metallic, there are two contributions to indirect exchange interactions. One contribution arises from superexchange interactions mediated by As atoms and the other contribution comes from RKKY (Ruderman–Kittel–Kasuya–Yosida) interactions \cite{Zhang2015}. It is important that we are able to determine what spin interactions are relevant and how does it affect the magnetic ordering in these materials. It is also crucial that we are able to verify the computational methods and the exchange coupling values obtained from these methods so that we can use these methods for other systems as well.
 
-%chapter 2
+%##################chapter 2
 \chapter{Theory of electrical switching in metallic antiferromagnets}
 
 %Introduction
-Electrical switching in any magnetic compound is a series of events involving current induced spin polarization (CISP) of charge carriers and different components of CISP exerting different torque on the magnetic moments of the atoms. The nature of CISP is set by the crystal symmetry. In previous studies of CuMnAs and Mn$_2$Au, it was stated that the compound should globally centrosymmetric but locally non-centrosymmetric and the two sublattices should be related to each other by a center of inversion \cite{Zelezny2014,Zelezny2017,Wadley2016}. Is this a necessary condition for observing a staggered spin polarization configuration and can it be applied to general cases? These are some of the questions we will answer in this chapter. Once we have determined the required symmetry criteria, we will filter out metallic antiferromagnetic candidates from large databases of materials such as MPDS (Materials Platform for Data Science) and ASM (ASM International), and analyze the effect of torque on the order parameter.
+Electrical switching in any magnetic compound is a series of events involving current induced spin polarization (CISP) of charge carriers and different components of CISP exerting different torque on the magnetic moments of the atoms. The nature of CISP is set by the crystal symmetry. In previous studies of CuMnAs and Mn$_2$Au, it was stated that the compound should globally centrosymmetric but locally non-centrosymmetric and the two sublattices should be related to each other by a center of inversion \cite{Zelezny2014,Zelezny2017,Wadley2016}. Is this a necessary condition for observing a staggered spin polarization configuration and can it be applied to general cases? These are some of the questions we will answer in this chapter. Once we have determined the required symmetry criteria, we will filter out metallic antiferromagnetic candidates from large databases of materials such as MPDS (Materials Platform for Data Science) and ASM (ASM International), and analyze the effect of CISP on the torque experienced by the order parameter.
 
 \section{Hidden spin polarization in centrosymmetric crystals}
 
 % Explanation of R2-D2 effect
 It has been known for quite some time that in materials (even non-magnetic) having large spin orbit coupling (SOC) and lacking a center of inversion, magnetic fields are induced. When materials possess structural inversion asymmetry such as in quantum wells and other heterostructures, this effect is called the Rashba effect and it results in a helical type spin texture. When this occurs in materials that lack bulk inversion symmetry, the effect is called the Dresselhaus effect and it results in a unique spin texture \cite{Zhang2014}. Zhang \emph{et al.} \cite{Zhang2014} argued that since SOC is a relativistic effect, instead of considering the symmetry of the entire unit cell, one should check for atomic site symmetry to understand SOC induced spin polarization. Based on this argument, there are four cases possible as shown in Table \ref{tab:RD_effect}.
 
-R1 and D1 effects refer to conventional Rashba and Dresselhaus spin polarization respectively. In materials that are globally centrosymmetric, hidden spin polarization is possible. There is local spin polarization near non-centrosymmetric sites but when summed over the entire unit cell, the net spin polarization is zero. This effect is called the R2 or D2 effect corresponding to Rashba or Dresselhaus effect, respectively in centrosymmetric crystals. The total spin polarization of the unit cell is the vector sum of all the local spin polarizations in the unit cell. Non-centrosymmetric point groups can be further divided into polar and non-polar groups. Local Rashba effect requires the presence of polar point groups on atomic sites and the local Dresselhaus effect requires the presence of non-polar point groups at the atom site. The presence of local spin polarization in centrosymmetric crystals opens the avenue to studying spin polarization in a larger group of compounds including metallic antiferromagnets.
+R1 and D1 effects refer to conventional Rashba and Dresselhaus spin polarization respectively. In materials that are globally centrosymmetric, hidden spin polarization is possible. There is local spin polarization near non-centrosymmetric sites but when summed over the entire unit cell, the net spin polarization is zero. This effect is called the R2 or D2 effect corresponding to Rashba or Dresselhaus effect, respectively in centrosymmetric crystals. The total spin polarization of the unit cell is the vector sum of all the local spin polarizations in the unit cell. Non-centrosymmetric point groups can be further divided into polar and non-polar groups. Local Rashba effect requires the presence of polar point groups on atomic sites and the local Dresselhaus effect requires the presence of non-polar point groups at the atom sites. The presence of local spin polarization in centrosymmetric crystals opens the avenue for studying spin polarization in a larger group of compounds including metallic antiferromagnets.
 
 \renewcommand{\arraystretch}{1.2}
 \begin{table}
@@ -204,13 +204,13 @@ Different cases of spin polarization depending on the symmetry of atomic sites a
 \begin{figure}
 \centering\includegraphics[width=\columnwidth]{figures/ch2/wadley_1.png} \\
 \caption{\label{fig:wadley_1}
-The Fermi surface of the local sectors near Mn1 and Mn2 atoms are shown in (a) and (b), respectively. The magnetic structure of tetragonal CuMnAs is shown in (c).
+The schematic of the Fermi surface of the local sectors near Mn1 and Mn2 atoms are shown in (a) and (b), respectively. The magnetic structure of tetragonal CuMnAs is shown in (c) which also includes the highlighted local sectors.
 }
 \end{figure}
 
 % Explain use of Zunger paper in CuMnAs
 
-In spin orbit torque based switching of metallic antiferromagnets, the same arguments apply as before except that we only care about the point group symmetry at the magnetic atom sites. For example, the magnetic structure of CuMnAs is shown in Fig. \ref{fig:wadley_1}(c). Cu and As atoms have no moments and sit on D$_{2d}$ and C$_{4v}$ sites respectively. Since only the Mn atoms have moments, we must take the site symmetry of Mn atoms into consideration. Mn atom sites have C$_{4v}$ point group symmetry which is polar. As seen in Fig. \ref{fig:wadley_1}(a,b), the Fermi surface corresponding to the Mn layer would have a Rashba-like spin texture. When current is applied, there is a spin polarization of the conduction electrons near Mn sites  which, through exchange coupling with Mn atoms, torques the order parameter. From the example of CuMnAs above, we can search for compounds from databases that are antiferromagnets or are likely to be antiferromagnets where the magnetic atoms sit on a polar point group. Such a search can be made for compounds which are not complicated by the presence of many magnetic sites with different point groups. The general case applicable for all magnetic compounds will be considered in the following sections. Following is the general procedure for extracting potential metallic antiferromagnet candidates from databases -
+In spin orbit torque based switching of metallic antiferromagnets, the same arguments apply as before except that we only care about the point group symmetry at the magnetic atom sites. For example, the magnetic structure of CuMnAs is shown in Fig. \ref{fig:wadley_1}(c). Cu and As atoms have no moments and sit on D$_{2d}$ and C$_{4v}$ sites, respectively. Since only the Mn atoms have moments, we must take the site symmetry of Mn atoms into consideration. Mn atom sites have C$_{4v}$ point group symmetry which is polar. As seen in Fig. \ref{fig:wadley_1}(a,b), the schematic of the Fermi surface corresponding to the Mn layer has a Rashba-like spin texture. When the current is applied, through inverse spin galvanic effect, there is a spin polarization of the conduction electrons near Mn sites. The spin polarization is staggered across the two Mn sublattices and through exchange coupling, a torque is experienced by the Mn moments. From the example of CuMnAs above, we can search for compounds from databases that are antiferromagnets or are likely to be antiferromagnets where the magnetic atoms sit on a polar point group. Such a search can be made for compounds which are not complicated by the presence of many magnetic sites with different point groups. The general case applicable for all magnetic compounds will be considered in the following sections. Following is the general procedure for extracting potential metallic antiferromagnet candidates from databases -
 
 % Procedure list
 \begin{enumerate}
@@ -222,7 +222,7 @@ In spin orbit torque based switching of metallic antiferromagnets, the same argu
 \item Study available literature to see if any compounds can be synthesized as single crystals.
 \end{enumerate}
 
-This procedure assumes that we are starting with a collection of known or possible metallic antiferromagnets. This is true in case of compounds downloaded from MPDS. In case of ASM database, the compounds are metallic but their magnetism is not known beforehand. We will have to make some assumptions based on the chemical nature and stoichiometry of the ions present in the compound in order to select antiferromagnets. Tetragonal, trigonal or hexagonal crystal systems are preferred since they allow for the presence of multiple degenerate axes for N\'eel vector orientation. It is still important to check if the magnetic structure for the compound is known or not and if the N\'eel vector points along the degerate axis. Carrying out the above mentioned steps for compounds in MPDS and ASM database gives us a list of compounds that have been grouped together based on their structure types in Table \ref{tab:metallic_afm_candidates}.
+This procedure assumes that we are starting with a collection of known or possible metallic antiferromagnets. This is true in case of compounds downloaded from MPDS. In case of ASM database, the compounds are metallic but their magnetism is not known beforehand. We will have to make some assumptions based on the chemical nature and stoichiometry of the ions present in the compound in order to select possible antiferromagnets. Tetragonal, trigonal or hexagonal crystal systems are preferred since they allow for the presence of multiple degenerate axes for N\'eel vector orientation. It is still important to check if the magnetic structure for the compound is known or not and if the N\'eel vector points along the degerate axes. Carrying out the above mentioned steps for compounds in MPDS and ASM database gives us a list of compounds  in Table \ref{tab:metallic_afm_candidates} that have been grouped together based on their structure types.
 
 \renewcommand{\arraystretch}{1.2}
 \begin{table}
@@ -233,7 +233,7 @@ List of metallic antiferromagnetic candidates filtered out from MPDS and ASM dat
 \hline\hline
 \textbf{Structure type} & \textbf{List of compounds} & \textbf{Point group} & \textbf{Magnetism}\\
 \hline
-MoSi$_2$ & Mn$_2$Au, Cr$_2$Al, Ni$_2$Ta & C$_{4v}$ & Mn$_2$Au is a candidate\\
+MoSi$_2$ & Mn$_2$Au, Cr$_2$Al, Ni$_2$Ta & C$_{4v}$ & Mn$_2$Au is a known candidate\\
 \hline
 HfFe$_6$Ge$_6$ & ScFe$_6$Ge$_6$ & C$_{2v}$ & AFM with N\'eel vector along $c$\\
 \hline
@@ -251,34 +251,157 @@ Ni$_2$Al$_3$ & Ni$_2$Al$_3$, Ni$_2$Ga$_3$, Ni$_2$In$_3$ & C$_{3v}$ & Unknown\\
 
 %Discuss the list of compounds obtained
 
-The first group of compounds consist of materials in MoSi$_2$ structure type. Mn$_2$Au is a well-known compound that has been extensively studied for electrical switching applications \cite{Meinert2018,Bodnar2019}. Cr$_2$Al powders can be prepared using traditional solid state synthesis routes by heating to above 850$^\circ$C \cite{Susner2015}. Early neutron diffraction experiments suggest Cr moments align at 65$^\circ$ to the $ab$ plane \cite{Atoji1965}. However, a later article \cite{Kallel1967} by another group of researchers indicate that the determined magnetic structure may not be correct. Regardless of whether the moments align in the $ab$ plane or not, Cr$_2$Al is an interesting candidate to study. ScFe$_6$Ge$_6$ is AFM at room temperature \cite{Venturini1992}. However, the Fe moments align along $c$ and does not satify our criteria \cite{Mazet2000}. Compounds in the Mg$_3$Cd structure type contain Kagome lattice of magnetic atoms. Mn$_3$Sn and Mn$_3$Ge are known to have a non-collinear spin arrangement. They have become popular for showing anomalous hall and spin hall effect \cite{Nakatsuji2015,Kubler2014,Kimata2019}. Electrical switching was demonstrated in Mn$_3$Sn recently. In the fourth group of compounds, both FeGa$_3$ and CoGa$_3$ are known to show diamagnetic properties and hence they can be discarded \cite{Haussermann2002,Viklund2002,Zhang2017}. The magnetism is unknown in the final two groups of compounds in MoNi$_4$ and Ni$_2$Al$_3$ structure types and most of these compounds can be synthesized by the arc melting process \cite{Harker1944,Taylor1972}.
+The first group of compounds consist of materials in MoSi$_2$ structure type. Mn$_2$Au is a well-known compound that has been extensively studied for electrical switching applications \cite{Meinert2018,Bodnar2019}. Cr$_2$Al powders can be prepared using traditional solid state synthesis routes by heating to above 850$^\circ$C \cite{Susner2015}. Early neutron diffraction experiments suggest Cr moments align at 65$^\circ$ to the $ab$ plane \cite{Atoji1965}. However, a later article indicates that the determined magnetic structure may not be correct \cite{Kallel1967}. Regardless of whether the moments align in the $ab$ plane or not, Cr$_2$Al is an interesting candidate to study electrical switching behavior. ScFe$_6$Ge$_6$ is AFM at room temperature \cite{Venturini1992}. However, the Fe moments align along $c$ and does not satify our criteria \cite{Mazet2000}. Compounds in the Mg$_3$Cd structure type contain Kagome lattice of magnetic atoms. Mn$_3$Sn and Mn$_3$Ge are known to have a non-collinear spin arrangement. They have become popular recently for showing large anomalous hall and spin hall effect behavior \cite{Nakatsuji2015,Kubler2014,Kimata2019}. Electrical switching was also demonstrated in Mn$_3$Sn recently. In the fourth group of compounds, both FeGa$_3$ and CoGa$_3$ are known to show diamagnetic properties and hence they can be discarded \cite{Haussermann2002,Viklund2002,Zhang2017}. The magnetism is unknown in the final two groups of compounds in MoNi$_4$ and Ni$_2$Al$_3$ structure types and most of these compounds can be synthesized by the arc melting process \cite{Harker1944,Taylor1972}.
 
 \section{Components of torque from non-equilibrium CISP}
 
+% Zelezny 2017 paper
 
+The previous section dealt with relatively simple magnetic compounds that had only one magnetic atom site and we were concerned with the point group of the site to determine whether the inverse spin galvanic effect would be observed or not. In the simplest sense, antidamping-like STT is induced by spin hall effect (SHE) and fieldlike SOT is generated from inverse spin galvanic effect. However, incomplete absorption of the spin current from SHE by the FM layer may produce a fieldlike torque, and spin relaxation and damping may induce an antidamping like component to the SOT \cite{Zelezny2017}. Using Kubo linear formalism, we can write CISP $\delta S_a = \chi_a E$ where E is the applied electric field and $\chi_a$ is the linear response tensor for the sublattice a. $\chi_a$ can be further divided into three components:
 
-\section{Torque from CISP in Fe$_2$As}
+\begin{equation}
+\chi_a = \chi_a^I + \chi_a^{II(a)} + \chi_a^{II(b)}
+\end{equation}
+
+where $\chi_a^I$ is the intraband term, and $\chi_a^{II(a)}$ and $\chi_a^{II(b)}$ are the interband terms. $\chi_a$ can also be broken down into even and odd terms:
+
+\begin{equation}
+\chi_a = \chi_a^{even} + \chi_a^{odd}
+\end{equation}
+
+where $\chi_a^{even} = (\chi_a([M])+\chi_a([-M]))/2$ and $\chi_a^{odd} = (\chi_a([M])-\chi_a([-M]))/2$. From the symmetry of the operators and the matrix element, it follows that -
+
+\begin{equation}
+\chi_a^{even} = \chi_a^{I} + \chi_a^{II(b)}
+\end{equation}
+\begin{equation}
+\chi_a^{odd} = \chi_a^{II(a)}
+\end{equation}
+
+We assume that the system only has a weak disorder and hence, we can neglect $\chi_a^{II(b)}$. $\chi_a$ also depends on the direction of the magnetic moments where \^n is the direction of the N\'eel vector.
+
+\begin{equation}
+\chi_{a,i,j}(\hat{n}) = \chi_{a,i,j}^{(0)} + \chi_{a,i,j,k}^{(1)}\hat{n}_k + \chi_{a,i,j,k,l}^{(2)}\hat{n}_k\hat{n}_l + ...
+\end{equation}
+
+where the sum of the first term and every alternate term after that corresponds to $\chi_a^{even}$ and the sum of the remaining terms correspond to $\chi_a^{odd}$. $\chi_a^{(0)}$ is usually dominant, independent of magnetization and contributes to field-like torque. $\chi_a^{(1)}$ contributes to anti-damping like torque and $\chi_a^{(2)}$ can be neglected if $\chi_a^{(0)}$ is not 0 \cite{Zelezny2017}. The zeroth order term which contributes to a fieldlike torque consists of three components in the form of generalized Rashba and generalized Dresselhaus terms and a term that is proportional to the electric field. Similarly, first order term can also be broken into three different components \cite{Zelezny2017}. The summary of the linear response tensor components is also provided in the Table \ref{tab:chi_summary}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{table}
+\caption{\label{tab:chi_summary} 
+Summary of the linear response tensor components for the CISP observable and electric field}
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{3.5cm}}
+\hline\hline
+ & \boldmath{$\chi_a^I$} & \boldmath{$\chi_a^{II(a)}$} & \boldmath{$\chi_a^{II(b)}$}\\
+\hline
+\textbf{Component} &  Intraband & Interband (imaginary) & Interband (real)\\
+\hline
+\textbf{Disorder $\Gamma \rightarrow 0$} &  Diverges & Constant & Zero\\
+\hline
+\textbf{Cause} & Non-equilibrium Fermi-Dirac distribution & Intrinsic change in carrier wave function & Change in carrier wave function due to disorder/defects\\
+\hline
+\textbf{Alternate name} & $\chi_a^{even}$ or $\chi_a^0$ & $\chi_a^{odd}$ or $\chi_a^1$ & \\
+\hline
+\textbf{Dependence on magnetization} & Independent & Dependent & \\
+\hline
+\textbf{Torque} & Field-like & Anti-damping-like & \\
+\hline\hline
+\end{tabular}
+~\\
+\end{table}
+
+\section{Spin polarization in CuMnAs, Mn$_2$Au and Fe$_2$As}
+
+% Provide examples from code.
+
+Zelezny \emph{et al.} \cite{Zelezny2017} provides a python code $symmetr$ for analyzing the linear response tensor for a number of observables such as current, spin, torque, position, spin current etc. and electric field. Using this code, we can test the reponse tensor of known compounds such as CuMnAs and Mn$_2$Au and also check for unknown compounds such as Fe$_2$As. Table \ref{tab:CISP_CuMnAs} shows the linear response tensor in case of CuMnAs or Mn$_2$Au. Both compounds have same spin polarization since they are both globally centrosymmetric and Mn atoms sit on C$_{4v}$ point group sites. Let us first understand $\chi^{even}$ for all the different cases presented here. Magnetism can be turned off to avoid including magnetization-based effects to the reponse tensor. Regardless of whether we toggle magnetism in Mn atoms or not, $\chi^{even}$ is 0 for the whole unit cell since it is centrosymmetric. When Mn magnetic moment is set to 0, $\chi^{even}$ for each sublattice corresponds to the response in conventional Rashba spin texture. Regardless of magnetism, the spin polarization in one site is opposite to that of another site as seen in the projected cases. When magnetism is turned on, $|\chi^{10}| = |\chi^{01}|$ is not valid anymore since we also have to consider higher terms in $\chi^{even}$. In case of $\chi^{odd}$, it is 0 when magnetization is turned off as also shown in Table \ref{tab:chi_summary}. When magnetic moments are allowed, there is spin polarization along $c$ direction.
+
+\begin{table}
+\caption{\label{tab:CISP_CuMnAs} 
+Linear response tensor in CuMnAs and Mn$_2$Au assuming Mn moment to be 1 $\mu_B$.}
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{7cm}>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}}
+\hline\hline
+\addlinespace[1.5ex]
+ & \boldmath{$\chi^{even}$} & \boldmath{$\chi^{odd}$} \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Magnetic Mn} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Magnetic Mn and for each sublattice} &  $\begin{bmatrix} 0 & \chi_{01} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0\end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Magnetic Mn, when one projected onto another} & $\begin{bmatrix} 0 & -\chi_{01} & 0\\  -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0\end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Mn} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Mn, for each sublattice} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Mn, when one projected onto another} & $\begin{bmatrix} 0 & \chi_{10} & 0\\ -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline\hline
+\end{tabular}
+~\\
+\end{table}
+
+Table \ref{tab:CISP_Fe2As} shows linear response tensor components in Fe$_2$As. Fe$_2$As is complicated by the presence of two different Fe sites. Fe1, Fe2, Fe5 and Fe6 atoms shown in Fig. \ref{fig:Fe2As} sit on D$_{2d}$ site whereas Fe3, Fe4, Fe7 and Fe8 atoms sit on C$_{4v}$ sites. The table only shows cases where Fe moments have not been considered. However, allowing magnetism would make the cases more general.
+
+\begin{table}
+\caption{\label{tab:CISP_Fe2As} 
+Linear response tensor in Fe$_2$As with Fe moments equal to 1 $\mu_B$.}
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{7cm}>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}}
+\hline\hline
+\addlinespace[1.5ex]
+ & \boldmath{$\chi^{even}$} & \boldmath{$\chi^{odd}$} \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Fe} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Fe, for each sublattice 1 and 2} &  $\begin{bmatrix} 0 & \chi_{10} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Fe, for each sublattice 3 and 4} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\  \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Fe, when 1 projected onto 2} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\ 0 & -\chi_{10} & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Fe, when 3 projected onto 4} & $\begin{bmatrix} 0 & \chi_{10} & 0\\ -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{Non-magnetic Fe, when 1 projected onto 3} & No relation & No relation \\
+\addlinespace[1.5ex]
+\hline\hline
+\end{tabular}
+~\\
+\end{table}
 
 \begin{figure}
 \centering\includegraphics[width=0.3\columnwidth]{figures/ch2/Fe2As.png} \\
 \caption{\label{fig:Fe2As}
-Electronic band structure
+Magnetic structure of Fe$_2$As along with the Fe site numbers used in Table \ref{tab:CISP_Fe2As}
 }
 \end{figure}
 
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch2/fieldlike_torque_Fe2As.png} \\
-\caption{\label{fig:fieldlike_torque_Fe2As}
-Electronic band structure
-}
-\end{figure}
-
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch2/antidamping_torque_Fe2As.png} \\
-\caption{\label{fig:antidamping_torque_Fe2As}
-Electronic band structure
-}
-\end{figure}
 
 \section{Acknowledgements}
 
@@ -286,7 +409,19 @@ Electronic band structure
 
 I would like to acknowledge two REU students, Scott Berens and Carmen Paquette, for compiling the list of metallic antiferromagnets from MPDS and ASM databases respectively. It saved me a lot of time and I was able to analyze the symmetry requirements on a much smaller list of compounds.
 
-%chapter 3
+%##################chapter 3
+\chapter{Materials synthesis and characterization}
+
+This is a citation to~\cite{Walker2015} and~\cite{Hager2006}.
+
+\begin{figure}
+\centering\includegraphics[width=\columnwidth]{figures/ch4/synthesis_procedure.png} \\
+\caption{\label{fig:synthesis_procedure}
+Electronic band structure
+}
+\end{figure}
+
+%##################chapter 4
 \chapter{Magnetic structure refinement from neutron diffraction measurements}
 
 \begin{figure}
@@ -340,19 +475,8 @@ Electronic band structure
 
 \Blindtext[6]
 
-%chapter 4
-\chapter{Materials synthesis and characterization}
 
-This is a citation to~\cite{Walker2015} and~\cite{Hager2006}.
-
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch4/synthesis_procedure.png} \\
-\caption{\label{fig:synthesis_procedure}
-Electronic band structure
-}
-\end{figure}
-
-%chapter 5
+%##################chapter 5
 \chapter{Discovery and magnetic frustration of hexagonal Cu$_{0.82}$Mn$_{1.18}$As}
 
 \begin{figure}
@@ -420,7 +544,7 @@ Electronic band structure
 
 \Blindtext[6]
 
-%chapter 6
+%##################chapter 6
 \chapter{Two step magnetic ordering in monoclinic Mn$_3$As$_2$}
 
 \begin{figure}
@@ -490,12 +614,12 @@ Electronic band structure
 
 \Blindtext[6]
 
-%chapter 7
+%##################chapter 7
 \chapter{Spin canting in tetragonal CuMnAs}
 
 \Blindtext[6]
 
-%chapter 8
+%##################chapter 8
 \chapter{Exchange interactions in Fe$_2$As probed by inelastic neutron scattering}
 
 \begin{figure}
@@ -584,7 +708,7 @@ Electronic band structure
 
 \Blindtext[6]
 
-%chapter 9
+%##################chapter 9
 \chapter{Conclusions}
 
 \Blindtext[6]
