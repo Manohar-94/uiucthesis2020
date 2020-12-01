@@ -284,7 +284,23 @@ We assume that the system only has a weak disorder and hence, we can neglect $\c
 \chi_{a,i,j}(\hat{n}) = \chi_{a,i,j}^{(0)} + \chi_{a,i,j,k}^{(1)}\hat{n}_k + \chi_{a,i,j,k,l}^{(2)}\hat{n}_k\hat{n}_l + ...
 \end{equation}
 
-where the sum of the first term and every alternate term after that corresponds to $\chi_a^{even}$ and the sum of the remaining terms correspond to $\chi_a^{odd}$. $\chi_a^{(0)}$ is usually dominant, independent of magnetization and contributes to field-like torque. $\chi_a^{(1)}$ contributes to anti-damping like torque and $\chi_a^{(2)}$ can be neglected if $\chi_a^{(0)}$ is not 0 \cite{Zelezny2017}. The zeroth order term which contributes to a fieldlike torque consists of three components in the form of generalized Rashba and generalized Dresselhaus terms and a term that is proportional to the electric field. Similarly, first order term can also be broken into three different components \cite{Zelezny2017}. The summary of the linear response tensor components is also provided in the Table \ref{tab:chi_summary}
+where the sum of the first term and every alternate term after that corresponds to $\chi_a^{even}$ and the sum of the remaining terms correspond to $\chi_a^{odd}$. $\chi_a^{(0)}$ is usually dominant, independent of magnetization and contributes to field-like torque. $\chi_a^{(1)}$ contributes to anti-damping like torque and $\chi_a^{(2)}$ can be neglected if $\chi_a^{(0)}$ is not 0 \cite{Zelezny2017}. The zeroth order term which contributes to a fieldlike torque consists of three components in the form of generalized Rashba and generalized Dresselhaus terms and a term that is proportional to the electric field as shown by the following equations:
+
+\begin{equation}
+\text{Generalized Rashba } \chi_a^{gR} = \begin{bmatrix} \chi_{11} & -\chi_{21} & 0 \\ \chi_{21} & \chi_{11} & 0 \\ 0 & 0 & 0 \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\text{Generalized Dresselhaus } \chi_a^{gD} = \begin{bmatrix} \chi_{11} & \chi_{21} & 0 \\ \chi_{21} & -\chi_{11} & 0 \\ 0 & 0 & 0 \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\text{Proportional to Electric field } \chi_a^{E} = \begin{bmatrix} \chi_{11} & 0 & 0 \\ 0 & \chi_{11} & 0 \\ 0 & 0 & \chi_{11} \end{bmatrix}
+\end{equation}
+
+
+
+Similarly, the first order term can also be broken into three different components \cite{Zelezny2017}. The summary of the linear response tensor components is also provided in the Table \ref{tab:chi_summary}
 
 \renewcommand{\arraystretch}{1.3}
 \begin{table}
@@ -301,7 +317,7 @@ Summary of the linear response tensor components for the CISP observable and ele
 \hline
 \textbf{Cause} & Non-equilibrium Fermi-Dirac distribution & Intrinsic change in carrier wave function & Change in carrier wave function due to disorder/defects\\
 \hline
-\textbf{Alternate name} & $\chi_a^{even}$ or $\chi_a^0$ & $\chi_a^{odd}$ or $\chi_a^1$ & \\
+\textbf{Alternate name} & $\chi_a^{even}$ or $\chi_a^{(0)}$ & $\chi_a^{odd}$ or $\chi_a^{(1)}$ & \\
 \hline
 \textbf{Dependence on magnetization} & Independent & Dependent & \\
 \hline
@@ -315,7 +331,7 @@ Summary of the linear response tensor components for the CISP observable and ele
 
 % Provide examples from code.
 
-Zelezny \emph{et al.} \cite{Zelezny2017} provides a python code $symmetr$ for analyzing the linear response tensor for a number of observables such as current, spin, torque, position, spin current etc. and electric field. Using this code, we can test the reponse tensor of known compounds such as CuMnAs and Mn$_2$Au and also check for unknown compounds such as Fe$_2$As. Table \ref{tab:CISP_CuMnAs} shows the linear response tensor in case of CuMnAs or Mn$_2$Au. Both compounds have same spin polarization since they are both globally centrosymmetric and Mn atoms sit on C$_{4v}$ point group sites. Let us first understand $\chi^{even}$ for all the different cases presented here. Magnetism can be turned off to avoid including magnetization-based effects to the reponse tensor. Regardless of whether we toggle magnetism in Mn atoms or not, $\chi^{even}$ is 0 for the whole unit cell since it is centrosymmetric. When Mn magnetic moment is set to 0, $\chi^{even}$ for each sublattice corresponds to the response in conventional Rashba spin texture. Regardless of magnetism, the spin polarization in one site is opposite to that of another site as seen in the projected cases. When magnetism is turned on, $|\chi^{10}| = |\chi^{01}|$ is not valid anymore since we also have to consider higher terms in $\chi^{even}$. In case of $\chi^{odd}$, it is 0 when magnetization is turned off as also shown in Table \ref{tab:chi_summary}. When magnetic moments are allowed, there is spin polarization along $c$ direction.
+Zelezny \emph{et al.} \cite{Zelezny2017} provides a python code $symmetr$ for analyzing the linear response tensor for a number of observables such as current, spin, torque, position, spin current etc. and electric field. Using this code, we can test the reponse tensor of known compounds such as CuMnAs and Mn$_2$Au and also check for unknown compounds such as Fe$_2$As. Table \ref{tab:CISP_CuMnAs} shows the linear response tensor in case of CuMnAs or Mn$_2$Au. Both compounds have same spin polarization since they are both globally centrosymmetric and Mn atoms sit on C$_{4v}$ point group sites. Let us first understand $\chi^{even}$ for all the different cases presented here. Magnetism can be turned off to avoid including magnetization-based effects to the reponse tensor. Regardless of whether we toggle magnetism in Mn atoms or not, $\chi^{even}$ is 0 for the whole unit cell since it is centrosymmetric. When Mn magnetic moment is set to 0, $\chi^{even}$ for each sublattice corresponds to the response in conventional Rashba spin texture. Regardless of magnetism, the spin polarization in one site is opposite to that of another site as seen in the projected cases. When magnetism is turned on, $|\chi_{10}| = |\chi_{01}|$ is not valid anymore since we also have to consider higher terms in $\chi^{even}$. In case of $\chi^{odd}$, it is 0 when magnetization is turned off as also shown in Table \ref{tab:chi_summary}. When magnetic moments are allowed, there is spin polarization along $c$ direction.
 
 \begin{table}
 \caption{\label{tab:CISP_CuMnAs} 
@@ -328,38 +344,40 @@ Linear response tensor in CuMnAs and Mn$_2$Au assuming Mn moment to be 1 $\mu_B$
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Magnetic Mn} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0 \end{bmatrix}$ \\
+\textbf{Magnetic Mn. For the entire unit cell} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0 \end{bmatrix}$ \\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Magnetic Mn and for each sublattice} &  $\begin{bmatrix} 0 & \chi_{01} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0\end{bmatrix}$\\
+\textbf{Magnetic Mn. For each Mn sublattice} &  $\begin{bmatrix} 0 & \chi_{01} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0\end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Magnetic Mn, when one projected onto another} & $\begin{bmatrix} 0 & -\chi_{01} & 0\\  -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0\end{bmatrix}$\\
+\textbf{Magnetic Mn. For one Mn sublattice projected onto another} & $\begin{bmatrix} 0 & -\chi_{01} & 0\\  -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & \chi_{02}\\ 0 & 0 & 0\\  \chi_{20} & 0 & 0\end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Mn} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\textbf{Non-magnetic Mn. For the entire unit cell} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Mn, for each sublattice} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\textbf{Non-magnetic Mn. For each Mn sublattice} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Mn, when one projected onto another} & $\begin{bmatrix} 0 & \chi_{10} & 0\\ -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\textbf{Non-magnetic Mn. For one Mn sublattice projected onto another} & $\begin{bmatrix} 0 & \chi_{10} & 0\\ -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline\hline
 \end{tabular}
 ~\\
 \end{table}
 
-Table \ref{tab:CISP_Fe2As} shows linear response tensor components in Fe$_2$As. Fe$_2$As is complicated by the presence of two different Fe sites. Fe1, Fe2, Fe5 and Fe6 atoms shown in Fig. \ref{fig:Fe2As} sit on D$_{2d}$ site whereas Fe3, Fe4, Fe7 and Fe8 atoms sit on C$_{4v}$ sites. The table only shows cases where Fe moments have not been considered. However, allowing magnetism would make the cases more general.
+Table \ref{tab:CISP_Fe2As} shows linear response tensor components in Fe$_2$As. Fe$_2$As is complicated by the presence of two different Fe sites. Fe1, Fe2, Fe5 and Fe6 atoms shown in Fig. \ref{fig:Fe2As} sit on D$_{2d}$ site whereas Fe3, Fe4, Fe7 and Fe8 atoms sit on C$_{4v}$ sites. The table only shows cases where Fe moments have not been considered. However, the results with finite Fe moments in case of $\chi^{even}$ can be easily inferred from this table by removing the equality between the magnitudes of $\chi_{ij}$ and $\chi_{ji}$. As expected, $\chi^{odd}$ is a zero matrix when magnetism is turned off. $\chi^{even}$ is 0 when the entire unit cell is considered which is expected since the unit cell is centrosymmetric like in the previous case. The sublattices Fe3 and Fe4 sitting on polar point groups show conventional Rashba spin polarization behavior. When $\chi^{even}$ at Fe3 is projected onto Fe4, we can see that the response is exactly opposite to Fe4. In case of sublattices Fe1 and Fe2 sitting on non-polar point groups, $\chi^{even}$ corresponds to generalized Dresselhaus polarization when $\chi_{00}$ and $\chi_{11}$ have been set to 0. As expected, the spin polarization would be opposite on the two sublattices. The nature of $\chi^{odd}$ when magnetism is included has not been discussed here.
+
+
 
 \begin{table}
 \caption{\label{tab:CISP_Fe2As} 
-Linear response tensor in Fe$_2$As with Fe moments equal to 1 $\mu_B$.}
+Linear response tensor in Fe$_2$As when Fe moments have been set to 0 $\mu_B$.}
 \centering
 \begin{tabular}{>{\raggedright\arraybackslash}p{7cm}>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}}
 \hline\hline
@@ -368,27 +386,27 @@ Linear response tensor in Fe$_2$As with Fe moments equal to 1 $\mu_B$.}
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Fe} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$ \\
+\textbf{For the entire unit cell} & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$ \\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Fe, for each sublattice 1 and 2} &  $\begin{bmatrix} 0 & \chi_{10} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$\\
+\textbf{For Fe1 and Fe2} &  $\begin{bmatrix} 0 & \chi_{10} & 0\\ \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Fe, for each sublattice 3 and 4} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\  \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$\\
+\textbf{For Fe3 and Fe4} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\  \chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\\  0 & 0 & 0 \end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Fe, when 1 projected onto 2} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\ 0 & -\chi_{10} & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\textbf{For Fe1 projected onto Fe2} & $\begin{bmatrix} 0 & -\chi_{10} & 0\\ -\chi_{10} & 0 & 0 \\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Fe, when 3 projected onto 4} & $\begin{bmatrix} 0 & \chi_{10} & 0\\ -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
+\textbf{For Fe3 projected onto Fe4} & $\begin{bmatrix} 0 & \chi_{10} & 0\\ -\chi_{10} & 0 & 0\\  0 & 0 & 0\\ \end{bmatrix}$ & $\begin{bmatrix} 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ \end{bmatrix}$\\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
-\textbf{Non-magnetic Fe, when 1 projected onto 3} & No relation & No relation \\
+\textbf{For Fe1 projected onto Fe3} & No relation & No relation \\
 \addlinespace[1.5ex]
 \hline\hline
 \end{tabular}
@@ -398,10 +416,13 @@ Linear response tensor in Fe$_2$As with Fe moments equal to 1 $\mu_B$.}
 \begin{figure}
 \centering\includegraphics[width=0.3\columnwidth]{figures/ch2/Fe2As.png} \\
 \caption{\label{fig:Fe2As}
-Magnetic structure of Fe$_2$As along with the Fe site numbers used in Table \ref{tab:CISP_Fe2As}
+Magnetic structure of Fe$_2$As along with the Fe site numbers corresponding to Table \ref{tab:CISP_Fe2As}.
 }
 \end{figure}
 
+\section{Conclusions}
+
+There can be local spin polarization present even in centrosymmetric crystals provided the unit cell contains non-centrosymmetric point groups. In CISP based switching, it is important that the magnetic ions sit on non-centrosymmetric sites. The presence of polar point group is required for Rashba spin polarization and non-polar point group for Dresselhaus spin polarization. We need to consider both antidamping-like torque and fieldlike torque when considering spin polarization. In broken inversion symmetry 2D AFM, it is the antidamping-like torque that can provide a mechanism for switching since the fieldlike torque component of CISP is uniform. In Fe$_2$As, CISP from ISGE in Fe3 and Fe4 sublattices is similar to Mn in CuMnAs. However, there is no relation between the even component of CISP in Fe1 or Fe2 and Fe3 or Fe4 sublattices. This allows for two possibilities when the current is along $[100]$. If the torque acts in the same direction for both sets of Fe atoms, then it would provide a possible pathway for switching. However, if the fieldlike torque act in the opposite direction for both sets of Fe moments, then a large current threshold may be required before the moments can be possibly switched.
 
 \section{Acknowledgements}
 
@@ -409,65 +430,137 @@ Magnetic structure of Fe$_2$As along with the Fe site numbers used in Table \ref
 
 I would like to acknowledge two REU students, Scott Berens and Carmen Paquette, for compiling the list of metallic antiferromagnets from MPDS and ASM databases respectively. It saved me a lot of time and I was able to analyze the symmetry requirements on a much smaller list of compounds.
 
+
+
+
+
 %##################chapter 3
 \chapter{Materials synthesis and characterization}
 
-This is a citation to~\cite{Walker2015} and~\cite{Hager2006}.
+\section{Bulk materials synthesis}
+
+%As : Arsenic Polycrystalline lump, 2-8mm (0.08-0.3 in.), Puratronic, 99.9999% (Metals basis), Alfa Aesar
+%Mn : 99.98% metals basis
+%Cu : Copper powder, spherical, -100+325 mesh, 99.9% (metals basis), Alfa Aesar
+%Fe old : Iron powder, -200 mesh, 99+% (metals basis), Alfa aesar
+%Fe new : Iron powder, spherical, >99.99% (metal basis), 99.5%, Alfa Aesar
+
+% Traditional solid state synthesis technique and provide ref to figures
+
+Bulk polycrystalline and single crystals of all the samples are prepared by traditional solid state synthesis routes. The process of synthesizing these samples is shown in Fig. \ref{fig:synthesis_procedure}. The constituent elements of the compounds are mixed in certain ratio using a mortar and pestle in an Argon atmosphere glovebox shown in Fig. \ref{fig:synthesis_procedure}(a). Quartz tubes, that have been sealed from one side, are filled with the mixed elemental powders and vacuum sealed using a flame torch as shown in Fig. \ref{fig:synthesis_procedure}(b). The sealed quartz tubes in Fig. \ref{fig:synthesis_procedure}(c) are placed inside a box furnce and heated to a high temperature to allow the powders to fuse together as shown in Fig. \ref{fig:synthesis_procedure}(d). Upon cooling, the desired crystal is removed from the quartz tube and characterized.
 
 \begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch4/synthesis_procedure.png} \\
+\centering\includegraphics[width=\columnwidth]{figures/ch3/synthesis_procedure.png} \\
 \caption{\label{fig:synthesis_procedure}
-Electronic band structure
+The process of making bulk materials using traditional solid state synthesis technique is shown here. The powders mixed inside the glovebox in (a) are transferred to a quartz tube and vacuum sealed in (b). The vacuum sealed ampoule in (c) is placed inside the box furnace in (d) and subjected to a heating profile. (e) shows the final ingot obtained in case of CuMnAs sample.
 }
 \end{figure}
+
+
+
+\subsection{Sensitivity of Fe:As stoichiometry in the synthesis of Fe$_2$As}
+
+% Fe2As and variation with stoichiometry
+Fe$_2$As crystals are prepared by mixing Fe and As powders inside the glovebox and heating it up to 600$^\circ$C at 1$^\circ$C/min, holding it for 6 h and then heating it above the melting point to 975$^\circ$C at 1$^\circ$C/min. The sample is held at 975$^\circ$C for 1 h before cooling it down to 900$^\circ$C at 1$^\circ$C/min and held for 1 h. Finally, the sample is allowed to furnace-cool down to the room temperature. The source of the Fe powders seems to have significant effect on the optimum Fe:As starting stoichiometry. As powders were obtained by grinding As chunks (Alfa Aesar, 2-8mm, 99.9999\% (metals basis)) using a mortar and pestle. Fig. \ref{Fe2As_ratio_1} shows the impurity percentage as a function of Fe:As stoichiometry for Fe powders (Alfa Aesar, -200 mesh, 99+\% (metals basis)) with 0.74 $\mu$m in size. Phase pure Fe$_2$As is obtained for Fe:As ratio of 1.95:1. Increasing the Fe content results in Fe impurity and decreasing Fe content results in FeAs impurity.
+
+\begin{figure}
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch3/Fe2As_ratio_1.png} \\
+\caption{\label{fig:Fe2As_ratio_1}
+Impurity percentage as a function of Fe:As starting stoichiometry ratio with 200 mesh size Fe powders for making Fe$_2$As samples.
+}
+\end{figure}
+
+While using the 200 mesh size Fe powders yielded pure Fe$_2$As, the residual resistivity ratio from the transport measurements indicated Fe$_2$As to be a bad metal. In an attempt to reduce the presence of trace impurities, more pure Fe powders were sourced. Fe powders (Alfa Aesar, 10 $\mu$m, spherical, $>$99.99\% (metals basis)) with 10 $\mu$m in size were used for preparing batches of 1 g of Fe$_2$As crystals. In order to reduce processing errors, before vacuum sealing the quartz tube, a magnet was moved from top to bottom of the outer walls of the tube in a rocking fashion to remove any Fe powders sticking to the inner walls of the tube. Finally, the synthesized Fe$_2$As crystals were crushed into powders and sent to the 11-BM beamline at the Advanced Photon Source in Argonne National Laboratory for synchrotron x-ray diffraction measurements. The results of the 8 samples with different Fe:As ratio is shown in Fig. \ref{fig:Fe2As_ratio_2}(a). The results from this data suggest that Fe:As ratio of 2:1 which is also the stoichiometric ratio, is optimum to produce phase pure samples as shown in Fig. \ref{fig:Fe2As_ratio_2}(b). Similar to earlier results, increasing the Fe:As ratio above 2 precipitates out Fe impurity and decreasing the Fe:As ratio results in FeAs impurity. The region colored in purple in Fig. \ref{fig:Fe2As_ratio_2}(b) contained the opposite of the expected impurity. The purple region on the excess Fe side contained FeAs impurity and on the lower Fe side contained Fe impurity. I attribute this inconsistency to random errors.
+
+\begin{figure}
+\centering\includegraphics[width=\columnwidth]{figures/ch3/Fe2As_stoichiometry.png} \\
+\caption{\label{fig:Fe2As_ratio_2}
+Synchrotron x-ray diffraction data of Fe$_2$As for different ratios of Fe:As from 10 $\mu$m Fe powders is shown in (a) and the corresponding impurity percentage is shown in (b).
+}
+\end{figure}
+
+\section{Synthesis of compounds in the Cu-Mn-As system}
+
+%Synthesis of CuMnAs compounds
+
+Compounds in the Cu-Mn-As system powders are synthesized by mixing Cu powders (Alfa Aesar, -100+325 mesh, spherical, 99.9\% (metals basis)), Mn powders ground from Mn chips (99.98\% (metals basis)) and As powders ground from chunks (Alfa Aesar, 2-8mm, 99.9999\% (metals basis)) inside the Ar atmosphere and following the same heating procedure as in the case of Fe$_2$As. To synthesize binary compounds Mn$_2$As and Mn$_3$As$_2$, excess Mn has to be added into the mixture. Mn:As ratio of 2.1:1 and 3.1:2 is required to synthesize pure phase Mn$_2$As and Mn$_3$As$_2$, respectively. In case of Mn$_2$As, when Mn and As powders are mixed in stoichiometric ratio, Mn$_3$As$_2$ impurity is formed due to peritectic reaction \cite{Yuzuri1960}. The ratio of Cu:Mn:As powders determines the final product. When Cu:Mn:As ratio is 0.82:1.18:1, the hexagonal polymorph of CuMnAs is stabilized. From literature, when Cu, Mn and As powders are mixed in equal proportions, orthorhombic CuMnAs is formed. However, in our synthesis procedure, we observe a mixture of tetragonal and orthorhombic CuMnAs. The difference in the final product comes from the use of an Alumina crucible inside the quartz tube. I have synthesized tetragonal CuMnAs by substituting equal amounts of Mn with Cu powders. An almost stoichiometric tetragonal CuMnAs has been reported in literature by substituting small amounts of Mn with As \cite{Uhlirova2019}. I also synthesized the near stoichiometric tetragonal CuMnAs by replicating the procedure from literature including the use of Alumina crucible. The heating procedure has a significant impact on the quality of the tetragonal CuMnAs crystals. Tetragonal CuMnAs undergoes a phase transition at around 800$^\circ$C which makes it difficult to synthesize large crystals using traditional solid state synthesis routes. Out of the three elemental powders, Cu is the element that is being directly used in the powder form. Hence, it is prone to oxidation easily. However, Cu powders can be easily reduced using H$_2$ gas flow reaction by heating it to 600$^\circ$C for holding it for 6 hours.
+
+\section{Materials characterization}
+
+\subsection{X-ray diffraction}
+
+% Discuss D8 Cu and Mo, Laue and synchrotron
+
+
+\subsection{Calorimetry}
+
+% Discuss TGA, DSC and DTA
+
+\subsection{SQUID magnetometry}
+
+% Discuss squid measurements
+
+\subsection{Transport measurements}
+
+% Discuss PPMS measurements and wire bonding
+
+\section{Neutron scattering}
+
+\subsection{Neutron powder diffraction}
+% Discuss different instruments and analysis
+
+\subsection{Inelastic neutron scattering}
+
+%Discuss ARCS instrument
+
 
 %##################chapter 4
 \chapter{Magnetic structure refinement from neutron diffraction measurements}
 
 \begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch3/C3v.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v.png} \\
 \caption{\label{fig:C3v}
 Electronic band structure
 }
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch3/group_multiplication_table_C3v.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/group_multiplication_table_C3v.png} \\
 \caption{\label{fig:gmt_C3v}
 Electronic band structure
 }
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch3/C3v_a1_a2.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v_a1_a2.png} \\
 \caption{\label{fig:C3v_a1_a2}
 Electronic band structure
 }
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch3/propagation_vector.png} \\
+\centering\includegraphics[width=\columnwidth]{figures/ch4/propagation_vector.png} \\
 \caption{\label{fig:propagation_vector}
 Electronic band structure
 }
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch3/mag_structures_single_k.png} \\
+\centering\includegraphics[width=\columnwidth]{figures/ch4/mag_structures_single_k.png} \\
 \caption{\label{fig:mag_structures_single_k}
 Electronic band structure
 }
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[width=0.7\columnwidth]{figures/ch3/star_of_propagation_vector_k.png} \\
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch4/star_of_propagation_vector_k.png} \\
 \caption{\label{fig:star}
 Electronic band structure
 }
 \end{figure}
 
 \begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch3/symmetry_based_analysis.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/symmetry_based_analysis.png} \\
 \caption{\label{fig:symmetry_based_analysis}
 Electronic band structure
 }
