@@ -467,6 +467,8 @@ I would like to acknowledge two REU students, Scott Berens and Carmen Paquette, 
 
 % Traditional solid state synthesis technique and provide ref to figures
 
+% Note: You may include pycnometry data if time permits
+
 Bulk polycrystalline and single crystals of all the samples are prepared by traditional solid state synthesis routes. The process of synthesizing these samples is shown in Fig. \ref{fig:synthesis_procedure}. The constituent elements of the compounds are mixed in certain ratio using a mortar and pestle in an Argon atmosphere glovebox shown in Fig. \ref{fig:synthesis_procedure}(a). Quartz tubes, that have been sealed from one side, are filled with the mixed elemental powders and vacuum sealed using a flame torch as shown in Fig. \ref{fig:synthesis_procedure}(b). The sealed quartz tubes in Fig. \ref{fig:synthesis_procedure}(c) are placed inside a box furnce and heated to a high temperature to allow the powders to fuse together as shown in Fig. \ref{fig:synthesis_procedure}(d). Upon cooling, the desired crystal is removed from the quartz tube and characterized.
 
 \begin{figure}
@@ -499,7 +501,7 @@ Synchrotron x-ray diffraction data of Fe$_2$As for different ratios of Fe:As fro
 }
 \end{figure}
 
-\section{Synthesis of compounds in the Cu-Mn-As system}
+\subsection{Synthesis of compounds in the Cu-Mn-As system}
 
 %Synthesis of CuMnAs compounds
 
@@ -513,13 +515,21 @@ Compounds in the Cu-Mn-As system powders are synthesized by mixing Cu powders (A
 
 Powder x-ray diffraction measurements were carried out primarily at the Bruker D8 Advance powder x-ray diffractometer with Mo souce using the capillary stage. Since the materials used here contain As and other transition metal atoms which absorb x-rays significantly, thin capillaries of 0.43~mm in diameter were used. In addition to that, the powders were diluted with appropriate amounts of amorphous silica to account for x-ray absorption. Most powder x-ray diffraction measurements on Cu-Mn-As samples were carried out on the Bruker D8 Advance x-ray diffractometer with Cu source using a reflective stage. In these measurements, the samples were not diluted with silica since absorption is not an issue. However, significant sample texturing was observed which had to be taken into account while carrying out Rietveld refinement. Certain samples were also measured at the 11-BM beamline of the Advanced Photon Source in Argonne National Laboratory. The powders were mounted onto 0.7 mm diameter quartz capillaries and vacuum sealed before fitting it inside a Kapton capilliary for measurement. The high energy synchrotron beam wavelength that was used at 11-BM beamline corresponds to 0.4128 \AA. Rietveld refinement of the powder x-ray diffraction data was carried out using \textsc{TOPAS} and \textsc{GSAS-II} \cite{Coelho:jo5037,Toby:aj5212}.
 
-Hexagonal Cu$_{0.82}$Mn$_{1.18}$As crystals were sent to SCS X-ray facility for single crystal x-ray diffraction measurement on a Bruker X8 Apex II diffractometer. Tiny single crystals of the size of around 100 $\mu$m were fractured out from a large ingot and used for the measurement. Alignment of large single crystals of Fe$_2$As and Cu$_{0.82}$Mn$_{1.18}$As for the purpose of aligned SQUID magnetometry, magnetotransport and inelastic neutron scattering measurements were carried out using a Laue System with a Multiwire 2D Detector at both MRL x-ray laboratory as well as at Spallation Neutron Source. The Laue diffractometer was only used to align samples from the symmetry of the Laue pattern. Indexing of the patterns were not carried out using the Northstar software due to issues with the software. The out-of-plane alignment in Cu$_{0.82}$Mn$_{1.18}$As single crystal was also confirmed using the reflective stage of Bruker D8 Advance diffractometer with Mo source.
+Hexagonal Cu$_{0.82}$Mn$_{1.18}$As crystals were sent to SCS X-ray facility for single crystal x-ray diffraction measurement on a Bruker X8 Apex II diffractometer. Tiny single crystals of the size of around 100 $\mu$m were fractured out from a large ingot and used for the measurement. Alignment of large single crystals of Fe$_2$As and Cu$_{0.82}$Mn$_{1.18}$As for the purpose of aligned SQUID magnetometry, magnetotransport and inelastic neutron scattering measurements were carried out using a Laue System with a Multiwire 2D Detector at both MRL x-ray laboratory as well as at Spallation Neutron Source. The Laue diffractometer was only used to align samples from the symmetry of the Laue pattern. Indexing of the patterns were not carried out using the Northstar software due to issues with the software. The out-of-plane alignment in Cu$_{0.82}$Mn$_{1.18}$As single crystal was also confirmed using the reflective stage of Bruker D8 Advance diffractometer with Mo source as shown in Fig. \ref{fig:hex_CuMnAs_alignment}(b).
 
-% add figures for hex CuMnAs alignment
+% Laue pattern and alignment of hex CuMnAs
+
+\begin{figure}
+\centering\includegraphics[width=\columnwidth]{figures/ch3/hex_CuMnAs_alignment.png} \\
+\caption{\label{fig:hex_CuMnAs_alignment}
+The two-fold symmetric Laue pattern obtained for \cumnas\ is shown in (a) and the reflective x-ray diffraction pattern for the same sample is shown is shown in (b).
+}
+\end{figure}
 
 \subsection{SEM/EDS measurements}
 
-% add brief statements about JEOL6060LV and Scios 2
+% add brief statements about JEOL6060LV
+Scanning electron microscopy (SEM) images were taken for all samples in the JEOL JSM-6060LV Low-Vacuum Scanning Electron Microscope. With proper beam alignment, astigmatism correction, wobble adjustment and focus, high quality images can be captured using this instrument. Using secondary electron detector, images can be obtained that gives information about the sample surface topology. Compositional as well as topological contrast can be obtained using back-scattered electrons. Energy dispersive x-ray microanalysis (EDX) were also carried out in the same instrument. EDX measures the energy of the characteristic x-rays emitted upon recombination of higher shell electrons of an element onto a hole in the lower shell.	This measurement can give quantitative information about the amount of elements present in the sample at a spot or a selected area.
 
 \subsection{Calorimetry measurements}
 
@@ -530,7 +540,7 @@ Thermogravimetric analysis (TGA) is a thermal analysis technique where the mass 
 DSC is a calorimetry technique where the difference in the heat required to keep the sample at the same temperature as the reference is recorded as a function of temperature. It is a sensitive measurement technique and is useful for detecting magnetic transitions such as the N\'eel temperature or any spin canting transition. DSC measurements for all samples were carried out in the DSC2500 instrument. The sample powders, weighing between 4~mg to 8~mg, were loaded onto Alumina pans and subjected to heat-cool-heat cycles between -180$^\circ$C and 400$^\circ$ at 10$^\circ$C/min.
 
 \begin{figure}
-\centering\includegraphics[width=0.8\columnwidth]{figures/ch3/DTA_tubes_combined.jpg} \\
+\centering\includegraphics[width=0.6\columnwidth]{figures/ch3/DTA_tubes_combined.jpg} \\
 \caption{\label{fig:DTA_tubes_combined}
 The flat-bottom bulk of the quartz ampoules is shown in (a) and (b) shows the final powder-containing vacuum sealed ampoules.
 }
@@ -541,19 +551,35 @@ Differential thermal analysis (DTA) is similar to DSC except that the temperatur
 \subsection{SQUID magnetometry measurements}
 
 % Discuss squid measurements
-SQUID measurements for all the samples were carried out in a Quantum Design MPMS3 (Magnetic Property Measurement System) in the DC mode. The DC moment was tracked as a function of applied field as well as temperature. In magnetic hysteresis measurements, fields up to 10~kOe were applied across six quadrants to account for the initial magnetization curve. Field cooling measurements refer to the application of magnetic field at 400$^\circ$C followed by cooling of the sample. Zero field cooling measurements are carried out by first cooling the sample in the absence of a field, followed by the application of an external field and then, heating the sample. The sample moment is measured at certain intervals across the temperature range. The SQUID measurements have been carried out for the powders of Fe$_2$As, Cu$_{0.82}$Mn$_{1.18}$As, tetragonal CuMnAs and Mn$_3$As$_2$, and the single crystals of Fe$_2$As and Cu$_{0.82}$Mn$_{1.18}$As. In case of powders, 20~mg to 40~mg of powders were filled into a VSM powder sample holder inside the Ar atmosphere glovebox. This capillary was snapped onto a MPMS3 brass half tube sample holder and wrapped with a small amount of insulating tape to keep it fixed. For single crystal measurements, aligned samples were fixed on the MPMS3 Quartz Paddle Sample Holder using GE Varnish and later removed using ethanol.
+SQUID measurements for all the samples were carried out in a Quantum Design MPMS3 (Magnetic Property Measurement System) in the DC mode. The DC moment was tracked as a function of applied field as well as temperature. In magnetic hysteresis measurements, fields up to 10~kOe were applied across six quadrants to account for the initial magnetization curve. Field cooling measurements in this document refer to the application of magnetic field at 400~K followed by cooling of the sample. Zero field cooling measurements were carried out by first cooling the sample to 5~K in the absence of a field, followed by the application of an external field and then, heating the sample. The sample moment is measured at certain intervals across the temperature range. The SQUID measurements have been carried out for the powders of Fe$_2$As, Cu$_{0.82}$Mn$_{1.18}$As, tetragonal CuMnAs and Mn$_3$As$_2$, and the single crystals of Fe$_2$As and Cu$_{0.82}$Mn$_{1.18}$As. In case of powders,between 20~mg to 40~mg of powders were filled into a VSM powder sample holder inside the Ar atmosphere glovebox. This capillary was snapped onto a MPMS3 brass half tube sample holder and wrapped with a small amount of insulating tape to keep it fixed. For single crystal measurements, aligned samples were fixed on the MPMS3 Quartz Paddle Sample Holder using GE Varnish and later removed using ethanol.
 
 
 \subsection{Magnetotransport measurements}
 
 % Discuss PPMS measurements and wire bonding
 
-Magnetotransport measurements for hexagonal Cu$_{0.82}$Mn$_{1.18}$As were carried out in a Quantum Design Physical Property Measurement System Dynacool.
+Resistivity measurements for hexagonal Cu$_{0.82}$Mn$_{1.18}$As were carried out in a Quantum Design Physical Property Measurement System Dynacool equipment using the resistivity module. The fractured sample that was aligned using the Laue setup and reflective x-ray diffraction measurements in Fig. \ref{fig:hex_CuMnAs_alignment} was fixed to a sapphire substrate using GE Varnish. The substrate was attached to the resistivity puck using a double-sided Kapton tape. Contacts were made between the pads on the puck and the sample using a 25 $\mu$m Al wire wedge bonder as shown in Fig. \ref{fig:resistivity}. For all measurements, current was applied along [001] and magnetic field was applied along [100]. Longitudnal and transverse resistivity measurements were carried out at different applied fields and temperatures. The results of the magnetotransport measurements for \cumnas\  are described in Chapter 5.
+
+\begin{figure}
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch3/resistivity.jpg} \\
+\caption{\label{fig:resistivity}
+Photo of the hexagonal \cumnas\ sample bonded to a resistivity puck for use in PPMS.
+}
+\end{figure}
+
+
 
 \section{Neutron scattering}
 
-\subsection{Neutron powder diffraction}
+Neutrons can be used as a probe from structural as well as magnetic characterization. Electrons contain charges and they interact strongly with matter and X-rays interact strongly with the electron cloud surrounding an atom. Neutrons, on the other hand, do not contain measurable electric dipole and weakly interact with matter. They can collide with the nucleus of an atom to provide structural information even in bulk materials. Unlike x-rays, there is no direct correlation between the atomic number of an element and its scattering cross section of neutrons. This helps in detecting light elements which is not possible using x-rays. Many dynamic processes such as lattice vibrations or spin waves occur at meV energy scales which is ideal to detect using neutrons. Since neutrons contain a finite magnetic moment, they can also interact with the dipole moment of an atom. Neutron diffraction is the only tool to extract the magnetic structure of a compound directly.
+
+A neutron can either interact with the system as whole and interfere with other scattered neutrons resulting in coherent neutron scattering or interact with individual nuclei resulting in incoherent neutron scattering. In coherent scattering, when there is no energy transfer between the neutron and the system, the process is called elastic coherent scattering and neutron diffraction is the most famous example of this case. When there is an energy transfer between the neutron and the system, the process is inelastic coherent scattering and it gives information on various phonon and magnon modes present in the system. Neutron diffraction data looks very similar to x-ray diffraction data with two major exceptions. The form factor in the case of neutrons remain independant of the angle and neutrons also provide intensity from magnetic scattering. The nuclear and magnetic scattering contributions can be added independantly to provide the final neutron diffraction data.
+
+\subsection{Neutron diffraction}
+
 % Discuss different instruments and analysis
+
+Neutron diffraction measurements were carried out at various beamlines at both, High Flux Isotrope Reactor (HFIR) and 
 
 \subsection{Inelastic neutron scattering}
 
@@ -618,10 +644,13 @@ Electronic band structure
 %##################chapter 5
 \chapter{An in-plane hexagonal antiferromagnet in the Cu-Mn-As system, Cu$_{0.82}$Mn$_{1.18}$As}
 
-Copyright statement
+\section{Copyrights and author contributions}
+\href{https://doi.org/10.1103/PhysRevMaterials.3.111402}{Reprinted with permission from Manohar H. Karigerasi, Kisung Kang, Arun Ramanathan, Danielle L. Gray, Matthias D. Frontzek, Huibo Cao, Andr\'e Schleife, and Daniel P. Shoemaker, Physical Review Materials 3, 111402(R) (2019). Copyright 2020 by the American Physical Society.} In this work, I synthesized single crystals and powders of \cumnas, analyzed neutron diffraction and synchrotron x-ray difraction data and also carried out SQUID and magnetotransport measurements. Kisung Kang carried out DFT simulations to verify the magnetic ground state and the band structure. Arun Ramanathan carried out the initial synthesis of the samples. I also wrote the paper with help from the coauthors.
 
-\iffalse
-\begin{abstract}
+%\iffalse
+%\begin{abstract}
+
+\section{Abstract}
 We report the single-crystal growth and characterization of a new hexagonal phase, Cu$_{0.82}$Mn$_{1.18}$As, in the Cu-Mn-As system. 
 This compound contains the same square-pyramidal MnAs$_5$ units as the tetragonal and orthorhombic polymorphs of CuMnAs.
 Calorimetry, magnetometry, and neutron diffraction measurements reveal antiferromagnetic ordering at 270~K.
@@ -629,9 +658,9 @@ The magnetic structure consists of a triangular arrangement of spins in the $ab$
 Hexagonal Cu$_{0.82}$Mn$_{1.18}$As shows resistivity that varies only weakly from 5~K to 300~K, and is many times higher than tetragonal CuMnAs, indicative of a strongly-scattering metal.
 First-principles calculations confirm the metallic band structure with a small density of states at the Fermi energy. The neutron-refined
 magnetic ground state is close to the computationally-determined minimum energy configuration. This compound should serve as a clear control when disentangling the effects of current-driven N\'{e}el switching of metallic antiferromagnets since it exhibits in-plane spins but the magnetic ordering does not break degeneracy along the $a$ and $b$ directions, unlike tetragonal CuMnAs.
-\end{abstract}
+%\end{abstract}
 
-\fi
+%\fi
 
 \section{Introduction} 
 
@@ -944,8 +973,7 @@ We report the crystal structure of a non-centrosymmetric $P\overline{6}^\prime$ 
 
 \section{Acknowledgments}
 
-This work is supported by the National Science Foundation
-(NSF) under Grant No.\ DMR-1720633.
+This work is supported by the National Science Foundation (NSF) under Grant No.\ DMR-1720633.
 Characterization was carried out in part in the Materials Research Laboratory Central Research Facilities, University of Illinois. Use of the Advanced Photon Source at Argonne National Laboratory was supported by the U.S.\ Department of Energy, Office of Science, Office of Basic Energy Sciences, under Contract No.\ DE-AC02-06CH11357. Neutron scattering was performed at the High Flux Isotope Reactor, a Department of Energy Office of Science User Facility operated by the Oak Ridge National Laboratory.
 This work made use of the Illinois Campus Cluster, a computing resource that is operated by the Illinois Campus Cluster Program (ICCP) in conjunction with the National Center for Supercomputing Applications (NCSA) and which is supported by funds from the University of Illinois at Urbana-Champaign.
 We thank Junseok Oh for assistance in making contacts for resistivity measurements.
@@ -953,16 +981,17 @@ We thank Junseok Oh for assistance in making contacts for resistivity measuremen
 %##################chapter 6
 \chapter{Two-step magnetic ordering into a canted state in ferrimagnetic monoclinic Mn$_3$As$_2$}
 
-Copyright
+\section{Copyrights and author contributions}
 
-\iffalse
-\begin{abstract}
+\href{https://arxiv.org/abs/2008.01776}{Reprinted with permission from Manohar H Karigerasi, Bao H. Lam, Maxim Avdeev and Daniel P. Shoemaker, Journal of Solid State Chemistry, (2020). Copyright 2020 by the Elsevier.} In this work, I carried out SQUID and DSC measurements. I also carried out the magnetic structure refinement from NPD data and wrote the paper with help from coauthors. Bao Lam synthesized the samples and took images from SEM.
+
+
+\section{Abstract}
+
 We report the magnetic structure of monoclinic Mn$_3$As$_2$ at 3~K and 250~K using neutron powder diffraction measurements. From magnetometry data, the Curie temperature of Mn$_3$As$_2$ was confirmed to be around 270~K. Calorimetry analysis showed the presence of another transition at 225~K. At 270~K, Mn$_3$As$_2$ undergoes a $k = 0$ ferrimagnetic ordering in the magnetic space group $C2/m$ (\#12.58) with Mn moments pointing along $b$. Below 225~K, there is a canting of Mn moments in the $ac$ plane which produces a multi-$k$  non-collinear magnetic structure in space group $C2/c$ (\#15.85). The components of Mn moments along $b$ follow $k=0$ ordering and the components along $a$ and $c$ have $k = [0 0 \frac{1}{2}]$ propagation vector. The change in the magnetic ground state with temperature provides a deeper insight into the factors that govern magnetic ordering in Mn-As compounds.
 
-\textbf{Keywords} - magnetic structure refinement; neutron diffraction; metallic ferrimagnet; geometric frustration; non-collinear magnetic ordering; magnetocrystalline anisotropy
-\end{abstract}
+%\textbf{Keywords} - magnetic structure refinement; neutron diffraction; metallic ferrimagnet; geometric frustration; non-collinear magnetic ordering; magnetocrystalline anisotropy
 
-\fi
 
 
 
@@ -1353,18 +1382,22 @@ In progress
 %##################chapter 8
 \chapter{Strongly two-dimensional exchange interactions in the in-plane metallic antiferromagnet Fe$_2$As probed by inelastic neutron scattering}
 
-Copyright statement
+\hfill \break
 
-\iffalse
+\section{Copyrights and author contributions}
 
-\begin{abstract}
+\href{https://doi.org/10.1103/PhysRevMaterials.4.114416}{Reprinted with permission from Manohar H. Karigerasi, Kisung Kang, Garrett E. Granroth, Arnab Banerjee, Andr\'e Schleife, and Daniel P. Shoemaker, Physical Review Materials 4, 114416 (2020). Copyright 2020 by the American Physical Society.} In this work, I synthesized single crystals of Fe$_2$As, carried out the alignment of the samples and measured inelastic neutron scattering (INS) spectra at Oak Ridge National Laboratory. I was also responsible for slicing and cutting INS data using mantidplot, simulating magnon spectra using SpinW and refining the magnon spectra to get exchange coupling values. Kisung Kang did DFT simulations to obtain phonon spectra and simulated phonon intensities using OCLIMAX. I wrote the paper with help from coauthors.
 
+
+%\begin{abstract}
+
+\section{Abstract}
 To understand spin interactions in materials of the Cu$_2$Sb structure type, inelastic neutron scattering of Fe$_2$As single crystals was examined at different temperatures and incident neutron energies. The experimental phonon spectra match well with the simulated phonon spectra obtained from density functional theory (DFT) calculations. The measured magnon spectra were compared to the simulated magnon spectra obtained via linear spin wave theory with the exchange coupling constants calculated using the spin polarized, relativistic Korringa-Kohn-Rostoker method in Zhang \emph{et al}. (2013). The simulated magnon spectra broadly agree with the experimental data although, the energy values are underestimated along the $K$ direction. Exchange coupling constants between Fe atoms were refined by fits to the experimental magnon spectra, revealing stronger nearest neighbor Fe1-Fe1 exchange coupling than previously reported. The strength of this exchange coupling is almost an order of magnitude higher than other exchange interactions despite the three-dimensional nature of the phonon interactions. The lack of scattering intensity at energies above 60~meV makes unconstrained determination of the full set of exchange interactions difficult, which may be a fundamental challenge in metallic antiferromagnets.
 
 
-\end{abstract}
+%\end{abstract}
 
-\fi
+%\fi
 
 \section{Introduction} 
 
