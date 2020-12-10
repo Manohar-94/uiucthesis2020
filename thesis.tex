@@ -573,18 +573,24 @@ Photo of the hexagonal \cumnas\ sample bonded to a resistivity puck for use in P
 
 Neutrons can be used as a probe from structural as well as magnetic characterization. Electrons contain charges and they interact strongly with matter and X-rays interact strongly with the electron cloud surrounding an atom. Neutrons, on the other hand, do not contain measurable electric dipole and weakly interact with matter. They can collide with the nucleus of an atom to provide structural information even in bulk materials. Unlike x-rays, there is no direct correlation between the atomic number of an element and its scattering cross section of neutrons. This helps in detecting light elements which is not possible using x-rays. Many dynamic processes such as lattice vibrations or spin waves occur at meV energy scales which is ideal to detect using neutrons. Since neutrons contain a finite magnetic moment, they can also interact with the dipole moment of an atom. Neutron diffraction is the only tool to extract the magnetic structure of a compound directly.
 
-A neutron can either interact with the system as whole and interfere with other scattered neutrons resulting in coherent neutron scattering or interact with individual nuclei resulting in incoherent neutron scattering. In coherent scattering, when there is no energy transfer between the neutron and the system, the process is called elastic coherent scattering and neutron diffraction is the most famous example of this case. When there is an energy transfer between the neutron and the system, the process is inelastic coherent scattering and it gives information on various phonon and magnon modes present in the system. Neutron diffraction data looks very similar to x-ray diffraction data with two major exceptions. The form factor in the case of neutrons remain independant of the angle and neutrons also provide intensity from magnetic scattering. The nuclear and magnetic scattering contributions can be added independantly to provide the final neutron diffraction data.
+A neutron can either interact with the system as whole and interfere with other scattered neutrons resulting in coherent neutron scattering or interact with individual nuclei resulting in incoherent neutron scattering. In coherent scattering, when there is no energy transfer between the neutron and the system, the process is called elastic coherent scattering and neutron diffraction is the most famous example of this case. When there is an energy transfer between the neutron and the system, the process is inelastic coherent scattering and it gives information on various phonon and magnon modes present in the system. Neutron diffraction data looks very similar to x-ray diffraction data with two major exceptions. The form factor in the case of neutrons remain independant of the angle and neutrons also provide intensity from magnetic scattering. The nuclear and magnetic scattering contributions can be added independantly to provide the final neutron diffraction pattern.
 
 \subsection{Neutron diffraction}
 
 % Discuss different instruments and analysis
 
-Neutron diffraction measurements were carried out at various beamlines at both, High Flux Isotrope Reactor (HFIR) and 
+Neutron diffraction measurements reported in this document were carried out at various beamlines in Oak Ridge National Laboratory (ORNL). ORNL has two facilities where neutron scattering measurements can be carried out. The Spallation Neutron Source (SNS) produces neutrons by spallation of a target by protons that have been accelerated up to very high speeds. The neutrons ejected from the target are moderated down to an accepted temperature and sent to various beamlines. Instruments in this facility can make use of time-of-flight techniques to get information on the neutron energy and momentum. High Flux Isotope Reactor (HFIR) provides steady-state flux of neutrons through nuclear reaction. Using monochromators at source and detector side, high resolution can be obtained for a narrow Q-range. Neutron powder diffraction (NPD) for most samples were carried out at the NOMAD and POWGEN beamlines in SNS. NPD of \cumnas\ was measured at the WAND$^2$ beamline and single crystal neutron diffraction of \cumnas\ was measured at HB-3A beamline in HFIR. In addition, tetragonal CuMnAs and Mn$_3$As$_2$ samples were also shipped to Australian Centre for Neutron Scattering for NPD measurements at WOMBAT and ECHIDNA beamlines. WOMBAT beamline also allows single crystal neutron diffraction measurements and ECHIDNA is ideal for carrying out high resolution NPD measurements. Methods of obtaining the magnetic structure from NPD data will be discussed in the next chapter.
+
 
 \subsection{Inelastic neutron scattering}
 
 %Discuss ARCS instrument
 
+In inelastic neutron scattering (INS) measurements, the energy and momentum of the incoming and scattered neutrons are tracked to give information about the dynamic structure factor. The precise nature in which this is done differs from one instrument to another. The incident neutron may give or receive energy from the system and the total energy of the system plus neutron must be conserved. The INS measurements for Fe$_2$As single crystals were carried out in the ARCS beamline at the Spallation Neutron Source (SNS). ARCS is a time-of-flight chopper neutron spectrometer with a wide angular coverage, ideal for gathering complete INS spectra of Fe$_2$As. Thermal neutrons coming from the moderator go through a series of choppers before reaching the sample. T0 chopper removes unwanted neutrons and other radiations from the beam and defines the starting time for the neutrons. The Fermi choppers select neutrons having particular incident neutron energies. The intial momentum and energy of neutrons are known. The time taken by the neutron to reach the detector determines the final energy of the neutron and its position in the detector determines its final momentum. Both single crystals and powders can be used in the ARCS beamline for INS measurements. 5 crystals of Fe$_2$As were co-aligned using a Laue setup at SNS.
+
+The final data obtained from the INS experiment is four dimensional (3 $Q$-axes and an energy axis) in nature and requires a huge amount of memory to store and process. The data can be reduced to lower dimensions by integrating it along one, two or three axes. The conventional INS spectra that we usually see in manuscripts is Energy vs $Q$ or constant energy slices where the other two axes have been integrated over a finite width. This action can be performed by writing python scripts and running it using \textsc{mantid}. Once the data is reduced, it can saved as a text file for easier processing on personal computers. A complete 360$^\circ$ scan in the ARCS instrument typically takes 24-36 hours. Cutting and slicing data correctly and being able to analyze this data within this timeframe is crucial to determine the next steps during beamtime.
+
+Simulated magnon spectra can be plotted using \textsc{SpinW}. Once we define out crystal, we have to define various exchange pathways for consideration. We can then assign exchange coupling values to these pathways. Magnetic anisotropy of the crystal can also be accounted in \textsc{SpinW}. There are provisions for switching between the calculated and simulated magnon spectra. To get a simulated magnon spectra that matches close to the experiment, one can calculate the magnon spectra at different points across the finite width of integration and sum or average all the intensities. It is also possible to refine exchange coupling constants from the experimental magnon spectra in \textsc{SpinW}. The experimental data points have to manually inserted in a certain format for a every value of $Q$. There are few parameters that can be tuned during refinement such as the minimum and maximum values of exchange constants, the optimizer used for refinement, the Hamiltonian being used during refinement etc. In the INS measurement of Fe$_2$As, we simulate magnon spectra from previous computationally calculated values and also refine the experimental spectra to obtain exchange coupling constants.
 
 %##################chapter 4
 \chapter{Magnetic structure refinement from neutron diffraction measurements}
@@ -644,8 +650,11 @@ Electronic band structure
 %##################chapter 5
 \chapter{An in-plane hexagonal antiferromagnet in the Cu-Mn-As system, Cu$_{0.82}$Mn$_{1.18}$As}
 
-\section{Copyrights and author contributions}
-\href{https://doi.org/10.1103/PhysRevMaterials.3.111402}{Reprinted with permission from Manohar H. Karigerasi, Kisung Kang, Arun Ramanathan, Danielle L. Gray, Matthias D. Frontzek, Huibo Cao, Andr\'e Schleife, and Daniel P. Shoemaker, Physical Review Materials 3, 111402(R) (2019). Copyright 2020 by the American Physical Society.} In this work, I synthesized single crystals and powders of \cumnas, analyzed neutron diffraction and synchrotron x-ray difraction data and also carried out SQUID and magnetotransport measurements. Kisung Kang carried out DFT simulations to verify the magnetic ground state and the band structure. Arun Ramanathan carried out the initial synthesis of the samples. I also wrote the paper with help from the coauthors.
+%\section{Copyrights and author contributions}
+
+\hfill \break
+
+\href{https://doi.org/10.1103/PhysRevMaterials.3.111402}{Reprinted with permission from Manohar H. Karigerasi, Kisung Kang, Arun Ramanathan, Danielle L. Gray, Matthias D. Frontzek, Huibo Cao, Andr\'e Schleife, and Daniel P. Shoemaker, Physical Review Materials 3, 111402(R) (2019). Copyright 2020 by the American Physical Society.} In this work, I synthesized single crystals and powders of \cumnas, analyzed neutron diffraction and synchrotron x-ray difraction data and carried out SQUID and magnetotransport measurements. Kisung Kang did DFT simulations to verify the magnetic ground state of \cumnas\ and obtain the band structure. Arun Ramanathan also synthesized the samples. I wrote the paper with help from the coauthors.
 
 %\iffalse
 %\begin{abstract}
@@ -981,7 +990,9 @@ We thank Junseok Oh for assistance in making contacts for resistivity measuremen
 %##################chapter 6
 \chapter{Two-step magnetic ordering into a canted state in ferrimagnetic monoclinic Mn$_3$As$_2$}
 
-\section{Copyrights and author contributions}
+%\section{Copyrights and author contributions}
+
+\hfill \break
 
 \href{https://arxiv.org/abs/2008.01776}{Reprinted with permission from Manohar H Karigerasi, Bao H. Lam, Maxim Avdeev and Daniel P. Shoemaker, Journal of Solid State Chemistry, (2020). Copyright 2020 by the Elsevier.} In this work, I carried out SQUID and DSC measurements. I also carried out the magnetic structure refinement from NPD data and wrote the paper with help from coauthors. Bao Lam synthesized the samples and took images from SEM.
 
@@ -1384,7 +1395,7 @@ In progress
 
 \hfill \break
 
-\section{Copyrights and author contributions}
+%\section{Copyrights and author contributions}
 
 \href{https://doi.org/10.1103/PhysRevMaterials.4.114416}{Reprinted with permission from Manohar H. Karigerasi, Kisung Kang, Garrett E. Granroth, Arnab Banerjee, Andr\'e Schleife, and Daniel P. Shoemaker, Physical Review Materials 4, 114416 (2020). Copyright 2020 by the American Physical Society.} In this work, I synthesized single crystals of Fe$_2$As, carried out the alignment of the samples and measured inelastic neutron scattering (INS) spectra at Oak Ridge National Laboratory. I was also responsible for slicing and cutting INS data using mantidplot, simulating magnon spectra using SpinW and refining the magnon spectra to get exchange coupling values. Kisung Kang did DFT simulations to obtain phonon spectra and simulated phonon intensities using OCLIMAX. I wrote the paper with help from coauthors.
 
