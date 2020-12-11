@@ -579,56 +579,99 @@ A neutron can either interact with the system as whole and interfere with other 
 
 % Discuss different instruments and analysis
 
-Neutron diffraction measurements reported in this document were carried out at various beamlines in Oak Ridge National Laboratory (ORNL). ORNL has two facilities where neutron scattering measurements can be carried out. The Spallation Neutron Source (SNS) produces neutrons by spallation of a target by protons that have been accelerated up to very high speeds. The neutrons ejected from the target are moderated down to an accepted temperature and sent to various beamlines. Instruments in this facility can make use of time-of-flight techniques to get information on the neutron energy and momentum. High Flux Isotope Reactor (HFIR) provides steady-state flux of neutrons through nuclear reaction. Using monochromators at source and detector side, high resolution can be obtained for a narrow Q-range. Neutron powder diffraction (NPD) for most samples were carried out at the NOMAD and POWGEN beamlines in SNS. NPD of \cumnas\ was measured at the WAND$^2$ beamline and single crystal neutron diffraction of \cumnas\ was measured at HB-3A beamline in HFIR. In addition, tetragonal CuMnAs and Mn$_3$As$_2$ samples were also shipped to Australian Centre for Neutron Scattering for NPD measurements at WOMBAT and ECHIDNA beamlines. WOMBAT beamline also allows single crystal neutron diffraction measurements and ECHIDNA is ideal for carrying out high resolution NPD measurements. Methods of obtaining the magnetic structure from NPD data will be discussed in the next chapter.
+Neutron diffraction measurements reported in this document were carried out at various beamlines in Oak Ridge National Laboratory (ORNL). ORNL has two facilities where neutron scattering measurements can be carried out. The Spallation Neutron Source (SNS) \cite{mason2006spallation} produces neutrons by spallation of a target by protons that have been accelerated up to very high speeds. The neutrons ejected from the target are moderated down to an accepted temperature and sent to various beamlines. Instruments in this facility can make use of time-of-flight techniques to get information on the neutron energy and momentum. High Flux Isotope Reactor (HFIR) provides steady-state flux of neutrons through nuclear reaction. Using monochromators at source and detector side, high resolution can be obtained for a narrow Q-range. Neutron powder diffraction (NPD) for most samples were carried out at the NOMAD and POWGEN beamlines in SNS \cite{NEUEFEIND201268,Huq:in5025}. NPD of \cumnas\ was measured at the WAND$^2$ beamline \cite{Frontzek_new} and single crystal neutron diffraction of \cumnas\ was measured at HB-3A beamline in HFIR. In addition, tetragonal CuMnAs and Mn$_3$As$_2$ samples were also shipped to Australian Centre for Neutron Scattering for NPD measurements at WOMBAT and ECHIDNA beamlines \cite{STUDER20061013,Liss2006,Avdeev2018}. WOMBAT beamline also allows single crystal neutron diffraction measurements and ECHIDNA is ideal for carrying out high resolution NPD measurements. Methods of obtaining the magnetic structure from NPD data will be discussed in the next chapter.
 
 
 \subsection{Inelastic neutron scattering}
 
 %Discuss ARCS instrument
 
-In inelastic neutron scattering (INS) measurements, the energy and momentum of the incoming and scattered neutrons are tracked to give information about the dynamic structure factor. The precise nature in which this is done differs from one instrument to another. The incident neutron may give or receive energy from the system and the total energy of the system plus neutron must be conserved. The INS measurements for Fe$_2$As single crystals were carried out in the ARCS beamline at the Spallation Neutron Source (SNS). ARCS is a time-of-flight chopper neutron spectrometer with a wide angular coverage, ideal for gathering complete INS spectra of Fe$_2$As. Thermal neutrons coming from the moderator go through a series of choppers before reaching the sample. T0 chopper removes unwanted neutrons and other radiations from the beam and defines the starting time for the neutrons. The Fermi choppers select neutrons having particular incident neutron energies. The intial momentum and energy of neutrons are known. The time taken by the neutron to reach the detector determines the final energy of the neutron and its position in the detector determines its final momentum. Both single crystals and powders can be used in the ARCS beamline for INS measurements. 5 crystals of Fe$_2$As were co-aligned using a Laue setup at SNS.
+In inelastic neutron scattering (INS) measurements, the energy and momentum of the incoming and scattered neutrons are tracked to give information about the dynamic structure factor. The precise nature in which this is done differs from one instrument to another. The incident neutron may give or receive energy from the system and the total energy of the system plus neutron must be conserved. The INS measurements for Fe$_2$As single crystals were carried out in the ARCS beamline \cite{doi:10.1063/1.3680104} at the Spallation Neutron Source (SNS). ARCS is a time-of-flight chopper neutron spectrometer with a wide angular coverage, ideal for gathering complete INS spectra of Fe$_2$As. Thermal neutrons coming from the moderator go through a series of choppers before reaching the sample. T0 chopper removes unwanted neutrons and other radiations from the beam and defines the starting time for the neutrons. The Fermi choppers select neutrons having particular incident neutron energies. The intial momentum and energy of neutrons are known. The time taken by the neutron to reach the detector determines the final energy of the neutron and its position in the detector determines its final momentum. Both single crystals and powders can be used in the ARCS beamline for INS measurements. 5 crystals of Fe$_2$As were co-aligned using a Laue setup at SNS.
 
-The final data obtained from the INS experiment is four dimensional (3 $Q$-axes and an energy axis) in nature and requires a huge amount of memory to store and process. The data can be reduced to lower dimensions by integrating it along one, two or three axes. The conventional INS spectra that we usually see in manuscripts is Energy vs $Q$ or constant energy slices where the other two axes have been integrated over a finite width. This action can be performed by writing python scripts and running it using \textsc{mantid}. Once the data is reduced, it can saved as a text file for easier processing on personal computers. A complete 360$^\circ$ scan in the ARCS instrument typically takes 24-36 hours. Cutting and slicing data correctly and being able to analyze this data within this timeframe is crucial to determine the next steps during beamtime.
+The final data obtained from the INS experiment is four dimensional (3 $Q$-axes and an energy axis) in nature and requires a huge amount of memory to store and process. The data can be reduced to lower dimensions by integrating it along one, two or three axes. The conventional INS spectra that we usually see in manuscripts is Energy vs $Q$ or constant energy slices where the other two axes have been integrated over a finite width. This action can be performed by writing python scripts and running it using \textsc{mantid} \cite{Arnold2014}. Once the data is reduced, it can saved as a text file for easier processing on personal computers. A complete 360$^\circ$ scan in the ARCS instrument typically takes 24-36 hours. Cutting and slicing data correctly and being able to analyze this data within this timeframe is crucial to determine the next steps during beamtime.
 
-Simulated magnon spectra can be plotted using \textsc{SpinW}. Once we define out crystal, we have to define various exchange pathways for consideration. We can then assign exchange coupling values to these pathways. Magnetic anisotropy of the crystal can also be accounted in \textsc{SpinW}. There are provisions for switching between the calculated and simulated magnon spectra. To get a simulated magnon spectra that matches close to the experiment, one can calculate the magnon spectra at different points across the finite width of integration and sum or average all the intensities. It is also possible to refine exchange coupling constants from the experimental magnon spectra in \textsc{SpinW}. The experimental data points have to manually inserted in a certain format for a every value of $Q$. There are few parameters that can be tuned during refinement such as the minimum and maximum values of exchange constants, the optimizer used for refinement, the Hamiltonian being used during refinement etc. In the INS measurement of Fe$_2$As, we simulate magnon spectra from previous computationally calculated values and also refine the experimental spectra to obtain exchange coupling constants.
+Simulated magnon spectra can be plotted using \textsc{SpinW} \cite{Toth_2015}. Once we define out crystal, we have to define various exchange pathways for consideration. We can then assign exchange coupling values to these pathways. Magnetic anisotropy of the crystal can also be accounted in \textsc{SpinW}. There are provisions for switching between the calculated and simulated magnon spectra. To get a simulated magnon spectra that matches close to the experiment, one can calculate the magnon spectra at different points across the finite width of integration and sum or average all the intensities. It is also possible to refine exchange coupling constants from the experimental magnon spectra in \textsc{SpinW}. The experimental data points have to manually inserted in a certain format into a separate file. There are few parameters that can be tuned during refinement such as the minimum and maximum values of exchange constants, the optimizer used for refinement, the Hamiltonian being used during refinement etc. In the INS measurement of Fe$_2$As, we simulate magnon spectra from previous computationally calculated values and also refine the experimental spectra to obtain exchange coupling constants.
+
+
+
 
 %##################chapter 4
 \chapter{Magnetic structure refinement from neutron diffraction measurements}
 
+\section{Representational analysis}
+
+\subsection{Group theory}
+
+% Four postulates in group theory
+
+There are four postulates in group theory:
+
+\begin{itemize}
+\item Product of two elements of the set is a member of the set
+\item Associative law holds true
+\item Must contain an identity element
+\item The inverse of all elements must be a member of the set
+\end{itemize}
+
+As an example, let us take a look at the point group C$_{3v}$ shown in the case of an equilateral triangle in Fig. \ref{fig:C3v}. This point group consists of six symmetry elements as shown below:
+
+\begin{itemize}
+\item E : Identity element
+\item C$_3$ : Rotation clockwise by 120$^circ$
+\item C$_3^2$ : Rotation clockwise by 240$^circ$
+\item $\sigma_1$ : reflection about y-axis
+\item $\sigma_2$ : reflection about line passing through center and point 2
+\item $\sigma_3$ : reflection about line passing through center and point 3
+\end{itemize}
+
+We can show that C$_{3v}$ follows all postulates of group theory. Fig. \ref{fig:gmt_C3v} shows the group multiplication table of C$_{3v}$. The values inside the table consist of the result of operating 
+
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v.png} \\
 \caption{\label{fig:C3v}
-Electronic band structure
+An equilateral triangle having C$_{3v}$ point group symmetry.
 }
 \end{figure}
 
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/group_multiplication_table_C3v.png} \\
 \caption{\label{fig:gmt_C3v}
-Electronic band structure
+The group multiplication table of C$_{3v}$ point group.
 }
 \end{figure}
+
+\subsection{Representation of a group}
+
+% Choice of basis vectors
 
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v_a1_a2.png} \\
 \caption{\label{fig:C3v_a1_a2}
-Electronic band structure
+The basis vectors a$_1$ and a$_2$ corresponds to the point group matrices in Table.
 }
 \end{figure}
+
+\subsection{Magnetic moments as Bloch waves}
+
+% Give examples of magnetic moments as Bloch waves
 
 \begin{figure}
 \centering\includegraphics[width=\columnwidth]{figures/ch4/propagation_vector.png} \\
 \caption{\label{fig:propagation_vector}
-Electronic band structure
+Magnetic structure for unit cell with one magnetic atom for $k = [00\frac{1}{2}]$ along $c$.
 }
 \end{figure}
 
 \begin{figure}
 \centering\includegraphics[width=\columnwidth]{figures/ch4/mag_structures_single_k.png} \\
 \caption{\label{fig:mag_structures_single_k}
-Electronic band structure
+Various magnetic structures obtained.
 }
 \end{figure}
+
+\subsection{Star of propagation vector k}
+
+% Star of propagation vector k
 
 \begin{figure}
 \centering\includegraphics[width=0.7\columnwidth]{figures/ch4/star_of_propagation_vector_k.png} \\
@@ -637,6 +680,13 @@ Electronic band structure
 }
 \end{figure}
 
+\subsection{Magnetic representation and basis vectors}
+
+% magnetic representation and obtaining basis vectors
+
+\section{Symmetry analysis}
+
+
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/symmetry_based_analysis.png} \\
 \caption{\label{fig:symmetry_based_analysis}
@@ -644,7 +694,6 @@ Electronic band structure
 }
 \end{figure}
 
-\Blindtext[6]
 
 
 %##################chapter 5
