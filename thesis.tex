@@ -598,9 +598,13 @@ Simulated magnon spectra can be plotted using \textsc{SpinW} \cite{Toth_2015}. O
 %##################chapter 4
 \chapter{Magnetic structure refinement from neutron diffraction measurements}
 
+To understand magnetic ordering in metallic transition metal arsenides, being able to correctly analyze neutron diffraction data and make correct assessment about the magnetic structure is crucial. The aim of this chapter is to provide a basic understanding of the theory behind the magnetic structure refinement of neutron powder diffraction (NPD) data. Emphasis has been given to explaining concepts through examples. Historically, there have been two major methods for analyzing the magnetic structure from NPD data. One method is based on Bertaut's theory of representational analysis which relies on Landau's theory of phase transitions. The other method requires carrying out symmetry analysis of the parent space group. The former is, in some sense, a bottom-up approach whereas the latter is a top-down approach. These methods were considered separate or distinct for a long period of time until people realized that they are equivalent. Modern methods rely on comparing results from both methods to make conclusions.
+
+For more details on group theory, the readers are referred to the first two chapters of Notes on Group Theory by George Koster \cite{Koster1956}. A walkthrough of Bertaut's method of representational analysis can be found in Andrew Wills's articles and reports \cite{Wills2001,Wills2019}. These articles are also available in the help menu of SARAh \cite{WILLS2000680,Wills2009}. To learn more about the history of magnetic space groups, Andrew Wills's educational article provides a comprehensive review \cite{Wills2017}. To understand magnetic structure refinement from symmetry analysis, there are a few well-written articles from the group that is responsible for maintaining Bilbao Crystallographic Server \cite{Perez-Mato2015,Gallego2016_1,Gallego2016_2}.  Doing \textsc{GSAS-II} \cite{Toby:aj5212} tutorials is a must for not just being able to use \textsc{GSAS-II} for magnetic structure refinement but also to get a better understanding of symmetry analysis concepts. A walkthrough of using \textsc{GSAS-II} for obtaining the magnetic structure of tetragonal CuMnAs is provided in the appendix.
+
 \section{Representational analysis}
 
-\subsection{Group theory}
+\subsection{General properties of groups}
 
 % Four postulates in group theory
 
@@ -608,23 +612,11 @@ There are four postulates in group theory:
 
 \begin{itemize}
 \item Product of two elements of the set is a member of the set
-\item Associative law holds true
-\item Must contain an identity element
+\item Associative law is valid for all members of the set
+\item The set should contain an identity element
 \item The inverse of all elements must be a member of the set
 \end{itemize}
 
-As an example, let us take a look at the point group C$_{3v}$ shown in the case of an equilateral triangle in Fig. \ref{fig:C3v}. This point group consists of six symmetry elements as shown below:
-
-\begin{itemize}
-\item E : Identity element
-\item C$_3$ : Rotation clockwise by 120$^circ$
-\item C$_3^2$ : Rotation clockwise by 240$^circ$
-\item $\sigma_1$ : reflection about y-axis
-\item $\sigma_2$ : reflection about line passing through center and point 2
-\item $\sigma_3$ : reflection about line passing through center and point 3
-\end{itemize}
-
-We can show that C$_{3v}$ follows all postulates of group theory. Fig. \ref{fig:gmt_C3v} shows the group multiplication table of C$_{3v}$. The values inside the table consist of the result of operating 
 
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v.png} \\
@@ -640,32 +632,158 @@ The group multiplication table of C$_{3v}$ point group.
 }
 \end{figure}
 
-\subsection{Representation of a group}
+
+As an example, let us take a look at the point group C$_{3v}$ shown in the case of an equilateral triangle in Fig. \ref{fig:C3v}. This point group consists of six symmetry elements as shown below:
+\begin{itemize}
+\item E : Identity element
+\item C$_3$ : Rotation clockwise by 120$^\circ$
+\item C$_3^2$ : Rotation clockwise by 240$^\circ$
+\item $\sigma_1$ : reflection about y-axis
+\item $\sigma_2$ : reflection about line passing through center and point 2
+\item $\sigma_3$ : reflection about line passing through center and point 3
+\end{itemize}
+
+We can show that the point group C$_{3v}$ follows all postulates of group theory and is a group. Fig. \ref{fig:gmt_C3v} shows the group multiplication table of C$_{3v}$. The values inside the table consist of the result of the product of row and column headers which are all the symmetry elements in the group. From Fig. \ref{fig:gmt_C3v}, we can see that all the values in the table are also a member of the point group. Similarly, we can easily prove the validity of the associative law. For example, $(C_3C_3^2)\sigma_1 = C_3(C_3^2\sigma_1) = \sigma_1$. The identity element is represented by the symbol $E$ and we can see that the product of an element with the identity element is the element itself. Finally, we can show that all elements contain an inverse element which is proved by the presence of one $E$ every row or column and they are all a member of the set. For example, the inverse element of C$_3$ is C$_3^2$.
+
+\subsection{Representations of a group}
 
 % Choice of basis vectors
+A set of elements which can be put in correspondence to the elements of a group and have the same multiplication table can be called a representation of the group. Every symmetry element in a group can be represented by a matrix. One useful way is to use square matrices. The representation $\Gamma$ of a group means that each element A in a group can be represented by a matrix $\Gamma$(A). The collection of all the corresponding matrices for each element would be the representation of a group. The representation of a group is not unique as shown in the following example. For the point group C$_{3v}$ considered above, if the basis vectors a$_1$ and a$_2$ point along $x$ and $y$ respectively, then the representation matrices are given by the first column in Table \ref{tab:basis_vectors} and if the basis vectors are oriented towards the vertices of the triangle from the center, then the representation matrices are given by the second column in Table \ref{tab:basis_vectors}. The choice of the basis vectors a$_1$ and a$_2$ determines the representation of the group. Conversely, the representation of a group determines the basis vectors. As we shall see in the following subsection, moments of an atom are represented by basis vectors. If we can determine the correct representation matrices that is in agreement with the symmetry of the system, we can project out the correct basis vectors.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+\caption{\label{tab:basis_vectors} 
+Basis vectors}
+\centering
+\begin{tabular}{>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}}
+\hline\hline
+\addlinespace[1.5ex]
+ & \boldmath{Basis vectors along x and y} & \boldmath{Basis vectors shown in Fig. \ref{fig:C3v_a1_a2}} \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{$E$} & $\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$ & $\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{$C_3$} & $\begin{bmatrix} -\frac{1}{2} & \frac{\sqrt{3}}{2} \\ -\frac{\sqrt{3}}{2} & -\frac{1}{2} \end{bmatrix}$ & $\begin{bmatrix} 0 & -1 \\ 1 & -1 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{$C_3^2$} & $\begin{bmatrix} -\frac{1}{2} & -\frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{bmatrix}$ & $\begin{bmatrix} -1 & 1 \\ -1 & 0 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{$\sigma_1$} & $\begin{bmatrix} -1 & 0 \\ 0 & 1 \end{bmatrix}$ & $\begin{bmatrix} 1 & -1 \\ 0 & -1 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{$\sigma_2$} & $\begin{bmatrix} \frac{1}{2} & -\frac{\sqrt{3}}{2} \\ -\frac{\sqrt{3}}{2} & -\frac{1}{2} \end{bmatrix}$ & $\begin{bmatrix} -1 & 0 \\ -1 & 1 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline
+\addlinespace[1.5ex]
+\textbf{$\sigma_3$} & $\begin{bmatrix} \frac{1}{2} & \frac{\sqrt{3}}{2} \\ \frac{\sqrt{3}}{2} & -\frac{1}{2} \end{bmatrix}$ & $\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ \\
+\addlinespace[1.5ex]
+\hline\hline
+\end{tabular}
+~\\
+\end{table}
 
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v_a1_a2.png} \\
 \caption{\label{fig:C3v_a1_a2}
-The basis vectors a$_1$ and a$_2$ corresponds to the point group matrices in Table.
+The basis vectors a$_1$ and a$_2$ referred in Table \ref{tab:basis_vectors}.
 }
 \end{figure}
+
+The previous example is a trivial case in the sense that the representation matrices can be transformed into one another using similarity transformations. If the representation is unitary, then all the matrices are orthogonal to each other. This is important for further analysis and we always convert our representation to a unitary one using similarity transformations. If the matrices of all the elements of a group $\Gamma$(A) can be reduced to the following format using a single similarity transformation, then the representation is said to be reducible.
+
+\begin{equation}
+\Gamma'(A) = S^{-1}\Gamma(A)S = \begin{bmatrix} \Gamma_1(A) & Q(A) \\ 0 & \Gamma_2(A) \end{bmatrix}
+\end{equation}
+
+If the $\Gamma$'(A) matrix is unitary, then Q(A) is also 0. Hence, $\Gamma$'(A) consists of square matrices along its diagonal and $\Gamma$(A) can be represented as –
+
+\begin{equation}
+\Gamma(A) = \Gamma_1(A) + \Gamma_2(A)
+\end{equation}
+
+$\Gamma_1$(A) and $\Gamma_2$(A) are irreducible representations (irrep) of a group. They can be thought of as the building symmetry blocks of a material. All theorems that are applicable to $\Gamma$(A) are also valid for the irreps. The $+$ sign does not mean the addition of the irreps but is a way for representing the relation between irreps.
 
 \subsection{Magnetic moments as Bloch waves}
 
 % Give examples of magnetic moments as Bloch waves
 
+Rather than say that a moment is of unit length and makes an angle of 0$^\circ$ with the c-axis, we will simply say that the projection of the moments along the crystallographic axes can be described by a basis vector $\Psi$ which has components along these axes.
+
+\begin{equation}
+m_j = \psi_j
+\end{equation}
+
+Generally, the moment is a weighted sum of basis vectors.
+
+\begin{equation}
+\Psi_j = \sum_v C_v \psi_v
+\end{equation}
+
+The propagation of magnetic structure through a solid can be described using plane waves, Bloch waves. For an equivalent magnetic atom in another nuclear cell, magnetic moment can be given by -
+
+\begin{equation}
+m_j = \sum_k \Psi_j^k e^{-2\pi ik.t}
+\end{equation}
+
+For the simplest and most common case -
+
+\begin{equation}
+m_j = \Psi_j^k e^{-2\pi ik.t}
+\end{equation}
+
+Magnetic structures can be described by the periodic repetition of a magnetic unit cell, just as crystal structures are described by translation of a nuclear unit cell. For convenience, rather than building a complete magnetic unit cell (which could contain thousands of magnetic atoms) we use a description based on the nuclear unit cell and a 'propagation vector', k, that describes the relation between moment orientations of equivalent magnetic atoms in different nuclear unit cells.
+
+
+\begin{equation}
+m_j = \Psi_j^k [cos(-2\pi k.t) + isin(-2\pi k.t)]
+\end{equation}
+
+$\Psi$ is real and the sine component is null (a-f).
+
+\begin{equation}
+m_j = Re(\Psi_j^k cos(-2\pi k.t))
+\end{equation}
+
+$\Psi$ is real and the sine component is non-zero (h)
+
+\begin{equation}
+m_j = \Psi_j^k e^{-2\pi ik.t} + \Psi_j^{-k} e^{2\pi ik.t}
+\end{equation}
+
+\begin{equation}
+\Psi_j^{-k} = \Psi_j^{k*}
+\end{equation}
+
+\begin{equation}
+m_j = 2Re(\Psi_j^k) cos(-2\pi k.t) + 2Im(\Psi_j^k) sin(-2\pi k.t)
+\end{equation}
+
+\begin{equation}
+m_j = 2Re(\Psi_j^k) cos(-2\pi k.t)
+\end{equation}
+
+
+$\Psi$  is complex and $Re(\Psi) = Im(\Psi)$ (i)
+$\Psi$ is complex and $Re(\Psi) \neq Im(\Psi)$ (j)
+
 \begin{figure}
 \centering\includegraphics[width=\columnwidth]{figures/ch4/propagation_vector.png} \\
 \caption{\label{fig:propagation_vector}
-Magnetic structure for unit cell with one magnetic atom for $k = [00\frac{1}{2}]$ along $c$.
+Magnetic structure for a unit cell with one magnetic atom with $k = [00\frac{1}{2}]$ propagation vector along $c$. The basis vector for the zeroth cell is $[010]$.
 }
 \end{figure}
 
 \begin{figure}
 \centering\includegraphics[width=\columnwidth]{figures/ch4/mag_structures_single_k.png} \\
 \caption{\label{fig:mag_structures_single_k}
-Various magnetic structures obtained.
+Various magnetic structures obtained for a single propagation vector.
 }
 \end{figure}
 
@@ -673,10 +791,33 @@ Various magnetic structures obtained.
 
 % Star of propagation vector k
 
+Each symmetry element g in a space group can be separated into rotation and translation parts g = {h,T}.
+Rotation part $h$ acts on $k$ and gives $k' = kh$.
+Either k changes or remains same.
+$k' = k \text{or}\ k' \neq k$
+The symmetry elements of G$_o$ that leave the k vector invariant are called little group G$_k$.
+Orthorhombic space group Pmn2$_1$ has following symmetry operations -
+
+\begin{align*}
+g_1 &: x,y,z\\
+g_2 &: \bar{x}+\frac{1}{2},\bar{y}, z+\frac{1}{2}\\
+g_3 &: x+\frac{1}{2},\bar{y}, z+\frac{1}{2}\\
+g_4 &: \bar{x},y,z
+\end{align*}
+
+Action of these symmetry operations on $\vec{k_3} = [0.1\ 0\ 0]$ gives:
+
+\begin{align*}
+\vec{k_3}g_1 &= [0.1\ 0\ 0]\\
+\vec{k_3}g_2 &= [-0.1\ 0\ 0]\\
+\vec{k_3}g_3 &= [0.1\ 0\ 0]\\
+\vec{k_3}g_4 &= [-0.1\ 0\ 0]
+\end{align*}
+
 \begin{figure}
 \centering\includegraphics[width=0.7\columnwidth]{figures/ch4/star_of_propagation_vector_k.png} \\
 \caption{\label{fig:star}
-Electronic band structure
+Star of propagation vector k for a space group $g = \{h,T\}$.
 }
 \end{figure}
 
@@ -684,8 +825,70 @@ Electronic band structure
 
 % magnetic representation and obtaining basis vectors
 
+A crystal appears invariant under all of the symmetry operations of its space group. However, equivalent atoms can be interchanged under the different symmetry operations.
+For example, point group C$_2$ has two symmetry operations: the identity element $E$ and the two-fold rotation $C_{2z}$. 
+Three equivalent positions: $a = (0.25\ 0.5\ 0)$, $b = (-0.25\ -0.5\ 0)$, $c = (0\ 0\ 0)$.
+
+\begin{align*}
+E\begin{pmatrix}a\\b\\c\end{pmatrix} &= \begin{pmatrix}a\\b\\c\end{pmatrix} \\
+\Gamma_{perm}^E (P) &= \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} \begin{pmatrix}a\\b\\c\end{pmatrix}
+\end{align*}
+
+\begin{align*}
+C_{2z}\begin{pmatrix}a\\b\\c\end{pmatrix} &= \begin{pmatrix}b\\a\\c\end{pmatrix} \\
+\Gamma_{perm}^E (P) &= \begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix} \begin{pmatrix}a\\b\\c\end{pmatrix}
+\end{align*}
+
+The character of the permutation representation for a symmetry operation, perm(g) is simply the number of position labels that are unchanged under its action. Hence, $\chi_	{perm}(E) = 3$ and $\chi_{perm}(C_{2z}) = 1$.
+
+Let Moment vector of an atom be $V = (m_a, m_b, m_c)$. Action of a rotational symmetry element on the axial vector -
+
+\begin{equation}
+\vec{V'} = R\vec{V} \times det(R)
+\end{equation}
+
+If $R = C_{2z}$, with $det(R) = 1$ we have
+
+\begin{equation*}
+R = \begin{pmatrix} \bar{1} & 0 & 0\\ 0 & \bar{1} & 0\\ 0 & 0 & \bar{1} \end{pmatrix}
+\end{equation*}
+
+The character of the axial representation $\chi_{axial}(C_{2z}) = (-1-1+1) \times 1 = -1$ and $\vec{V'} = {-m_a, -m_b, m_c}$.
+
+The magnetic representation $\Gamma_{mag}$, describes both the result of the symmetry operation on the atomic positions and on the axial vectors that describe the atomic moments.
+
+\begin{align*}
+\Gamma_{mag} &= \Gamma_{axial} \Gamma_{perm}\\
+\chi_{mag} &= \chi_{axial} \chi_{perm}
+\end{align*}
+
+Irreducible representations are the building blocks out of which all other representations can be made. 
+Matrix representation is reducible and can be expressed as a linear combination of irreducible representations $\Gamma_v$.
+
+\begin{align}
+\Gamma_{mag} &= \sum_v n_v \Gamma_v \\
+n_v &= \frac{1}{n(G_k)} \sum_{g \in G_k} \chi_{mag}(g) \chi_v(g)
+\end{align}
+
+$n_v$ also tells us the number of basis vectors contributed from each irrep towards magnetic representation. Using test vectors (usually crystallographic axis), magnetic basis vectors for each Irrep are projected out using the formula -
+
+\begin{equation}
+\vec{\psi_{\alpha v}^\lambda} = \sum_{g \in G(k)} D_v^{\lambda*}(g) \sum_i \delta_{i,gi} R_g \vec{\phi_{\alpha}} det(R_g) \\
+\end{equation}
+
+\begin{equation}
+\Psi_j = \sum_v C_v \psi_v
+\end{equation}
+
+Once basis vectors are obtained for each atoms corresponding to an irrep, the magnetic moment can be expressed as a linear combination of the basis vectors. The coefficients C$_v$ are refined to the neutron diffraction data to get the magnetic moments.
+
+
+
 \section{Symmetry analysis}
 
+%Write two pages summary of your learnings, maybe with example of CuMnAs
+
+The crux of this method has been well summarized in Perez-Mato \emph{et al}. \cite{Perez-Mato2015} as follows -"Magnetic ordering is a symmetry-breaking process, and, as in other fields of physics, the characterization of the involved symmetry reduction is an essential step for its comprehension." The symmetry of a commensurate magnetic compound is given by a magnetic space group that determines all magnetic as well as structural symmetry constraints in the compound. The lack of computer-readable listings of MSG and computational tools for magnetic symmetry for a long period of time meant that the representational analysis was the most popular method for magnetic structure refinement.
 
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/symmetry_based_analysis.png} \\
@@ -693,7 +896,6 @@ Electronic band structure
 Electronic band structure
 }
 \end{figure}
-
 
 
 %##################chapter 5
@@ -1043,7 +1245,7 @@ We thank Junseok Oh for assistance in making contacts for resistivity measuremen
 
 \hfill \break
 
-\href{https://arxiv.org/abs/2008.01776}{Reprinted with permission from Manohar H Karigerasi, Bao H. Lam, Maxim Avdeev and Daniel P. Shoemaker, Journal of Solid State Chemistry, (2020). Copyright 2020 by the Elsevier.} In this work, I carried out SQUID and DSC measurements. I also carried out the magnetic structure refinement from NPD data and wrote the paper with help from coauthors. Bao Lam synthesized the samples and took images from SEM.
+\href{https://doi.org/10.1016/j.jssc.2020.121901}{Reprinted with permission from Manohar H Karigerasi, Bao H. Lam, Maxim Avdeev and Daniel P. Shoemaker, Journal of Solid State Chemistry, (2020). Copyright 2020 by the Elsevier. This manuscript version is made available under the CC-BY-NC-ND 4.0 license http://creativecommons.org/licenses/by-nc-nd/4.0/} In this work, I carried out SQUID and DSC measurements. I also carried out the magnetic structure refinement from NPD data and wrote the paper with help from coauthors. Bao Lam synthesized the samples and took SEM images.
 
 
 \section{Abstract}
