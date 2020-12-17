@@ -619,19 +619,43 @@ There are four postulates in group theory:
 
 
 \begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/equilateral_triangle.png} \\
 \caption{\label{fig:C3v}
 An equilateral triangle having C$_{3v}$ point group symmetry.
 }
 \end{figure}
 
-\begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/group_multiplication_table_C3v.png} \\
-\caption{\label{fig:gmt_C3v}
-The group multiplication table of C$_{3v}$ point group.
-}
-\end{figure}
+%\begin{figure}
+%\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/group_multiplication_table_C3v.png} \\
+%\caption{\label{fig:gmt_C3v}
+%The group multiplication table of C$_{3v}$ point group.
+%}
+%\end{figure}
 
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+\caption{\label{tab:gmt_C3v} 
+The group multiplication table of C$_{3v}$ point group.}
+\centering
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+ & \boldmath{E} & \boldmath{C$_3$} & \boldmath{C$_3^2$} & \boldmath{$\sigma_1$} & \boldmath{$\sigma_2$} & \boldmath{$\sigma_3$} \\
+\hline \hline
+\boldmath{E} & E & C$_3$ & C$_3^2$ & $\sigma_1$ & $\sigma_2$ & $\sigma_3$ \\
+\hline
+\boldmath{C$_3$} & C$_3$ & C$_3^2$ & E & $\sigma_3$ & $\sigma_1$ & $\sigma_2$ \\
+\hline
+\boldmath{C$_3^2$} & C$_3^2$ & E & C$_3$ & $\sigma_2$ & $\sigma_3$ & $\sigma_1$ \\
+\hline
+\boldmath{$\sigma_1$} & $\sigma_1$ & $\sigma_2$ & $\sigma_3$ & E & C$_3$ & C$_3^2$ \\
+\hline
+\boldmath{$\sigma_2$} & $\sigma_2$ & $\sigma_3$ & $\sigma_1$ & C$_3^2$ & E & C$_3$ \\
+\hline
+\boldmath{$\sigma_3$} & $\sigma_3$ & $\sigma_1$ & $\sigma_2$ & C$_3$ & C$_3^2$ & E\\
+\hline
+\end{tabular}
+~\\
+\end{table}
 
 As an example, let us take a look at the point group C$_{3v}$ shown in the case of an equilateral triangle in Fig. \ref{fig:C3v}. This point group consists of six symmetry elements as shown below:
 \begin{itemize}
@@ -643,7 +667,7 @@ As an example, let us take a look at the point group C$_{3v}$ shown in the case 
 \item $\sigma_3$ : reflection about line passing through center and point 3
 \end{itemize}
 
-We can show that the point group C$_{3v}$ follows all postulates of group theory and is a group. Fig. \ref{fig:gmt_C3v} shows the group multiplication table of C$_{3v}$. The values inside the table consist of the result of the product of row and column headers which are all the symmetry elements in the group. From Fig. \ref{fig:gmt_C3v}, we can see that all the values in the table are also a member of the point group. Similarly, we can easily prove the validity of the associative law. For example, $(C_3C_3^2)\sigma_1 = C_3(C_3^2\sigma_1) = \sigma_1$. The identity element is represented by the symbol $E$ and we can see that the product of an element with the identity element is the element itself. Finally, we can show that all elements contain an inverse element which is proved by the presence of one $E$ every row or column and they are all a member of the set. For example, the inverse element of C$_3$ is C$_3^2$.
+We can show that the point group C$_{3v}$ follows all postulates of group theory and is a group. Table \ref{tab:gmt_C3v} shows the group multiplication table of C$_{3v}$. The values inside the table consist of the result of the product of row and column headers which are all the symmetry elements in the group. From Fig. \ref{fig:gmt_C3v}, we can see that all the values in the table are also a member of the point group. Similarly, we can easily prove the validity of the associative law. For example, $(C_3C_3^2)\sigma_1 = C_3(C_3^2\sigma_1) = \sigma_1$. The identity element is represented by the symbol $E$ and we can see that the product of an element with the identity element is the element itself. Finally, we can show that all elements contain an inverse element which is proved by the presence of one $E$ every row or column and they are all a member of the set. For example, the inverse element of C$_3$ is C$_3^2$.
 
 \subsection{Representations of a group}
 
@@ -653,12 +677,12 @@ A set of elements which can be put in correspondence to the elements of a group 
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
 \caption{\label{tab:basis_vectors} 
-Basis vectors}
+The matrix for different symmetry elements in the C$_{3v}$ point group when the basis vectors are along $x$ and $y$ and when the basis vectors point along the directions shown in Fig. \ref{fig:C3v_a1_a2}.}
 \centering
 \begin{tabular}{>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}>{\centering\arraybackslash}p{3.5cm}}
 \hline\hline
 \addlinespace[1.5ex]
- & \boldmath{Basis vectors along x and y} & \boldmath{Basis vectors shown in Fig. \ref{fig:C3v_a1_a2}} \\
+ & \boldmath{Basis vectors along $x$ and $y$} & \boldmath{Basis vectors shown in Fig. \ref{fig:C3v_a1_a2}} \\
 \addlinespace[1.5ex]
 \hline
 \addlinespace[1.5ex]
@@ -690,7 +714,7 @@ Basis vectors}
 \end{table}
 
 \begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/C3v_a1_a2.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/equilateral_triangle_basis_vectors.png} \\
 \caption{\label{fig:C3v_a1_a2}
 The basis vectors a$_1$ and a$_2$ referred in Table \ref{tab:basis_vectors}.
 }
@@ -774,7 +798,7 @@ $\Psi$  is complex and $Re(\Psi) = Im(\Psi)$ (i)
 $\Psi$ is complex and $Re(\Psi) \neq Im(\Psi)$ (j)
 
 \begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch4/propagation_vector.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/propagation_vector_vesta.png} \\
 \caption{\label{fig:propagation_vector}
 Magnetic structure for a unit cell with one magnetic atom with $k = [00\frac{1}{2}]$ propagation vector along $c$. The basis vector for the zeroth cell is $[010]$.
 }
@@ -815,7 +839,7 @@ Action of these symmetry operations on $\vec{k_3} = [0.1\ 0\ 0]$ gives:
 \end{align*}
 
 \begin{figure}
-\centering\includegraphics[width=0.7\columnwidth]{figures/ch4/star_of_propagation_vector_k.png} \\
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/k-star.png} \\
 \caption{\label{fig:star}
 Star of propagation vector k for a space group $g = \{h,T\}$.
 }
@@ -888,15 +912,41 @@ Once basis vectors are obtained for each atoms corresponding to an irrep, the ma
 
 %Write two pages summary of your learnings, maybe with example of CuMnAs
 
-The crux of this method has been well summarized in Perez-Mato \emph{et al}. \cite{Perez-Mato2015} as follows -"Magnetic ordering is a symmetry-breaking process, and, as in other fields of physics, the characterization of the involved symmetry reduction is an essential step for its comprehension." The symmetry of a commensurate magnetic compound is given by a magnetic space group that determines all magnetic as well as structural symmetry constraints in the compound. The lack of computer-readable listings of MSG and computational tools for magnetic symmetry for a long period of time meant that the representational analysis was the most popular method for magnetic structure refinement.
+The crux of this method has been well summarized in Perez-Mato \emph{et al}. \cite{Perez-Mato2015} as follows: "Magnetic ordering is a symmetry-breaking process, and, as in other fields of physics, the characterization of the involved symmetry reduction is an essential step for its comprehension." The symmetry of a commensurate magnetic compound is given by a magnetic space group (MSG) that determines all magnetic as well as structural symmetry constraints in the compound. For a long period of time, the lack of computer-readable listings of MSG meant that the representational analysis was the most popular method for magnetic structure refinement. Now, there are computational tools available for magnetic symmetry analysis \cite{Perez-Mato2015,Gallego2016_1,Gallego2016_2}. Magnetic moments are considered as physical entities and the action of a time-reversal operation on a spin is to flip the orientation of the spin. There are four types of magnetic symmetries possible depending on the type of symmetry breaking transition. Let the space group of a magnetic compound in its paramagnetic state be G and let the MSG be $\Omega$. For a subgroup F in G:
+
+\begin{enumerate}
+\item $\Omega = F$. The type I MSG is just a subgroup of the paramagnetic space group and does not contain the time reversal operator.
+\item $\Omega = G + \{1' \mid 000\}G$. The type II MSG is for a paramagnetic compound and is also known as the gray group. The MSG can also be simply represented as G1' and consists of a time reversal operator multiplying to all operations in G, in addition to all the operations in G. Any commensurate magnetic ordering would be of a subgroup of this gray group.
+\item $\Omega = F + \{R_\circ' \mid t\}F$. In type III MSG, $\{R_\circ' \mid t\}$ is an operation of the gray group G1'.
+\item $\Omega = F + \{1' \mid L\}F$. The Type IV MSG consists of the time reversal operator acting on all the elements of F following by a lattice translation L.
+\end{enumerate}
+
+% Define k-maximal subgroups
+
+As mentioned in the previous section, the propagation vector (k-vector) can be obtained from neutron diffraction measurements and it describes magnetic moments as spin waves superimposed over atoms of the unit cell. Once the k-vector is determined, we have to identify the correct subgroups that are consistent with the k-vector. The k-vector consistent subgroups of G1' that do not have any k-vector consistent supergroups are called k-maximal subgroups. Let us look at the example of \cumnas. Fig. \ref{fig:WAND_data} shows the neutron powder diffraction data of \cumnas when it is cooled down from 700$^\circ$C to 200$^\circ$C. We can see that the intensity of (020), (011) and (021) peak increases at 300~K. The compound is a paramagnet above 300~K as shown in the next chapter. Since there are no structurally forbidden magnetic peaks present, the propagation vector $k = 0$. \cumnas\ has a space group of P$\bar{6}$. With P$\bar{6}$ as the parent space group and $k = 0$ ordering, the graph of subgroups consistent with this space gorup is shown in Fig. \ref{fig:subgraph_cumnas}. The MSGs, P$\bar{6}$' and P$\bar{6}$, in the top-level branch are the two k-maximal subgroups which are obtained by including or excluding the time reversal operator with the $\bar{6}$ symmetry element. Fig. \ref{fig:wand_refinement} shows the refined fits to the two models from the 200~K neutron powder diffraction data. The fit to P$\bar{6}$ MSG in Fig. \ref{fig:wand_refinement}(b) does not contain the required intensity for the (021) magnetic peak. Hence, P$\bar{6}$' is the correct MSG for cumnas at 200~K.
 
 \begin{figure}
-\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/symmetry_based_analysis.png} \\
-\caption{\label{fig:symmetry_based_analysis}
-Electronic band structure
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch4/WAND_data.png} \\
+\caption{\label{fig:WAND_data}
+Neutron powder diffraction measurements of \cumnas\ between 200$^\circ$C and 700$^\circ$C.
 }
 \end{figure}
 
+
+\begin{figure}
+\centering\includegraphics[width=0.5\columnwidth]{figures/ch4/subgraph_cumnas.png} \\
+\caption{\label{fig:subgraph_cumnas}
+The graph of subgroups for \cumnas\ having P$\bar{6}$ space group and $k=0$ ordering.
+}
+\end{figure}
+
+
+\begin{figure}
+\centering\includegraphics[width=\columnwidth]{figures/ch4/wand_refinement.png} \\
+\caption{\label{fig:wand_refinement}
+Refinement of the two possible k-maximal subgroups of P$\bar{6}$ is shown for (a) P$\bar{6}$' and (b) P$\bar{6}$.
+}
+\end{figure}
 
 %##################chapter 5
 \chapter{An in-plane hexagonal antiferromagnet in the Cu-Mn-As system, Cu$_{0.82}$Mn$_{1.18}$As}
@@ -905,7 +955,7 @@ Electronic band structure
 
 \hfill \break
 
-\href{https://doi.org/10.1103/PhysRevMaterials.3.111402}{Reprinted with permission from Manohar H. Karigerasi, Kisung Kang, Arun Ramanathan, Danielle L. Gray, Matthias D. Frontzek, Huibo Cao, Andr\'e Schleife, and Daniel P. Shoemaker, Physical Review Materials 3, 111402(R) (2019). Copyright 2020 by the American Physical Society.} In this work, I synthesized single crystals and powders of \cumnas, analyzed neutron diffraction and synchrotron x-ray difraction data and carried out SQUID and magnetotransport measurements. Kisung Kang did DFT simulations to verify the magnetic ground state of \cumnas\ and obtain the band structure. Arun Ramanathan also synthesized the samples. I wrote the paper with help from the coauthors.
+\href{https://doi.org/10.1103/PhysRevMaterials.3.111402}{Reprinted with permission from Manohar H. Karigerasi, Kisung Kang, Arun Ramanathan, Danielle L. Gray, Matthias D. Frontzek, Huibo Cao, Andr\'e Schleife, and Daniel P. Shoemaker, Physical Review Materials 3, 111402(R) (2019). Copyright 2020 by the American Physical Society.} In this work, I synthesized single crystals and powders of \cumnas, analyzed neutron diffraction and synchrotron x-ray diffraction data, and carried out SQUID and magnetotransport measurements. Kisung Kang did DFT simulations to verify the magnetic ground state of \cumnas\ and obtain the band structure. Arun Ramanathan also synthesized the samples. I wrote the paper with help from the coauthors.
 
 %\iffalse
 %\begin{abstract}
