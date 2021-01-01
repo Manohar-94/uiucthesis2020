@@ -73,6 +73,9 @@
 \NewDocumentCommand \pd { m m } { \dfrac{\partial #1}{\partial #2} }
 
 \newcommand*{\cumnas}{Cu$_{0.82}$Mn$_{1.18}$As}
+\newcommand*{\cuexcess}{Cu$_{1.18}$Mn$_{0.82}$As}
+\newcommand*{\mnexcess}{Cu$_{0.64}$Mn$_{1.36}$As}
+\newcommand*{\asexcess}{CuMn$_{0.964}$As$_{1.036}$}
 
 % }}}
 
@@ -109,12 +112,17 @@ Research Assistant Professor Gregory MacDougall \\
 \begin{frontmatter}
 
 \begin{abstract}
-Metallic antiferromagnets have gained interest in recent times due to the possibility of being useful as a memory device. Arsenic forms a large pool of magnetic metals in combination with other transition metals that have largely been ignored so far. In this report, we discover a new ternary metallic arsenide in the Cu-Mn-As phase space, identify its chemical and magnetic structure, and characterize its electrical and magnetic properties. We also carry out the magnetic structure refinement of Mn$_3$As$_2$ from neutron powder diffraction data at different temperatures to understand the magnetic ordering in Mn-As compounds. Using inelastic neutron scattering measurements, we determine exchange interactions in Fe$_2$As, which has the same structure as CuMnAs, showing a highly 2D magnon character although the phonons are 3D. Finally, we report a magnetic-structural coupled transition across 300 K in tetragonal CuMnAs and determine the correct magnetic structure of the compound.
+Metallic antiferromagnets have gained interest in recent times due to the possibility of being useful as a memory device. Arsenic forms a large pool of magnetic metals in combination with other transition metal atoms that have largely been ignored so far. In this report, we explore compounds in Cu-Mn-As phase space by identifying the transition temperatures using calorimetry and magnetometry measurements, understanding the magnetic structure at different temperatures using neutron powder diffraction techniques and using inelastic neutron scattering techniques to characterize exchange interactions in these materials. We discover a new ternary metallic arsenide \cumnas\ which crystallizes in the hexagonal crystal system and contains a frustrated in-plane triangular arrangment of Mn spins. We also identify the two step transition in Mn$_3$As$_2$ from a paramagnet to a collinear ferrimagnet and then, into a canted spin state. Using high resolution synchrotron x-ray diffraction and neutron powder diffraction measurements, we identify magnetically coupled structural transitions in tetragonal CuMnAs which result from the presence of finite Cu moments. Finally, using single crystal inelastic neutron scattering measurements, we determine exchange interactions in Fe$_2$As, which has the same structure as CuMnAs, showing a highly two dimensional magnon character although the phonon interactions are three dimensional.
 \end{abstract}
 
 \chapter*{Acknowledgments}
 
-This project would not be possible without many people. Firstly, thanks to my advisor, Prof. Daniel P. Shoemaker.
+I want to thank my advisor Daniel Shoemaker for providing me the opportunity and support throughout my graduate life. Right from making aesthetically pleasing figures to writing well articulated manuscripts, I am invaluably grateful for the guidance. I want to thank all members of the Shoemaker Research Group for helping out with making samples, characterization, instrument training and all the laughter we shared in the lab. Special mentions go out to Ankita, Rebecca and Zhelong for seamlessly transitioning me into a Shoemaker Lab member by training me on tube sealing, glovebox and D8 usage. I want to thank Bao Lam for being an excellent undergraduate researcher and making plenty of V-Mn-As samples. I would like to thank my computational and experimental collaborators at MRSEC including Kexin Yang, Kisung Kang, Junsoek Oh, David Cahill and Andr\'e Schleife and all other members for valuable contributions as well as suggestions on my projects. Many thanks to Danielle Gray and Toby Woods at the SCS X-ray facility for all the help with single crystal x-ray diffraction measurements and structure solution of crystals.
+
+I want to thank my Saul Lapidus for helping me with my experiment at the 11-BM beamline in Advanced Photon Source of Argonne National Laboratory. Many thanks to Maxim Avdeev, Vanessa Peterson, Kirrily Rule and Andrew Studer at Australian Centre for Neutron Scattering for carrying out the neutron powder diffraction experiments of my samples. I want to thank all my collaborators, Arnab Banerjee, Huibo Cao, Matthias Frontzek, Garrett Granroth, Yan Wu and Douglas Abernathy at Oak Ridge National Laboratory for help with my experiments as well as many insightful discussions.
+
+This work was undertaken as part of the Illinois Materials Research Science and Engineering Center, supported by the National Science Foundation MRSEC program under NSF Award No. DMR-1720633. The characterization was carried out in part in the Materials Research Laboratory Central Research Facilities, University of Illinois. This work made use of the Illinois Campus Cluster, a computing resource that is operated by the Illinois Campus Cluster Program (ICCP) in conjunction with the National Center for Supercomputing Applications (NCSA) and which is supported by funds from the University of Illinois at Urbana-Champaign. This research is part of the Blue Waters sustained-petascale computing project, which is supported by the National Science Foundation (Awards No. OCI-0725070 and No. ACI-1238993) and the state of Illinois. Blue Waters is a joint effort of the University of Illinois at Urbana-Champaign and its National Center for Supercomputing Applications. This research used resources of the Spallation Neutron Source, a DOE Office of Science User Facility operated by Oak Ridge National Laboratory, and the Advanced Photon Source, a DOE Office of Science User Facility operated for the DOE Office of Science by Argonne National Laboratory under Contract No. DE-AC02-06CH11357. Neutron scattering was performed at the High Flux Isotope Reactor, a Department of Energy Office of Science User Facility operated by the Oak Ridge National Laboratory. Neutron diffraction measurements were also carried out at Australian Centre for Neutron Scattering.
+
 
 %\begin{dedication}
 %To Coffee
@@ -579,7 +587,7 @@ A neutron can either interact with the system as whole and interfere with other 
 
 % Discuss different instruments and analysis
 
-Neutron diffraction measurements reported in this document were carried out at various beamlines in Oak Ridge National Laboratory (ORNL). ORNL has two facilities where neutron scattering measurements can be carried out. The Spallation Neutron Source (SNS) \cite{mason2006spallation} produces neutrons by spallation of a target by protons that have been accelerated up to very high speeds. The neutrons ejected from the target are moderated down to an accepted temperature and sent to various beamlines. Instruments in this facility can make use of time-of-flight techniques to get information on the neutron energy and momentum. High Flux Isotope Reactor (HFIR) provides steady-state flux of neutrons through nuclear reaction. Using monochromators at source and detector side, high resolution can be obtained for a narrow Q-range. Neutron powder diffraction (NPD) for most samples were carried out at the NOMAD and POWGEN beamlines in SNS \cite{NEUEFEIND201268,Huq:in5025}. NPD of \cumnas\ was measured at the WAND$^2$ beamline \cite{Frontzek_new} and single crystal neutron diffraction of \cumnas\ was measured at HB-3A beamline in HFIR. In addition, tetragonal CuMnAs and Mn$_3$As$_2$ samples were also shipped to Australian Centre for Neutron Scattering for NPD measurements at WOMBAT and ECHIDNA beamlines \cite{STUDER20061013,Liss2006,Avdeev2018}. WOMBAT beamline also allows single crystal neutron diffraction measurements and ECHIDNA is ideal for carrying out high resolution NPD measurements. Methods of obtaining the magnetic structure from NPD data will be discussed in the next chapter.
+Neutron diffraction measurements reported in this document were carried out at various beamlines in Oak Ridge National Laboratory (ORNL). ORNL has two facilities where neutron scattering measurements can be carried out. The Spallation Neutron Source (SNS) \cite{mason2006spallation} produces neutrons by spallation of a target by protons that have been accelerated up to very high speeds. The neutrons ejected from the target are moderated down to an accepted temperature and sent to various beamlines. Instruments in this facility can make use of time-of-flight techniques to get information on the neutron energy and momentum. High Flux Isotope Reactor (HFIR) provides steady-state flux of neutrons through nuclear reaction. Using monochromators at source and detector side, high resolution can be obtained for a narrow Q-range. Neutron powder diffraction (NPD) for most samples were carried out at the NOMAD and POWGEN beamlines in SNS \cite{NEUEFEIND201268,Huq:in5025}. NPD of \cumnas\ was measured at the WAND$^2$ beamline \cite{Frontzek_new} and single crystal neutron diffraction of \cumnas\ was measured at HB-3A beamline in HFIR. In addition, tetragonal CuMnAs and Mn$_3$As$_2$ samples were also shipped to Australian Centre for Neutron Scattering for NPD measurements at WOMBAT and ECHIDNA beamlines, respectively \cite{STUDER20061013,Liss2006,Avdeev2018}. WOMBAT beamline also allows single crystal neutron diffraction measurements and ECHIDNA is ideal for carrying out high resolution NPD measurements. Methods of obtaining the magnetic structure from NPD data will be discussed in the next chapter.
 
 
 \subsection{Inelastic neutron scattering}
@@ -598,23 +606,25 @@ Simulated magnon spectra can be plotted using \textsc{SpinW} \cite{Toth_2015}. O
 %##################chapter 4
 \chapter{Magnetic structure refinement from neutron diffraction measurements}
 
-To understand magnetic ordering in metallic transition metal arsenides, being able to correctly analyze neutron diffraction data and make correct assessment about the magnetic structure is crucial. The aim of this chapter is to provide a basic understanding of the theory behind the magnetic structure refinement of neutron powder diffraction (NPD) data. Emphasis has been given to explaining concepts through examples. Historically, there have been two major methods for analyzing the magnetic structure from NPD data. One method is based on Bertaut's theory of representational analysis which relies on Landau's theory of phase transitions. The other method requires carrying out symmetry analysis of the parent space group. The former is, in some sense, a bottom-up approach whereas the latter is a top-down approach. These methods were considered separate or distinct for a long period of time until people realized that they are equivalent. Modern methods rely on comparing results from both methods to make conclusions.
+To understand the magnetic ordering in transition metal arsenides, being able to analyze neutron diffraction data and make correct assessment about the magnetic structure is crucial. The aim of this chapter is to provide a basic understanding of the theories behind the magnetic structure refinement from neutron powder diffraction (NPD) data. Emphasis has been given to explaining concepts through examples. Historically, there have been two major methods for analyzing the magnetic structure from NPD data. One method is based on Bertaut's theory of representational analysis which relies on Landau's theory of phase transitions. The other method requires carrying out symmetry analysis of the parent space group. The former is, in some sense, a bottom-up approach whereas the latter is a top-down approach. These methods were considered separate or distinct for a long period of time until it was realized that that are many similarities. Modern methods rely on comparing results from both methods to arrive at correct conclusions.
 
-For more details on group theory, the readers are referred to the first two chapters of Notes on Group Theory by George Koster \cite{Koster1956}. A walkthrough of Bertaut's method of representational analysis can be found in Andrew Wills's articles and reports \cite{Wills2001,Wills2019}. These articles are also available in the help menu of SARAh \cite{WILLS2000680,Wills2009}. To learn more about the history of magnetic space groups, Andrew Wills's educational article provides a comprehensive review \cite{Wills2017}. To understand magnetic structure refinement from symmetry analysis, there are a few well-written articles from the group that is responsible for maintaining Bilbao Crystallographic Server \cite{Perez-Mato2015,Gallego2016_1,Gallego2016_2}.  Doing \textsc{GSAS-II} \cite{Toby:aj5212} tutorials is a must for not just being able to use \textsc{GSAS-II} for magnetic structure refinement but also to get a better understanding of symmetry analysis concepts. A walkthrough of using \textsc{GSAS-II} for obtaining the magnetic structure of tetragonal CuMnAs is provided in the appendix.
+For more details on group theory, the readers are referred to the first two chapters of Notes on Group Theory by George Koster \cite{Koster1956}. A walkthrough of Bertaut's method of representational analysis can be found in Andrew Wills's articles and reports \cite{Wills2001,Wills2019}. These articles are also available in the help menu of SARAh \cite{WILLS2000680,Wills2009}. To learn more about the history of magnetic space groups, Andrew Wills's educational article provides a comprehensive review \cite{Wills2017}. To understand magnetic structure refinement from symmetry analysis, there are a few well-written articles from the group that is responsible for maintaining Bilbao Crystallographic Server \cite{Perez-Mato2015,Gallego2016_1,Gallego2016_2}.  Doing \textsc{GSAS-II} \cite{Toby:aj5212} tutorials is a must not just for being able to use \textsc{GSAS-II} in magnetic structure refinements but also to get a better understanding of symmetry analysis concepts. An example of magnetic structure refinement of \cumnas\ using symmetry analysis is provided in this chapter.
+
+%A walkthrough of using \textsc{GSAS-II} for obtaining the magnetic structure of tetragonal CuMnAs is provided in the appendix.
 
 \section{Representational analysis}
 
-\subsection{General properties of groups}
+\subsection{General properties of a group}
 
 % Four postulates in group theory
 
-There are four postulates in group theory:
+There are four postulates that must be satisfied for a set to be a group in group theory \cite{Koster1956}:
 
 \begin{itemize}
-\item Product of two elements of the set is a member of the set
+\item Product of any two elements in the set is also a member of the set
 \item Associative law is valid for all members of the set
 \item The set should contain an identity element
-\item The inverse of all elements must be a member of the set
+\item The inverse of all elements in the set must also be a member of the set
 \end{itemize}
 
 
@@ -658,21 +668,22 @@ The group multiplication table of C$_{3v}$ point group.}
 \end{table}
 
 As an example, let us take a look at the point group C$_{3v}$ shown in the case of an equilateral triangle in Fig. \ref{fig:C3v}. This point group consists of six symmetry elements as shown below:
+
 \begin{itemize}
 \item E : Identity element
 \item C$_3$ : Rotation clockwise by 120$^\circ$
 \item C$_3^2$ : Rotation clockwise by 240$^\circ$
-\item $\sigma_1$ : reflection about y-axis
-\item $\sigma_2$ : reflection about line passing through center and point 2
+\item $\sigma_1$ : reflection about $y$
+\item $\sigma_2$ : reflection about the line passing through center and point 2
 \item $\sigma_3$ : reflection about line passing through center and point 3
 \end{itemize}
 
-We can show that the point group C$_{3v}$ follows all postulates of group theory and is a group. Table \ref{tab:gmt_C3v} shows the group multiplication table of C$_{3v}$. The values inside the table consist of the result of the product of row and column headers which are all the symmetry elements in the group. From Fig. \ref{fig:gmt_C3v}, we can see that all the values in the table are also a member of the point group. Similarly, we can easily prove the validity of the associative law. For example, $(C_3C_3^2)\sigma_1 = C_3(C_3^2\sigma_1) = \sigma_1$. The identity element is represented by the symbol $E$ and we can see that the product of an element with the identity element is the element itself. Finally, we can show that all elements contain an inverse element which is proved by the presence of one $E$ every row or column and they are all a member of the set. For example, the inverse element of C$_3$ is C$_3^2$.
+We can show that the point group C$_{3v}$ follows all the postulates of group theory and is a group. Table \ref{tab:gmt_C3v} shows the group multiplication table of C$_{3v}$. The values inside the table consist of the product of the row and column headers which are all the symmetry elements in the group. From Table \ref{tab:gmt_C3v}, we can see that all the values in the table are also a member of the point group. Similarly, we can easily prove the validity of the associative law. For example, $(C_3C_3^2)\sigma_1 = C_3(C_3^2\sigma_1) = \sigma_1$. The identity element is represented by the symbol $E$ and we can see that the product of an element with the identity element is the element itself. Finally, we can show that all elements contain an inverse element which is proved by the presence of only one $E$ in every row and column. For example, the inverse element of C$_3$ is C$_3^2$.
 
 \subsection{Representations of a group}
 
 % Choice of basis vectors
-A set of elements which can be put in correspondence to the elements of a group and have the same multiplication table can be called a representation of the group. Every symmetry element in a group can be represented by a matrix. One useful way is to use square matrices. The representation $\Gamma$ of a group means that each element A in a group can be represented by a matrix $\Gamma$(A). The collection of all the corresponding matrices for each element would be the representation of a group. The representation of a group is not unique as shown in the following example. For the point group C$_{3v}$ considered above, if the basis vectors a$_1$ and a$_2$ point along $x$ and $y$ respectively, then the representation matrices are given by the first column in Table \ref{tab:basis_vectors} and if the basis vectors are oriented towards the vertices of the triangle from the center, then the representation matrices are given by the second column in Table \ref{tab:basis_vectors}. The choice of the basis vectors a$_1$ and a$_2$ determines the representation of the group. Conversely, the representation of a group determines the basis vectors. As we shall see in the following subsection, moments of an atom are represented by basis vectors. If we can determine the correct representation matrices that is in agreement with the symmetry of the system, we can project out the correct basis vectors.
+A set of elements which can be put in correspondence to all the elements of a group and have the same multiplication table can be called a representation of the group \cite{Koster1956}. Every symmetry element in a group can be represented by a matrix. One useful way is to use square matrices. The representation $\Gamma$ of a group means that each element A in a group can be represented by a matrix $\Gamma$(A). The collection of all the corresponding matrices for each element would be a representation of the group. The representation of a group is not unique as shown in the following example. For the point group C$_{3v}$ considered above, if the basis vectors a$_1$ and a$_2$ point along $x$ and $y$ respectively, then the representation matrices for the symmetry elements are given by the first column in Table \ref{tab:basis_vectors} and if the basis vectors are oriented towards the vertices of the triangle from the center as shown in Fig. \ref{fig:C3v_a1_a2}, then the representation matrices are given by the second column in Table \ref{tab:basis_vectors}. The choice of the basis vectors a$_1$ and a$_2$ determines the representation of the group. Conversely, the representation of a group determines the basis vectors. As we shall see in the following subsection, the moment of an atom can be represented by basis vectors. If we can determine the correct representation matrices that are in agreement with the symmetry of the system, we can project out the correct basis vectors and refine the magnetic moments.
 
 \renewcommand{\arraystretch}{1.5}
 \begin{table}
@@ -720,7 +731,7 @@ The basis vectors a$_1$ and a$_2$ referred in Table \ref{tab:basis_vectors}.
 }
 \end{figure}
 
-The previous example is a trivial case in the sense that the representation matrices can be transformed into one another using similarity transformations. If the representation is unitary, then all the matrices are orthogonal to each other. This is important for further analysis and we always convert our representation to a unitary one using similarity transformations. If the matrices of all the elements of a group $\Gamma$(A) can be reduced to the following format using a single similarity transformation, then the representation is said to be reducible.
+The previous example is a trivial case in the sense that the representation matrices can be transformed into one another using a similarity transformation. If the representation of a group is unitary, then the matrices of all symmetry elements are orthogonal to each other \cite{Koster1956}. This is important for further analysis and we always convert our representation to a unitary one using similarity transformations. If the matrices of all the elements of a group $\Gamma$(A) can be reduced to the following format using a single similarity transformation, then the representation is said to be reducible.
 
 \begin{equation}
 \Gamma'(A) = S^{-1}\Gamma(A)S = \begin{bmatrix} \Gamma_1(A) & Q(A) \\ 0 & \Gamma_2(A) \end{bmatrix}
@@ -732,19 +743,19 @@ If the $\Gamma$'(A) matrix is unitary, then Q(A) is also 0. Hence, $\Gamma$'(A) 
 \Gamma(A) = \Gamma_1(A) + \Gamma_2(A)
 \end{equation}
 
-$\Gamma_1$(A) and $\Gamma_2$(A) are irreducible representations (irrep) of a group. They can be thought of as the building symmetry blocks of a material. All theorems that are applicable to $\Gamma$(A) are also valid for the irreps. The $+$ sign does not mean the addition of the irreps but is a way for representing the relation between irreps.
+$\Gamma_1$(A) and $\Gamma_2$(A) are the irreducible representations (irrep) of a group. They can be thought of as the building symmetry blocks of a material. All theorems that are applicable to $\Gamma$(A) are also valid for the irreps. The $+$ sign does not mean the addition of the irreps but is a way for representing the relation between irreps.
 
 \subsection{Magnetic moments as Bloch waves}
 
 % Give examples of magnetic moments as Bloch waves
 
-Rather than say that a moment is of unit length and makes an angle of 0$^\circ$ with the c-axis, we will simply say that the projection of the moments along the crystallographic axes can be described by a basis vector $\Psi$ which has components along these axes.
+Rather than saying that a moment is of unit length and makes an angle of 0$^\circ$ with the c-axis, we will simply say that the projection of the moments along the crystallographic axes can be described by a basis vector $\Psi$ which has components along these axes.
 
 \begin{equation}
 m_j = \psi_j
 \end{equation}
 
-Generally, the moment is a weighted sum of basis vectors.
+In general, the moment is a weighted sum of basis vectors.
 
 \begin{equation}
 \Psi_j = \sum_v C_v \psi_v
@@ -756,15 +767,15 @@ The propagation of magnetic structure through a solid can be described using pla
 m_j = \sum_k \Psi_j^k e^{-2\pi ik.t}
 \end{equation}
 
-For the simplest and most common case -
+For the simplest and most common case with just 1 k-vector:
 
 \begin{equation}
 m_j = \Psi_j^k e^{-2\pi ik.t}
 \end{equation}
 
-Magnetic structures can be described by the periodic repetition of a magnetic unit cell, just as crystal structures are described by translation of a nuclear unit cell. For convenience, rather than building a complete magnetic unit cell (which could contain thousands of magnetic atoms) we use a description based on the nuclear unit cell and a 'propagation vector', k, that describes the relation between moment orientations of equivalent magnetic atoms in different nuclear unit cells.
+The k-vector or the propagation vector is obtained from neutron diffraction measurements. The importance of a propagation vector is well summarised in Wills, A. \cite{Wills2001} as follows: "Magnetic structures can be described by the periodic repetition of a magnetic unit cell, just as crystal structures are described by translation of a nuclear unit cell. For convenience, rather than building a complete magnetic unit cell (which could contain thousands of magnetic atoms) we use a description based on the nuclear unit cell and a 'propagation vector', k, that describes the relation between moment orientations of equivalent magnetic atoms in different nuclear unit cells". As an example, Fig. \ref{fig:propagation_vector} shows the magnetic ordering of an atom with magnetic moment along $[010]$ and having a propagation vector of $[00\frac{1}{2}]$. Examples of various magnetic structures obtained from different propagation vectors and basis vectors are provided in Wills, A. \cite{Wills2001}.
 
-
+\iffalse
 \begin{equation}
 m_j = \Psi_j^k [cos(-2\pi k.t) + isin(-2\pi k.t)]
 \end{equation}
@@ -796,31 +807,28 @@ m_j = 2Re(\Psi_j^k) cos(-2\pi k.t)
 
 $\Psi$  is complex and $Re(\Psi) = Im(\Psi)$ (i)
 $\Psi$ is complex and $Re(\Psi) \neq Im(\Psi)$ (j)
+\fi
+
 
 \begin{figure}
 \centering\includegraphics[width=0.5\columnwidth]{figures/ch4/propagation_vector_vesta.png} \\
 \caption{\label{fig:propagation_vector}
-Magnetic structure for a unit cell with one magnetic atom with $k = [00\frac{1}{2}]$ propagation vector along $c$. The basis vector for the zeroth cell is $[010]$.
+Magnetic structure for a unit cell with one magnetic atom with $k = [00\frac{1}{2}]$ propagation vector along $c$. The basis vector for the zeroth cell is  along $[010]$.
 }
 \end{figure}
 
-\begin{figure}
-\centering\includegraphics[width=\columnwidth]{figures/ch4/mag_structures_single_k.png} \\
-\caption{\label{fig:mag_structures_single_k}
-Various magnetic structures obtained for a single propagation vector.
-}
-\end{figure}
+%\begin{figure}
+%\centering\includegraphics[width=\columnwidth]{figures/ch4/mag_structures_single_k.png} \\
+%\caption{\label{fig:mag_structures_single_k}
+%Various magnetic structures obtained for a single propagation vector.
+%}
+%\end{figure}
 
 \subsection{Star of propagation vector k}
 
 % Star of propagation vector k
 
-Each symmetry element g in a space group can be separated into rotation and translation parts g = {h,T}.
-Rotation part $h$ acts on $k$ and gives $k' = kh$.
-Either k changes or remains same.
-$k' = k \text{or}\ k' \neq k$
-The symmetry elements of G$_o$ that leave the k vector invariant are called little group G$_k$.
-Orthorhombic space group Pmn2$_1$ has following symmetry operations -
+Each symmetry element g in a space group can be separated into its rotation and translation parts $g = \{h,T\}$. Rotation part $h$ can act on the propagation vector $k$ to give $k' = kh$ as shown in Fig. \ref{fig:star}. The propagation vector can either rotate or remain unchanged: $k' = k \text{ or}\ k' \neq k$. The collection of the symmetry elements of G$_o$ that leave the k-vector invariant is called the little group G$_k$. For example, orthorhombic space group Pmn2$_1$ has the following symmetry operations:
 
 \begin{align*}
 g_1 &: x,y,z\\
@@ -845,66 +853,53 @@ Star of propagation vector k for a space group $g = \{h,T\}$.
 }
 \end{figure}
 
+$g_1$ and $g_3$ leave $\vec{k_3}$ invariant and would comprise of the little group G$_k$. G$_k$ is consistent with the symmetry of the system and will be used for obtaining the representation of the group.
+
 \subsection{Magnetic representation and basis vectors}
 
 % magnetic representation and obtaining basis vectors
 
-A crystal appears invariant under all of the symmetry operations of its space group. However, equivalent atoms can be interchanged under the different symmetry operations.
-For example, point group C$_2$ has two symmetry operations: the identity element $E$ and the two-fold rotation $C_{2z}$. 
-Three equivalent positions: $a = (0.25\ 0.5\ 0)$, $b = (-0.25\ -0.5\ 0)$, $c = (0\ 0\ 0)$.
+A crystal appears invariant under all the symmetry operations in its space group. However, equivalent atoms can be interchanged under the different symmetry operations. For example, point group C$_2$ has two symmetry operations: the identity element $E$ and the two-fold rotation $C_{2z}$. If we have three atoms, $a = (0.25\ 0.5\ 0)$, $b = (-0.25\ -0.5\ 0)$, $c = (0\ 0\ 0)$, then the action of the symmetry elements are as follows:
 
 \begin{align*}
 E\begin{pmatrix}a\\b\\c\end{pmatrix} &= \begin{pmatrix}a\\b\\c\end{pmatrix} \\
-\Gamma_{perm}^E (P) &= \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} \begin{pmatrix}a\\b\\c\end{pmatrix}
+C_{2z}\begin{pmatrix}a\\b\\c\end{pmatrix} &= \begin{pmatrix}b\\a\\c\end{pmatrix}
 \end{align*}
+
+$E$ leaves the atoms unchanged whereas the C$_{2z}$ results in a swap of atoms $a$ and $b$. The permutation representation matrices for the two symmetry elements are given by:
 
 \begin{align*}
-C_{2z}\begin{pmatrix}a\\b\\c\end{pmatrix} &= \begin{pmatrix}b\\a\\c\end{pmatrix} \\
-\Gamma_{perm}^E (P) &= \begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix} \begin{pmatrix}a\\b\\c\end{pmatrix}
+\Gamma_{perm}^E (P) &= \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix} \begin{pmatrix}a\\b\\c\end{pmatrix} \\
+\Gamma_{perm}^{C_{2z}} (P) &= \begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix} \begin{pmatrix}a\\b\\c\end{pmatrix}
 \end{align*}
 
-The character of the permutation representation for a symmetry operation, perm(g) is simply the number of position labels that are unchanged under its action. Hence, $\chi_	{perm}(E) = 3$ and $\chi_{perm}(C_{2z}) = 1$.
-
-Let Moment vector of an atom be $V = (m_a, m_b, m_c)$. Action of a rotational symmetry element on the axial vector -
-
-\begin{equation}
-\vec{V'} = R\vec{V} \times det(R)
-\end{equation}
-
-If $R = C_{2z}$, with $det(R) = 1$ we have
+The character of the permutation representation for a symmetry element $\chi_{perm}$(g) is simply the number of position labels that are unchanged under its action \cite{Wills2001}. Hence, $\chi_{perm}(E) = 3$ and $\chi_{perm}(C_{2z}) = 1$. Let us define the moment of an atom to be $V = (m_a, m_b, m_c)$. Magnetic moments are considered to be axial vectors and not polar vectors. Action of a rotational symmetry element  $R$ on the axial vector is $\vec{V'} = R\vec{V} \times det(R)$. For example, if $R = C_{2z}$, it can be represented in matrix form as follows:
 
 \begin{equation*}
-R = \begin{pmatrix} \bar{1} & 0 & 0\\ 0 & \bar{1} & 0\\ 0 & 0 & \bar{1} \end{pmatrix}
+R = \begin{pmatrix} \bar{1} & 0 & 0\\ 0 & \bar{1} & 0\\ 0 & 0 & 1 \end{pmatrix}
 \end{equation*}
 
-The character of the axial representation $\chi_{axial}(C_{2z}) = (-1-1+1) \times 1 = -1$ and $\vec{V'} = {-m_a, -m_b, m_c}$.
+The axial representation matrix for a symmetry element $\Gamma_{axial}^g(P) = det(R)R$. The character of the axial representation of a symmetry element  $\chi_{axial}(g) = det(R)trace(R)$ \cite{Wills2001}. $\chi_{axial}(C_{2z}) = (-1-1+1) \times 1 = -1$ and $\vec{V'} = (-m_a, -m_b, m_c)$. The magnetic representation $\Gamma_{mag}$, describes the result of a symmetry operation on both, the atomic positions as well as moments.
 
-The magnetic representation $\Gamma_{mag}$, describes both the result of the symmetry operation on the atomic positions and on the axial vectors that describe the atomic moments.
-
-\begin{align*}
+\begin{align}
 \Gamma_{mag} &= \Gamma_{axial} \Gamma_{perm}\\
 \chi_{mag} &= \chi_{axial} \chi_{perm}
-\end{align*}
+\end{align}
 
-Irreducible representations are the building blocks out of which all other representations can be made. 
-Matrix representation is reducible and can be expressed as a linear combination of irreducible representations $\Gamma_v$.
+Irreducible representations are the building blocks out of which all other representations can be made. Matrix representation is reducible and can be expressed as a linear combination of irreducible representations $\Gamma_v$ \cite{Wills2001}.
 
 \begin{align}
 \Gamma_{mag} &= \sum_v n_v \Gamma_v \\
 n_v &= \frac{1}{n(G_k)} \sum_{g \in G_k} \chi_{mag}(g) \chi_v(g)
 \end{align}
 
-$n_v$ also tells us the number of basis vectors contributed from each irrep towards magnetic representation. Using test vectors (usually crystallographic axis), magnetic basis vectors for each Irrep are projected out using the formula -
+$n_v$ also tells us the number of basis vectors contributed from each irrep towards the magnetic representation. Using test vectors $\vec{\phi_{\alpha}}$ (usually crystallographic axes), magnetic basis vectors for each irrep are projected out using the following formula:
 
 \begin{equation}
 \vec{\psi_{\alpha v}^\lambda} = \sum_{g \in G(k)} D_v^{\lambda*}(g) \sum_i \delta_{i,gi} R_g \vec{\phi_{\alpha}} det(R_g) \\
 \end{equation}
 
-\begin{equation}
-\Psi_j = \sum_v C_v \psi_v
-\end{equation}
-
-Once basis vectors are obtained for each atoms corresponding to an irrep, the magnetic moment can be expressed as a linear combination of the basis vectors. The coefficients C$_v$ are refined to the neutron diffraction data to get the magnetic moments.
+where $D_v(g)$ is the matrix representative for the vth irrep of the symmetry element g and R$_g$ is the rotational part of the symmetry element g. Once basis vectors are obtained for each atom corresponding to an irrep, the magnetic moment can be expressed as a linear combination of the basis vectors $\Psi_j = \sum_v C_v \psi_v$ \cite{Wills2001}. The coefficients C$_v$ are refined to the neutron diffraction data to get the magnetic moments.
 
 
 
@@ -1295,7 +1290,7 @@ We thank Junseok Oh for assistance in making contacts for resistivity measuremen
 
 \hfill \break
 
-\href{https://doi.org/10.1016/j.jssc.2020.121901}{Reprinted with permission from Manohar H Karigerasi, Bao H. Lam, Maxim Avdeev and Daniel P. Shoemaker, Journal of Solid State Chemistry, (2020). Copyright 2020 by the Elsevier. This manuscript version is made available under the CC-BY-NC-ND 4.0 license http://creativecommons.org/licenses/by-nc-nd/4.0/} In this work, I carried out SQUID and DSC measurements. I also carried out the magnetic structure refinement from NPD data and wrote the paper with help from coauthors. Bao Lam synthesized the samples and took SEM images.
+\href{https://doi.org/10.1016/j.jssc.2020.121901}{Reprinted with permission from Manohar H Karigerasi, Bao H. Lam, Maxim Avdeev and Daniel P. Shoemaker, Journal of Solid State Chemistry 294, 121901 (2020). Copyright 2020 by the Elsevier. This manuscript version is made available under the CC-BY-NC-ND 4.0 license http://creativecommons.org/licenses/by-nc-nd/4.0/} In this work, I carried out SQUID and DSC measurements. I also carried out the magnetic structure refinement from NPD data and wrote the paper with help from coauthors. Bao Lam synthesized the samples and took SEM images.
 
 
 \section{Abstract}
@@ -1685,10 +1680,231 @@ _chemical_formula_weight  629.32
 %\fi
 
 %##################chapter 7
-\chapter{Spin canting in tetragonal CuMnAs}
+\chapter{High resolution diffraction reveals magnetoelastic coupling and local moment on Cu in tetragonal CuMnAs}
 
-In progress
+\section{Abstract}
+Tetragonal CuMnAs is the first antiferromagnet where the electrical switching behavior was reported. 
+%Pure-phase bulk CuMnAs can be grown using traditional solid state synthesis routes but requires mixing Cu, Mn and As elemental powders in off-stoichiometric ratio.
+We grow two CuMnAs samples, \cuexcess\ (sample A) and \asexcess\ (near-stoichiometric sample B), and study their structural and magnetic phase transitions. From calorimetry measurements, we identify a high temperature phase transition at around 1073~K and 1123~K in samples A and B, respectively and also confirm the reported melting point of 1223~K in both samples. From calorimetry and magnetometry measurements, we identify two transitions corresponding to the N\'eel temperature (T$_N$) and an antiferromagnet to ferromagnet transition in both samples. These transitions are also seen in the form of a change of slope in the $c$ lattice parameter and a broadening of the (001) peak in synchrotron powder x-ray diffraction measurements. From magnetic structure refinement to neutron powder diffraction data, we attribute the reduction in the symmetry of the structure at T$_N$ to the exchange frustration caused between Mn moments and finite moments observed at Cu sites. The presence of a non-negligible moment on Cu means that we need to re-evaluate the symmetry requirements in CuMnAs for electrical switching applications.
 
+
+\section{Introduction} 
+
+%\mhk{The figures are in place and the outline is ready. Need to re-write Results and Discussion and write Conclusions. Hopefully can finish by Sunday. I am also writing another paper on Mn-excess CuMnAs. It may not be a part of thesis. I can just put it in arxiv if it is not important enough to publish.}
+
+Ever since the electrical switching behavior was proposed \cite{Zelezny2014} and demonstrated \cite{Wadley2016} in metallic antiferromagnets (AFMs), there have been plenty of research in trying to understand the magnetic ordering and anisotropy energies in these materials for potential use a memory unit \cite{Grzybowski2017,Bodnar2019,Wadley2013,Hills2015,Wadley2015,Saidl2017,Yang2020}. There are certain advantages of using AFMs over ferromagnets (FMs) as active components in magnetic random access memory (MRAM) devices. AFMs provide resistance to external magnetic perturbations, do not produce stray fields of their own and also exhibit ultrafast dynamics \cite{Wadley2016}. When a current is applied, there is a non-equilibrium spin polarization that occurs for the charge carriers. A component of the spin polarization is staggered across the sublattices if the two sublattices are related to each other by an inversion center as seen in the case of CuMnAs and Mn$_2$Au \cite{Zelezny2014,Zelezny2017}. The moments experience a uniform fieldlike torque which can rotate the N\'eel vector into the perpendicular direction. The electrical switching behavior has been demonstrated so far in sputtered and molecular beam epitaxially grown CuMnAs and Mn$_2$Au thin films \cite{Wadley2016,Meinert2018,Matalla-Wagner2019}. 
+
+Unlike spin transfer torque based switching \cite{Gomonay2010}, the fieldlike torque from inverse spin galvanic effect does not require an adjacent ferromagnet (FM) polarizer. This provides opportunity to synthesize bulk stress-free samples that do not require a substrate for the measurements. Large single crystals are also required for studying magnetic anisotropy using inelastic neutron scattering techniques or using a torque magnetometer\cite{Karigerasi2020,Yang2020}. However, all attempts to grow bulk crystals of CuMnAs so far have only resulted in $\mu$m sized grains \cite{Volny2020} and requires further investigation.
+%This requires further investigation since other materials with same structure type have been successfully studied using single crystal INS measurements \cite{Karigerasi2020, Ishimoto1995}.
+%despite heating the powders above the melting point (~950$^\circ$C) of CuMnAs.
+
+Bulk ternary compounds in the Cu-Mn-As system can be grown using traditional solid state synthesis routes \cite{Uhlirova2015,Uhlirova2019,Karigerasi2019}. However, when Cu, Mn, and As elemental powders are mixed in stoichiometric proportions, the orthorhombic polymorph of CuMnAs is stabilized. Typically, substituting small amounts of Mn with Cu helps in stabilizing the tetragonal phase and the crossover from orthorhombic to tetragonal phase for Cu$_{1+x}$Mn$_{1-x}$As lies somewhere between $x = 0.06 - 0.11$. The effect of increasing Cu substitution results in a decrease of the N\'eel temperature (T$_N$) \cite{Uhlirova2019}. Near stoichiometric tetragonal phase can be synthesized by substituting Mn with As in small amounts \cite{Uhlirova2019,Volny2020}. It is known to exhibit an AFM-FM transition at around 315~K which the authors attribute to possible MnAs impurity \cite{Uhlirova2019}. The first manuscript on the discovery of CuMnAs also reports a Curie temperature (T$_c$) of 300~K. Surprisingly, the AFM-FM transition has not been reported in any of the thin-film electrical switching papers \cite{Wadley2016,Meinert2018,Matalla-Wagner2019}. There is a need to determine whether this transition is intrinsic to CuMnAs or not.
+
+%Cu-Mn-As ternary phase space has been explored extensively on the Cu excess side of Cu$_{1+x}$Mn$_{1-x}$As \cite{Uhlirova2019} and as mentioned earlier, there is a shift from the orthorhombic polymorph to the tetragonal polymorph of CuMnAs with increase in Cu content. On increasing the Mn content in Cu$_{1+x}$Mn$_{1-x}$As from the stoichiometric ratio, the thermodynamically stable phase changes from orthorhombic CuMnAs\cite{Uhlirova2015} to hexagonal \cumnas\cite{Karigerasi2019} to orthorhombic CuMn$_3$As$_2$\cite{Uhlirova2015} and eventually tetragonal Mn$_2$As \cite{Austin1962}. The crossover to tetragonal Mn$_2$As is interesting since it has the same structure type as CuMnAs. This provides opportunity to synthesize phase pure tetragonal CuMnAs on the Mn-excess side and investigate its magnetic structure since Mn$_2$As has a $k=[00\frac{1}{2}]$ magnetic ordering whereas CuMnAs has a $k=0$ ordering.
+
+In this article, we synthesize two samples of the tetragonal phase: (A) Cu-excess \cuexcess\ where some Mn has been substituted with Cu and (B) As-excess \asexcess\ where some Mn has been substituted with As. Sample B is the most stoichiometric bulk tetragonal CuMnAs that can be synthesized and has a T$_N$ of above 500~K \cite{Uhlirova2019}. Using calorimetry, superconducting quantum interference device (SQUID) magnetometry, synchrotron x-ray and neutron diffraction measurements, we report the high temperature stability of CuMn$_3$As$_2$ in sample B and also a magnetoelastic coupling that causes structural distortion at T$_N$ in both samples.
+
+%From calorimetry and magnetometry measurements, we report structural and magnetic phase transitions in samples A and B at around 800$^\circ$C and 300$^\circ$C, respectively. From neutron powder diffraction (NPD) measurements, we determine the magnetic ordering of the FM state in sample C at -263$^\circ$C. We also analyze the magnetic structure of sample B which shows localized magnetic ordering observed in both Mn$_2$As as well as tetragonal CuMnAs.
+
+
+\section{Methods}
+
+% Synthesis of three samples of CuMnAs
+Both samples, A and B, were synthesized using traditional solid state synthesis routes. The elemental powders of Cu (99.9\% metals basis), Mn (99.98\% metals basis), and As (99.9999\% metals basis) were mixed in 1.18:0.82:1 ratio in sample A and in 1:0.964:1.036 ratio in sample B in an Ar-atmosphere glovebox.  %\dps{repeat them here, or wait to specify them here} 
+The mixed powders were vacuum sealed in quartz tubes and heated up in a Lindberg box furnace up to 873~K in 10~hours. The samples were held at 873~K for 6~hours before being heated up to 1248~K at 1~K/min and held for 1~hour. Sample A was cooled to 1173~K at 1~K/min and held for 1~hour before being allowed to furnace-cool down to room temperature. Sample B was cooled slowly to 1023~K at 0.5~K/min and held for 1 hour before cooling down. Unlike sample A, mixed powders of sample B was transferred to an alumina crucible and the crucible was vacuum sealed inside a quartz tube in accordance with Uhlirova \textit{et al}. \cite{Uhlirova2019}. The resulting ingots were black in color and lightly stuck to the tube or crucible. The phase purity was confirmed using synchrotron and lab x-ray diffraction (XRD) measurements for samples A and B, respectively as shown in Fig. \ref{fig:XRD_data}(a,b).
+
+% x-ray diffraction (synchrotron) and neutron diffraction
+Synchrotron powder XRD measurements were performed at different temperatures for sample A at the 11-BM beamline of the Advanced Photon Source in Argonne National Laboratory \cite{wang_dedicated_2008}. Powder XRD measurements were also carried out in a Bruker D8 Advance in the reflection geometry with a Cu source. Variable-temperature neutron powder diffraction (NPD) measurements for sample A was carried out in POWGEN beamline at the Spallation Neutron Source in Oak Ridge National Laboratory \cite{Huq:in5025,mason2006spallation}. Powders of sample A were also shipped to Australian Center for Neutron Scattering (ACNS) for NPD measurements at the WOMBAT beamline \cite{STUDER20061013}. Variable-temperature NPD measurements for sample B were carried out in the ECHIDNA beamline at ACNS \cite{Avdeev2018}. The Rietveld analysis of XRD data was done using \textsc{TOPAS5} and \textsc{GSAS-II} software \cite{Coelho:jo5037,Toby:aj5212}. The magnetic structure refinement of the NPD data with help from \textsc{k-Subgroupsmag} program \cite{Perez-Mato2015} in the Bilbao Crystallographic Server was carried out in \textsc{GSAS-II} \cite{Toby:aj5212}.
+
+
+% SQUID, DSC and DTA measurements
+Field cooling (FC) and zero field cooling (ZFC) curves with a field of 10~kOe for both powdered samples were measured using a Brass Half-tube Sample Holder in a Quantum Design MPMS3. Powders of the samples weighing less than 10~mg were transferred to Al pans and differential scanning calorimetry (DSC) measurements were carried out using a heat-cool-heat cycle between 93~K and 673~K at 10~K/min in a TA Instruments DSC 2500. Differential thermal analysis (DTA) measurements were done by vacuum sealing about 30~mg to 40~mg of powders in a quartz ampoule and heating it above 1273~K at 20~K/min in a Shimadzu DTA-50.
+
+
+\section{Results and Discussion}
+
+
+%Plan of action:
+\iffalse
+
+Use Q (A^-1) and K everywhere.
+
+Fig 1: DTA data
+
+Fig 2: Quench for sample B from 900C.
+
+Fig 3: sample A - 5 proofs showing the two transitions
+
+Fig 4: NPD data at 500 K and 520 K for samples A and B
+
+Fig 5: Fit for POWGEN data at 420 K and ECHIDNA data at 400 K for 100 magnetic peak.
+
+Fig 6: Exchange frustration due to Cu moments.
+
+Supplementary fig:
+
+Fig 1: XRD data for sample purities.
+
+Fig 2: Quench for sample A from 900C.
+
+Fig 3: sample B - 2 proofs (SQUID and DSC) showing the two transitions.
+
+Fig 4: 11-BM, POWGEN, WAND NPD data for sample A.
+
+Fig 5: Fe2As c lattice parameter
+
+Fig 6: Rietveld fit to 420 K and 400 K NPD data for samples A and B, respectively.
+
+Fig 7: Fit to NPD data at 4 K for sample B using Pm'mn MSG.
+\fi
+
+
+\begin{figure}
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/DTA_plots_cropped.pdf} \\
+\caption{\label{fig:DTA}
+%KHM153 and KHM145
+The DTA data from samples A and B show two transition temperatures. The kink at around 1120~K corresponds to the melting point of the samples. The data shown here is during the heating cycle. %\dps{heating or cooling?}
+} 
+\end{figure}
+
+High temperature transitions for samples A and B were studied using DTA measurements. From Fig. \ref{fig:DTA}, we can clearly see two transitions in each sample. Both samples show a kink at around 1223~K and CuMnAs has been reported to melt at 1223~K \cite{Uhlirova2019}. Sample A shows a transition at around 1073~K whereas sample B shows a transition at around 1123~K. To investigate the nature of the phase transition, in-situ XRD measurements were attempted using sealed quartz capillaries.
+%in Bruker D8 Advance x-ray diffractometer. 
+However, high vapor pressure of As along with the reaction of the powders with the capillary precluded any successful measurements above 873~K.
+%\dps{why can we not do in situ XRD with the already-made compound?} \mhk{I have tried that as well but its the same issue. The capillary breaks at high temperatures.}
+Both samples were then water quenched from 1173~K after slow-cooling from 1248~K during synthesis. Fig. \ref{fig:quenched_samples} shows the XRD pattern for sample B after water quenching. The additional impurity peaks present in the XRD pattern were indexed to the orthorhombic CuMn$_3$As$_2$ phase.
+%\dps{This is ortho because it is an ordered tetragonal phase, not related to o-CuMnAs, right? if so, I do not believe this ordered phase would be favored at high temperatures and then become disordered upon cooling like you say 2 sentences later.} \mhk{Not sure I understand. I dont know what happens to CuMn3As2 when the sample is cooled down. My guess is that it maybe transforms to tetragonal CuMnAs.}
+XRD pattern of water quenched sample A did not provide any conclusive evidence of the presence of another phase although some diffuse shoulder peaks were observed in the XRD pattern as shown in Fig. \ref{fig:quenched_sample_A}. From this, we conclude that above 1123~K, orthorhombic CuMn$_3$As$_2$ is a stable phase for the near stoichiometric sample B. The excess Mn required for the formation of CuMn$_3$As$_2$ would make the high temperature tetragonal CuMnAs phase Cu-rich. Below 1123~K, CuMn$_3$As$_2$ is not thermodynamically stable and probably gets converted to CuMnAs. 
+%In order to synthesize large grained CuMnAs samples, it is necessary that the sample is slow cooled through both the transitions before it is allowed to furnace cool.%\dps{ Is this always true? You don't want to grow large grains of the wrong phase.} \mhk{Actually I am not sure. These are the cases - 1. furnace cooled from 900C = has some shoulder peaks. 2. slow cooled at 0.5C/min to 750C and then furnce cooled = no shoulder peaks present and XRD pattern looks better. 3. very slow cooled to 750C and held at 750C for a long period of time = so many impurity peaks present that could not be indexed. XRD looks horrible.}
+
+
+\begin{figure}
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/quenched_samples_cropped.pdf} \\
+\caption{\label{fig:quenched_samples}
+%KHM153 and KHM145. TOPAS says 31.32% CuMn3As2 impurity in sample C.
+Rietveld fit to the XRD data obtained by water quenching sample B from 1173~K shows CuMn$_3$As$_2$ as an impurity phase. The poor Rietveld fit can be attributed to significant texturing of the powders.%\dps{it is clear the strong peaks are not fit very well for the major phase here. This figure is also supposed to show sample B?} \mhk{The fit is poor. I don't know why. I have tried including texturing in the refinement but this was the best I could get. This figure is for sample B. Sample A is the supplementary figure S2.}
+} 
+\end{figure}
+
+
+
+\begin{figure}
+\centering\includegraphics[width=0.8\columnwidth]{figures/ch7/sampleA_DSC_squid_11BM_cropped.pdf} \\
+\caption{\label{fig:sampleA_transitions}
+For sample A, the DSC heating (inverted) and cooling curves are shown in (a) and the field cooling and zero field cooling curves are shown in (b). (c) shows the change in $c$ lattice parameter across temperature as determined from synchrotron XRD measurements and the variation in the intensity and Lorentzian peak width for the (001) peak across temperature is provided in (d).
+} 
+\end{figure}
+
+
+Fig. \ref{fig:sampleA_transitions}(a) shows the results of DSC measurements for sample A. We observe two kinks at around 300~K and 420~K respectively. The transition at 420~K corresponds to the T$_N$ of the sample. This is also confirmed from studies by Uhlirova \emph{et al}.\cite{Uhlirova2019} where increasing the Cu substitution at Mn sites decreases the T$_N$ considerably from its maximum value of around 520~K. The transition at 300~K is seen in the magnetometry measurements as shown in Fig. \ref{fig:sampleA_transitions}(b). There is an increase in the net moment below 300~K indicating a possible transition from an AFM to a weak FM phase. As mentioned earlier, the ferromagnetic transition has been reported in previous studies as well \cite{Nateprov2011,Uhlirova2019}. This was attributed to the presence of a possible MnAs impurity phase although there was no evidence of such an impurity. Similarly, we do not observe any MnAs impurity in the synchrotron XRD data of sample A as shown in Fig. \ref{fig:XRD_data}(a). Similar transitions are also observed in the DSC and SQUID measurements of sample B as shown in Fig. \ref{fig:DSC_SQUID_B}. The T$_N$ of sample B was observed to be around 500~K and the AFM-FM transformation was confirmed at 315~K which is consistent with the values reported in Uhlirova \emph{et al}. \cite{Uhlirova2019}.
+
+The $c$ lattice constant extracted from Rietveld fits to synchrotron XRD data of sample A shows a change of slope across the two transitions in Fig. \ref{fig:sampleA_transitions}(c) which further confirmed that the small moment arising in magnetometry around 300~K is intrinsic to CuMnAs and not due to an impurity. The thermal coefficient of expansion of $c$ is negative between the two temperatures, although the volume coefficient remains positive. Comparison between $c$ extracted from fits to NPD and synchrotron XRD measurements are shown in Fig. \ref{fig:lattice_param} and are in rough agreement. Such changes in lattice parameters are not observed in Fe$_2$As, which has the same structure type as CuMnAs, as shown in Fig. \ref{fig:Fe2As}. From fits to the (001) XRD peak in Fig. \ref{fig:sampleA_transitions}(d), we see a decrease in the peak intensity when the sample is cooled from 420~K to 300~K and the peak intensity remains constant at lower temperatures. The origin of the sudden increase in intensity below 150~K is unknown. %\dps{are you normalizing by the incident beam intensity?} \mhk{No. This is the raw intensity of the peaks. How do I obtain the incident beam intensity? There is a normalizing factor provided in the files. Not sure if the data has already been normalized or not}. 
+Similarly, the Lorentzian peak width of the (001) peak shows a clear correlation across the two transitions. There is a peak broadening effect when the sample is cooled from above T$_N$ to 300~K, beyond which it mostly remains constant.
+
+
+
+\begin{figure}
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/paramagnetic_regime_NPD_cropped.pdf} \\
+\caption{\label{fig:paramagnetic_regime}
+NPD measurements in the paramagnetic regime of sample A at 500~K and sample B at 520~K is shown in (a) and (b), respectively. The tiny peak at $Q$~=~1.65~\AA$^{-1}$ in (b) corresponds to a magnetic peak of CuMnAs since the measurement temperature was close to the T$_N$ (500~K) of the sample.
+} 
+\end{figure}
+
+Since the changes observed in the synchrotron XRD data in Fig. \ref{fig:sampleA_transitions}(c,d) occur at temperatures where magnetic transitions are observed, there is a coupling between the magnetic ordering and the structure of CuMnAs. Fig. \ref{fig:paramagnetic_regime}(a) and (b) shows the Rietveld fit to the NPD data of samples A and B, respectively in the paramagnetic regime. In case of sample A, Cu atoms were allowed to mix in Mn sites and the total stoichiometry at the Mn site was constrained to 1. The refined Cu:Mn ratio was obtained as 1.185:0.815 which is close to the starting synthesis ratio of 1.18:0.82. Allowing Mn to mix in Cu sites yielded negative atomic fraction on the Mn atoms indicating that most of the excess Cu was rightfully substituted into the Mn sites. Small amounts of MnO impurity (0.7 wt.\%) were detected in NPD data in sample A. In case of sample B, the refined fit in Fig. \ref{fig:paramagnetic_regime}(b) was obtained when the atomic fractions were fixed to be 1 in all the sites. Along with the observed T$_N$ of 500~K being above the reported value of 480~K in CuMnAs thin films \cite{Wadley2015}, these results indicate the absence of any significant anti-site mixing.
+%\dps{Your sample A must not be homogeneous because the XRD data has strong broadening, right?} \mhk{By homogeneous, I just meant absence of anti-site mixing.}
+
+
+\begin{figure}
+\centering\includegraphics[width=0.8\columnwidth]{figures/ch7/400K_ECHINDA_POWGEN_mag_peaks_cropped.pdf} \\
+\caption{\label{fig:400K_NPD_data}
+Rietveld fit to the (100) magnetic peak of samples A and B when the Cu moment is fixed to 0~$\mu_B$ is shown in (a) and (b), respectively for the magnetic space group of Pm'mn (\#59.407). The improvement in the fits when the Cu moment is allowed to refine is shown in (c) and (d) for samples A and B, respectively.
+} 
+\end{figure}
+
+Cooling down both samples to below T$_N$, there is an appearance of a magnetic peak at $Q$~=~1.65~\AA$^{-1}$ that is structurally forbidden as shown in Fig. \ref{fig:400K_NPD_data}. This corresponds to the expected $k = 0$ magnetic ordering vector. With $P4/nmm$ as the parent space group and a $k = 0$ propagation vector, there are 12 k-maximal space groups of which 4 are in orthorhombic crystal system. None of the 8 magnetic subgroups in the tetragonal crystal system allow Mn moment components in the $a-b$ plane. Of the 4 k-maximal magnetic subgroups in the orthorhombic crystal system, Mn moments are ordered ferromagnetically in two of them. Of the remaining two models, a slightly better fit for both samples is obtained for the model with a $Pm'mn$ (\#59.407) magnetic space group (MSG) (shown in Fig. \ref{fig:400K_rietveld_fit}) which is also the one reported in previous studies \cite{Wadley2015}.
+%The other model has a similar ordering of Mn moments but the moments at Cu sites are ordered ferromagnetically and perpendicular to Mn moments which seem energetically unfavorable. 
+
+Fig. \ref{fig:400K_NPD_data}(a) and (b) show the fit to the (100) magnetic peak using $Pm'mn$ MSG and fixing Cu moments to be 0 for sample A at 420~K and sample B at 400~K, respectively. There is no constraint by symmetry for the moment to be zero at Cu sites. There is an improvement in the fit when the Cu moments are also allowed to refine as shown for samples A and B in (c) and (d), respectively. The weighted residual of the magnetic phase R$_F^2$ improves from 30.008\% to 22.916\% in sample A and from 17.565\% to 8.904\% in sample B upon refining Cu moments. The refined moment magnitude on Cu site is 0.63~$\mu_B$ for sample A and 0.5~$\mu_B$ in case of sample B and the Rietveld fit to the NPD data for both samples is provided in Fig. \ref{fig:400K_rietveld_fit}. 
+Cu is bonded tetrahedrally to As in CuMnAs and has a nominal valency of +1. One possible reason could come from a diamagnet Cu developing moment in response to the exchange fields from neighboring Mn moments. However this requires further computational investigation. %\mhk{These are my theories and needs backing up from MAGNDATA and other papers.} \dps{I talked to Lucas about the second point, he basically expected Cu to have a small moment when coordinated so close to Mn due to exchange. Can DFT shed light on whether the Cu DOS is spin polarized? We probably need some computational collaboration on this paper anyway. For itinerant magnets you don't always need a magnetic element, for instance TiAu is magnetic.} \mhk{For the sake of thesis, I will just state that this needs to be verified using computation?}
+
+
+
+\begin{figure}
+\centering\includegraphics[width=0.9\columnwidth]{figures/ch7/mag43_Cu_moments_400K.png} \\
+\caption{\label{fig:400K_mag_structure}
+The magnetic structure of sample B at 400~K. The exchange frustration between the Cu and Mn moments is also highlighted.
+} 
+\end{figure}
+
+In Fig. \ref{fig:400K_mag_structure}, we can see that the Cu moments in the $a-b$ plane are arranged antiparallel to each other. The Mn moments above and below the Cu layer are also antiferromagnetically aligned. A look at Cu-Mn exchange interactions in Fig. \ref{fig:400K_mag_structure} suggest that there is both AFM and FM coupling between the Cu and Mn moments. There is anisotropic exchange interactions between the Cu and Mn moments where the coupling is FM or AFM depending on the in-plane direction of the Cu-Mn bonds. This is similar to the well-known case of Cr$_2$As which has the same structure as CuMnAs. In Cr$_2$As, the structure has been predicted to undergo a tetragonal to orthorhombic distortion due to the exchange frustration between different Cr sublattices \cite{Zhang2013}. We believe that this is also the case here where the magnetic ordering at T$_N$ causes structural distortion that is manifested in the form of a shift and peak broadening of the (001) XRD peak. The Cu moments are small as compared to Mn moments at low temperatures (around 0.5~$\mu_B$ as compared to 3~$\mu_B$ in Mn). However, just below T$_N$, they are comparable in magnitude and the Cu-Mn exchange coupling might dominate the spin interactions in the system.
+
+%\dps{What can we say about the magnetoelastic coupling here? In the thin film samples you may be constraining the moment very strongly, or you may get large strains from the transition. As a second question, does the existence of the moment on Cu change any of the existing work on CuMnAs? It would not affect the switching symmetry arguments, but would presumably have some effect when setting up your Hamiltonian and needing another site} \mhk{I think there are 2 effects here. One is increase in c lattice parameter and the other is the decrease in intensity of 001. The change in intensity could arise from the change in atom coordinates. All coordinates are fixed by symmetry except z component of Mn and As atoms. If the Mn atoms move away from the Cu layer, the intensity of 001 peak decreases and vice versa (from XRD simulations). The c lattice parameter could also increase if this happens due to repulsion from Cu layer. This is different from what might happen in Cr2As. In Cr2As, my guess is there would be a splitting of 200 peak since a and b are not degenerate anymore (100 is forbidden). The second part of the question is covered below and in a little more detail in the 2nd chapter of thesis.}
+
+The AFM to FM transition observed in sample A at around 300~K and at 315~K in sample B requires further investigation. The Rietveld fit to the NPD data of sample B at 4~K using $Pm'mn$ MSG is shown in Fig. \ref{fig:4K_mag_structure}. No additional peaks are observed which might indicate a different propagation vector. Considering magnetic subgroups of $Pm'mn$ for a better fit might be helpful but since the canting of the spins is of the order of 0.02~$\mu_B$, the magnetic structure cannot be resolved using an unconstrained refinement of the NPD data. Further torque magnetometry or aligned single crystal SQUID measurements can be carried out to get some idea of the anisotropy in CuMnAs at low temperatures which might provide some insights into the magnetic ordering. Mn atoms sit on C$_{4v}$ point group sites and Cu atom sites have D$_{2d}$ point group symmetry. There is no relation in the component of the current induced spin polarization that is responsible for producing the fieldlike torque between the Cu and Mn sublattices. When the current in along $[100]$, the torque may act on the same or opposite direction on the Cu moments as compared to the Mn moments. In either case, we cannot ignore the presence of Cu moments for studying the electrical switching behavior. This also raises an opportunity to check for magnetic moments in other metallic systems containing Cu such as othorhombic CuMnAs, CuMn$_3$As$_2$ etc. While AFM order has been seen in metallic systems such as TiAu \cite{Svanidze2015} which does not contain any magnetic atoms, the presence of moment in Cu further proves that we cannot ignore non-magnetic atoms. We need computational methods such as density function theory to investigate spin polarized density of states in Cu for verification.
+
+\section{Conclusions}
+We synthesize two Cu-Mn-As samples of the tetragonal phase, sample A (\cuexcess) which is Cu-rich and sample B (\asexcess) which is near-stoichiometric and study the phase transitions across different temperatures. Using DTA measurements, we observed a high temperature phase transition at 1073~K in sample A and 1123~K in sample B. XRD data of the water-quenched sample B from above the phase transition showed the presence of CuMn$_3$As$_2$ impurity. DSC and SQUID measurements highlight two magnetic transitions corresponding to T$_N$ and an AFM to FM transition. Lattice constants, peak widths and intensities extracted from synchrotron XRD data indicate a coupling between the structural and magnetic transitions. We attribute the magnetoelastic transition across T$_N$ to arise from exchange frustration between Cu and Mn moments. The presence of finite Cu moments raises important questions regarding its origin, the observed electrical switching behavior and our understanding of magnetic ordering in itinerant magnets.
+
+
+
+\section{Acknowledgments}
+This work was undertaken as part of the Illinois Materials  Research  Science  and  Engineering  Center,  supported by the National Science Foundation MRSEC program under NSF Award No.\ DMR-1720633.
+Characterization was carried out in part in the Materials Research Laboratory Central Research Facilities, University of Illinois. Use of the Advanced Photon Source at Argonne National Laboratory was supported by the U.S.\ Department of Energy, Office of Science, Office of Basic Energy Sciences, under Contract No.\ DE-AC02-06CH11357.
+
+\section{Supplementary}
+
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/suppl_XRD_data_cropped.pdf} \\
+\caption{\label{fig:XRD_data}
+Phase purity of the samples is confirmed from the Rietveld analysis of (a) synchrotron XRD data of sample A and (b) XRD data of sample B. %\dps{Still looks to me like you have weird broadening} \mhk{which one? (b) was measured in D8.}
+} 
+\end{figure}
+
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/suppl_quenched_samples_A_cropped.pdf} \\
+\caption{\label{fig:quenched_sample_A}
+XRD pattern of water quenched sample A. The sample is mostly pure although tiny impurity peaks were observed at around $Q$~=~2.4~\AA$^{-1}$ and 3.2~\AA$^{-1}$ which could not be indexed.
+} 
+\end{figure}
+
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/suppl_sampleC_DSC_SQUID_cropped.pdf} \\
+\caption{\label{fig:DSC_SQUID_B}
+DSC data in (a) and field cooling and zero field cooling measurements in (b) show two transitions in sample B at around 315~K and 500~K. The transition at 500~K corresponds to the T$_N$ of the sample and there is an antiferromagnet to ferromagnet transition at 315~K.
+} 
+\end{figure}
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/supplementary_lattice_parameter_cropped.pdf} \\
+\caption{\label{fig:lattice_param}
+$c$ lattice parameter of sample A refined from synchrotron XRD and NPD measurements. There is a right-shift of about 40~K in $c$ obtained from NPD measurements as compared to XRD measurements possibly due to the differences in instrumental calibrations.
+} 
+\end{figure}
+
+
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/Fe2As_lattice_constants_cropped.pdf} \\
+\caption{\label{fig:Fe2As}
+$a$ and $c$ lattice parameters of Fe$_2$As across a range of temperatures obtained from Rietveld refinement of synchrotron XRD data. More information on the synthesis and XRD measurements of Fe$_2$As can be found in Karigerasi \emph{et al}. (2020).
+} 
+\end{figure}
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/suppl_rietveld_fit_samples_400K_cropped.pdf} \\
+\caption{\label{fig:400K_rietveld_fit}
+Rietveld fit to NPD data of (a) sample A at 420~K and (b) sample B at 400~K. 
+} 
+\end{figure}
+
+\begin{figure}[h]
+\centering\includegraphics[width=0.7\columnwidth]{figures/ch7/suppl_ECHIDNA_4K_sample_B_cropped.pdf} \\
+\caption{\label{fig:4K_mag_structure}
+Rietveld fit to NPD data of sample B at 4~K using Pm'mn MSG.
+} 
+\end{figure}
 
 
 %##################chapter 8
