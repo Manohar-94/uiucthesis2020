@@ -312,13 +312,16 @@
 
 % change name
 \AtBeginDocument{
-    \renewcommand{\contentsname}{Table of Contents}
+    \renewcommand{\contentsname}{\hfill TABLE OF CONTENTS \hfill}
+    \renewcommand{\listfigurename}{\centering LIST OF FIGURES}
+    \renewcommand{\listtablename}{\centering LIST OF TABLES}
 }
 
 % make sure its single spaced
 \let\thesis@tableofcontents=\tableofcontents
 \def\tableofcontents{%
     {\singlespacing\thesis@tableofcontents}}
+
 
 % add some more spacing to sections
 \DeclareTOCStyleEntry[beforeskip=0.5em]{section}{section}
@@ -361,7 +364,7 @@
 
 % <<< abstract
 
-\def\abstractname{Abstract}
+\def\abstractname{\begin{center}ABSTRACT\end{center}}
 \newenvironment{abstract}{\chapter*{\abstractname}}{}
 
 % >>>
@@ -376,16 +379,17 @@
 \newcommand{\subsubsectiontitlefont}{\normalsize\bfseries}
 % add a `Chapter ...` in front of toc entries
 \DeclareTOCStyleEntry[
-    dynnumwidth
+   dynnumwidth
 ]{chapter}{chapter}
 \let\thesis@addchaptertocentry=\addchaptertocentry
 \def\addchaptertocentry#1#2{
     \ifstr{#1}{}{
         \thesis@addchaptertocentry{#1}{#2}}{
-        \thesis@addchaptertocentry{\chapapp{} #1}{#2}}
+        \thesis@addchaptertocentry{CHAPTER #1}{\space #2}}
 }
+%\chapapp{} 
 
-% nice spacing for the chapter title
+% nice spacing for the chapter title \@chapapp
 \newskip{\dim@chapskip}
 \newlength{\dim@chapternumberheight}
 
@@ -399,7 +403,7 @@
     \ifnum \c@secnumdepth >\m@ne
         \if@mainmatter
             \dim@chapskip=\z@
-            {\chapternumberfont \@chapapp\space \thechapter}
+            {\begin{center} \chapternumberfont CHAPTER\space \thechapter \end{center}}
             \par\nobreak
             \vskip 20\p@
         \fi
@@ -407,7 +411,7 @@
 
     \interlinepenalty\@M
     \vspace*{\dim@chapskip}%
-    \chaptertitlefont #1
+    \begin{center}\chaptertitlefont #1 \end{center}
     \vfil
     }%
 \par\nobreak%
@@ -441,7 +445,7 @@
 
 % <<< bibliography
 
-\renewcommand{\bibname}{References}
+\renewcommand{\bibname}{REFERENCES}
 
 \AtBeginDocument{
 \let\thesis@thebib\thebibliography
