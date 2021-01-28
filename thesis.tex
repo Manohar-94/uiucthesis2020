@@ -1,4 +1,4 @@
-\documentclass[10pt,doublespacing,edeposit]{uiucthesis2020}
+\documentclass[letterpaper,10pt,doublespacing,edeposit]{uiucthesis2020}
 %draftthesis
 
 % {{{ packages
@@ -129,7 +129,10 @@ This work was undertaken as part of the Illinois Materials Research Science and 
 %\end{dedication}
 
 \tableofcontents
+\clearpage
 \listoftables
+\clearpage
+\clearpage
 \listoffigures
 
 \end{frontmatter}
@@ -928,8 +931,6 @@ The crux of this method has been well summarized in Perez-Mato \emph{et al}. \ci
 
 % Define k-maximal subgroups
 
-As mentioned in the previous section, the propagation vector (k-vector) can be obtained from neutron diffraction measurements and it describes magnetic moments as spin waves superimposed over atoms of the unit cell. Once the k-vector is determined, we have to identify the correct subgroups that are consistent with the k-vector. The k-vector consistent subgroups of G1' that do not have any k-vector consistent supergroups are called k-maximal subgroups. Let us look at the example of \cumnas. Fig. \ref{fig:WAND_data} shows the neutron powder diffraction data of \cumnas when it is cooled down from 700$^\circ$C to 200$^\circ$C. We can see that the intensity of (020), (011) and (021) peak increases at 300~K. The compound is a paramagnet above 300~K as shown in the next chapter. Since there are no structurally forbidden magnetic peaks present, the propagation vector $k = 0$. \cumnas\ has a space group of P$\bar{6}$. With P$\bar{6}$ as the parent space group and $k = 0$ ordering, the graph of subgroups consistent with this space gorup is shown in Fig. \ref{fig:subgraph_cumnas}. The MSGs, P$\bar{6}$' and P$\bar{6}$, in the top-level branch are the two k-maximal subgroups which are obtained by including or excluding the time reversal operator with the $\bar{6}$ symmetry element. Fig. \ref{fig:wand_refinement} shows the refined fits to the two models from the 200~K neutron powder diffraction data. The fit to P$\bar{6}$ MSG in Fig. \ref{fig:wand_refinement}(b) does not contain the required intensity for the (021) magnetic peak. Hence, P$\bar{6}$' is the correct MSG for cumnas at 200~K.
-
 \begin{figure}
 \centering\includegraphics[width=0.7\columnwidth]{figures/ch4/WAND_data.png} \\
 \caption{\label{fig:WAND_data}
@@ -952,6 +953,10 @@ The graph of subgroups for \cumnas\ having P$\bar{6}$ space group and $k=0$ orde
 Refinement of the two possible k-maximal subgroups of P$\bar{6}$ is shown for (a) P$\bar{6}$' and (b) P$\bar{6}$.
 }
 \end{figure}
+
+As mentioned in the previous section, the propagation vector (k-vector) can be obtained from neutron diffraction measurements and it describes magnetic moments as spin waves superimposed over atoms of the unit cell. Once the k-vector is determined, we have to identify the correct subgroups that are consistent with the k-vector. The k-vector consistent subgroups of G1' that do not have any k-vector consistent supergroups are called k-maximal subgroups. Let us look at the example of \cumnas. Fig. \ref{fig:WAND_data} shows the neutron powder diffraction data of \cumnas when it is cooled down from 700$^\circ$C to 200$^\circ$C. We can see that the intensity of (020), (011) and (021) peak increases at 300~K. The compound is a paramagnet above 300~K as shown in the next chapter. Since there are no structurally forbidden magnetic peaks present, the propagation vector $k = 0$. \cumnas\ has a space group of P$\bar{6}$. With P$\bar{6}$ as the parent space group and $k = 0$ ordering, the graph of subgroups consistent with this space gorup is shown in Fig. \ref{fig:subgraph_cumnas}. The MSGs, P$\bar{6}$' and P$\bar{6}$, in the top-level branch are the two k-maximal subgroups which are obtained by including or excluding the time reversal operator with the $\bar{6}$ symmetry element. Fig. \ref{fig:wand_refinement} shows the refined fits to the two models from the 200~K neutron powder diffraction data. The fit to P$\bar{6}$ MSG in Fig. \ref{fig:wand_refinement}(b) does not contain the required intensity for the (021) magnetic peak. Hence, P$\bar{6}$' is the correct MSG for cumnas at 200~K.
+
+
 
 %##################chapter 5
 \chapter{AN IN-PLANE HEXAGONAL ANTIFERROMAGNET IN THE Cu-Mn-As SYSTEM, Cu$_{0.82}$Mn$_{1.18}$As}
